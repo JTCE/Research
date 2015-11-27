@@ -1,0 +1,77 @@
+﻿html, body {
+    background-color: #F1F1F1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    height: 100%;
+}
+
+a, div, p, h1, h2, h3, h4, h5, h6, input, li, select, span, table, td, textarea, th, tr, ul {
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+
+body {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+calendar {
+    display: block;
+}
+
+month {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(230, 230, 230);
+    display: inline-block;
+    height: 145px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+    month .header {
+      /*background-color: rgb(203, 0, 126);*/
+      background-color: rgb(62, 62, 62);
+      color: rgb(243, 243, 243);
+      font-size: 14px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+month table {
+    
+    color: rgb(62, 62, 62);
+}
+
+month td {
+    font-size: 10px;
+    text-align: center;
+    width: 16px;
+}
+
+month td.disabled {
+    color: rgb(153, 153, 153);
+}
+
+month td.error {
+    color: rgb(187, 11, 11);
+}
+
+month td.warning {
+    color: rgb(241, 211, 71);
+}
+
+month th {
+    font-size: 11px;
+    text-align: center;
+    width: 16px;
+}

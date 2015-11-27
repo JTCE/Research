@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D51032DE-9E19-40CA-BF67-F9727BC9EE3B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.Database</RootNamespace>
+    <AssemblyName>App.Database</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Database.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Documenten_AV_ArbouwDocument.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Documenten_AV_zvdzoDocument.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Documenten_AV_EOSDocument.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Medisch_AV_MedischFris.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Medisch_AV_DocActueelMedisch_2013_en_verder.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Document_AV_DocActueel_2008_tm_2012.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Medisch_AV_DocActueelMedisch_voor_2013.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Document_AV_DocActueel_2015_en_verder.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Document_AV_DocActueel_2013_tm_2014.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Document_AV_DocActueel_voor_2007.sql" />
+    <Content Include="Jobs\Samenvoegen Documenten\Document_AV_DocActueel_2007.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Job.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 03 - Werkgeverdossier - Lookup.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 04 - Werkgeverdossier - RedenAfsluiting.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 05 - Werkgeverdossier - CommercieelTrajectOpmerking.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 06 - Werkgeverdossier - CommercieelTraject.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 07 - Werkgeverdossier - CommercieelTrajectDeleted.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 08 - Werkgeverdossier - Communicatiematrix.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 09 - Werkgeverdossier - Contact.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 10 - Werkgeverdossier - DocumentUserInput.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 11 - Werkgeverdossier - Memo.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 12 - Werkgeverdossier - Opmerking.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 13 - Werkgeverdossier - Taak.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 14 - Werkgeverdossier - TrajectStatus.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Template.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 02 - WGDDocumenten - Document.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Step 01 - WGDDocumenten - Folder.sql" />
+    <Content Include="Jobs\Samenvoegen Werkgeverdossier\Testen.sql" />
+    <Content Include="Tools\enable_check_constraints.sql" />
+    <Content Include="Tools\disable_check_constraints.sql" />
+    <Content Include="Tools\enable_triggers.sql" />
+    <Content Include="Tools\disable_triggers.sql" />
+    <Content Include="Tools\diff 2 tables.sql" />
+    <Content Include="Tools\select posible foreignkey columns.sql" />
+    <Content Include="Tools\select columnnames from a table.sql" />
+    <None Include="deploy.ps1" />
+    <Content Include="Tables\dbo.Product.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Functions\" />
+    <Folder Include="StoredProcedures\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

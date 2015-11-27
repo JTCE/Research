@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spike page</title>
+    
+    <!-- Library styles -->
+    <link href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.materialblack.min.css" rel="stylesheet" />
+    <!--<link href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.silver.min.css" rel="stylesheet" />-->
+    <!--<link href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.min.css" rel="stylesheet" />-->
+    <!--<link href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.silver.min.css" rel="stylesheet" />-->
+    <!--<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <!--<link href="http://daneden.github.io/animate.css/animate.min.css" rel="stylesheet" type="text/css">-->
+    <!-- App styles -->
+    <style>
+        html, body {
+            background-color: #F1F1F1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 13px;
+            height: 100%;
+        }
+
+        a, div, p, h1, h2, h3, h4, h5, h6, input, li, select, span, table, td, textarea, th, tr, ul {
+            border: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            margin: 0;
+            outline: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        form {
+            padding-top: 20px;
+        }
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-controller="main" ng-cloak>
+
+    <h1>{{ title }}</h1>
+
+    <div app-dashboard></div>
+
+    <!-- Library scripts -->
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="https://code.angularjs.org/1.3.15/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.15/angular-animate.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.15/angular-sanitize.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.15/i18n/angular-locale_nl-nl.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.all.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/cultures/kendo.culture.nl-NL.min.js"></script>
+    <!--<script src="http://cdn.kendostatic.com/2015.1.408/js/cultures/kendo.messages.nl-NL.js"></script>-->
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.timezones.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+    <!-- App scripts -->
+    <script src="angular.kendo.js"></script>
+</body>
+</html>

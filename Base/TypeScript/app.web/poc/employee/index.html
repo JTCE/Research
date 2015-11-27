@@ -1,0 +1,227 @@
+﻿<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Library styles -->
+    <link rel="stylesheet" href="/libraries/normalize/normalize.css" />
+    <link rel="stylesheet" href="/libraries/fontawesome/font-awesome.custom.css" />
+    <link rel="stylesheet" href="/libraries/leaflet/leaflet.css">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="app.css" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-controller="MainController" ng-click="vm.reset($event)" ng-cloak>
+    <style ng-if="vm.useCustomStyles">
+        .breadcrumb .label {
+            color: rgb(51, 152, 204);
+        }
+        
+        .header {
+            background-color: rgb(51, 102, 103);
+        }
+
+        .header .left-menu {
+            background-color: rgb(51, 152, 204);
+        }
+
+        .header .left-menu .sidenav .item .sub div:hover,
+        .header .left-menu .sidenav .item .title:hover {
+            background-color: rgb(51, 152, 204);
+            border-bottom: 1px solid rgb(51, 152, 204);
+            border-left: 1px solid rgb(51, 152, 204);
+            border-right: 1px solid rgb(51, 152, 204);
+            color: rgb(255, 255, 255);
+        }
+
+        .header .right-menu .logo {
+            background-image: url('logo2.png');
+        }
+
+        .page .center .group .name {
+            color: rgb(51, 152, 204);
+        }
+
+        .page .center .group .tiles.cat1 .tile-content {
+            background-color: rgb(51, 152, 204);
+        }
+
+        .page .center .group .tiles .tooltip-content {
+            background-color: rgb(51, 102, 103);
+        }
+
+        .page .center .group .tiles .tooltip .map .leaflet-popup-content {
+            color: rgb(51, 102, 103);
+        }
+
+        .page .center .group .tiles .tile.marker:after {
+            border-bottom-color: rgb(51, 102, 103);
+        }
+
+        .page .center .group .tiles .tile-content:hover {
+            background-color: rgb(51, 102, 103);
+        }
+
+        .vertical-left-border, .vertical-right-border {
+            background: linear-gradient(to bottom, rgb(51, 102, 103) 0,#F1F1F1 25%,#F1F1F1 75%, rgb(51, 102, 103) 100%);
+        }
+    </style>
+
+    <!-- Remove ng-cloak form body, multiple ngCloak directives should be applied, to small portions of the page to permit progressive rendering of the browser view.  -->
+    <div class="header">
+        <div class="left-menu" ng-click="vm.menu.toggle($event)">
+            <i class="fa icon" ng-class="{rotate: vm.menu.visible, back: vm.menu.visible, bars: !vm.menu.visible }"></i>
+            <span class="label">{{ vm.menu.label }}</span>
+            <div class="sidenav" ng-class="{open: vm.menu.visible}">
+                <div class="item" ng-repeat="item in vm.menu.items">
+                    <div class="title">{{ item.title }}<div class="chevron-down" ng-click="vm.menu.toggleSubMenu($event, item)">&#xf107;</div></div>
+                    <div class="sub" ng-class="{open: item.subMenuVisible}">
+                        <div ng-repeat="subitem in item.items">{{ subitem.title }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-menu">
+            <span class="logo"></span>
+            <div class="fa signout" ng-click="vm.toggleStyles()"></div>
+        </div>
+        <div class="profiel">
+            <div class="inner">
+                <div class="fa logo"></div>
+                <div class="label">{{ vm.profiel.label }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <div class="inner">
+            <div class="container">
+                <span class="label">{{ vm.breadcrumb.label }}</span><span class="path">{{ vm.breadcrumb.items[0] }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="center">
+            <div class="group">
+                <div class="name">{{ vm.groups[0].title }}</div>
+                <div class="tiles cat1">
+                    <div class="tile" ng-repeat-start="tile in vm.groups[0].tiles" ng-class="{marker: tile.tooltip.visible}" ng-click="vm.showTooltip($event, tile.tooltip)">
+                        <div class="tile-content">
+                            <div class="top">
+                                {{ tile.title }}
+                            </div>
+                            <div class="top">
+                                {{ tile.subtitle }}
+                            </div>
+                            <div class="bottom">
+                                <span>{{ tile.datum }}</span>
+                                <span>{{ tile.tijd }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tooltip" ng-class="{open: tile.tooltip.visible}" ng-if="tile.tooltip.visible" ng-repeat-end>
+                        <div class="tooltip-content clear">
+                            <div class="c1 content-container">
+                                <div class="vertical-right-border"></div>
+                                <div class="title">Waar is de afspraak?</div>
+                                <div leaflet markers="vm.map.markers" center="vm.map.center" class="map content"></div>
+                            </div>
+                            <div class="c2 content-container">
+                                <div class="vertical-left-border"></div>
+                                <div class="title">Informatie</div>
+                                <div class="content">
+                                    Je hebt een afspraak met:
+                                    <br>
+                                    - Dhr. F.A. Kunnen, bedrijfsarts
+                                    <br>
+                                    - Dinsdag 04 mei 2015 om 14:15 uur
+                                    <br>
+                                    - Beneluxlaan 901, 5544 EK Utrecht
+                                    <br>
+                                    <br>
+                                    Bijzonderheden bij de afspraak:
+                                    <br>
+                                    - U meldt zich bij de receptie van Zorg van de Zaak aan de groen kant
+                                    <br>
+                                    <br>
+                                    Voor dienstverband bij werkgever:
+                                    <br>
+                                    - Johanssen Verkeersregelmaatschappij
+                                </div>
+                            </div>
+                            <div class="c3 content-container">
+                                <div class="vertical-left-border"></div>
+                                <div class="title">Uw actie</div>
+                                <div class="content">
+                                    <button>Download pdf</button>
+                                </div>
+                            </div>
+                            <div class="close" ng-click="vm.hideTooltip($event, tile.tooltip)">X</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">{{ vm.groups[1].title }}</div>
+                <div class="tiles cat2 clear">
+                    <div class="tile" ng-repeat="tile in vm.groups[1].tiles">
+                        <div class="tile-content">
+                            <div class="top">
+                                {{ tile.title }}
+                            </div>
+                            <div class="bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">{{ vm.groups[2].title }}</div>
+                <div class="tiles cat3 advertisements medium clear">
+                    <div class="tile ad" ng-repeat="tile in vm.groups[2].tiles">
+                        <div class="tile-content">
+                            <div class="top">
+                                {{ tile.title }}
+                            </div>
+                            <div class="bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">{{ vm.groups[3].title }}</div>
+                <div class="tiles cat4 clear">
+                    <div class="tile" ng-repeat="tile in vm.groups[2].tiles">
+                        <div class="tile-content">
+                            <div class="top">
+                                {{ tile.title }}
+                            </div>
+                            <div class="bottom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Library scripts -->
+    <script type="text/javascript" src="/libraries/fastclick/fastclick.js"></script>
+    <script type="text/javascript" src="/libraries/leaflet/leaflet.min.js"></script>
+    <script type="text/javascript" src="/libraries/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/libraries/leaflet/angular-leaflet-directive.min.js"></script>
+
+    <!-- App scripts -->
+    <script src="employee.model.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

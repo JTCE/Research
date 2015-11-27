@@ -1,0 +1,30 @@
+﻿{
+  "ignore": [],
+  "options": {
+    "predef": {},
+    "ass": false,
+    "bitwise": false,
+    "browser": false,
+    "closure": false,
+    "continue": false,
+    "couch": false,
+    "debug": false,
+    "devel": false,
+    "eqeq": false,
+    "evil": false,
+    "forin": false,
+    "newcap": false,
+    "node": false,
+    "nomen": false,
+    "plusplus": true,
+    "regexp": false,
+    "rhino": false,
+    "unparam": false,
+    "sloppy": true,
+    "stupid": true,
+    "sub": false,
+    "todo": false,
+    "vars": false,
+    "white": false
+  }
+}

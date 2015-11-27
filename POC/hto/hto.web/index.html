@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html manifest="Client/Core/Resources/manifest.appcache" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="hto">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Handtekeningen Online.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="msapplication-TileColor" content="#222222">
+	<meta name="msapplication-TileImage" content="Client/Core/Images/icon_144x144.png">
+
+    <title>HTO - Desktop v2</title>
+
+    <!-- App icons. -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="Client/Core/Images/icon_144x144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="Client/Core/Images/icon_114x114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="Client/Core/Images/icon_72x72.png">
+	<link rel="apple-touch-icon-precomposed" href="Client/Core/Images/icon_57X57.png">
+	<link rel="shortcut icon" sizes="196x196" href="Client/Core/Images/icon_196x196.png">
+    <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+	<link rel="shortcut icon" href="Client/Core/Images/icon_256x256.png">
+	<link rel="icon" href="Client/Core/Images/icon_96x96.png">
+
+	<!-- Library styles-->
+	<link href="Client/Libraries/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="Client/Libraries/Fontawesome/font-awesome.min.css" rel="stylesheet" />
+
+	<!-- App styles -->
+	<link href="Client/Core/Styles/reset.css" rel="stylesheet" />
+	<link href="Client/Core/Styles/app.css" rel="stylesheet" />
+	<link href="Client/Core/Directives/Login/login.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="splash" ng-if="app.isSplashVisible">
+		Loading...
+	</div>
+	<div hto-desktop></div>
+
+	<!-- Global error handling and appcache -->
+	<script src="Client/Core/namespaces.js"></script>
+	<script src="Client/Core/Services/global.error.handling.js"></script>
+	<script src="Client/Core/Services/appcache.js"></script>
+
+	<!-- Library code -->
+	<script src="Client/Libraries/Modernizr/modernizr-2.8.3.js"></script>
+	<script src="Client/Libraries/Jquery/jquery-2.1.4.min.js"></script>
+	<script src="Client/Libraries/Jquery/jquery.signalR-2.2.0.min.js"></script>
+    <script src="Client/Core/Signalr/server.js"></script>
+	<script src="Client/Libraries/Angular/angular.min.js"></script>
+	<script src="Client/Libraries/Angular/angular-cookies.min.js"></script>
+	<script src="Client/Libraries/Fastclick/fastclick.js"></script>
+
+	<!-- App code -->
+    <script src="Client/Core/Modules/hto.js"></script>
+	<script src="Client/Core/Enums/enums.js"></script>
+	<script src="Client/Core/Settings/settings.js"></script>
+	<script src="Client/Core/Models/user.js"></script>
+	<script src="Client/Core/Models/app.js"></script>
+    <script src="Client/Core/Models/chatMessage.js"></script>
+	<script src="Client/Core/Models/signatureMessage.js"></script>
+	<script src="Client/Core/Directives/focus.js"></script>
+	<script src="Client/Desktop/desktop.js"></script>
+	<script src="Client/Core/Directives/Login/login.js"></script>
+</body>
+</html>

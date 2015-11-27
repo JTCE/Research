@@ -1,0 +1,22 @@
+﻿.k-calendar .k-header .k-nav-next
+{
+    display: none;
+}
+
+.k-calendar .k-header .k-nav-prev
+{
+    display: none;
+}
+
+.k-calendar td.k-state-selected {
+    background-color: transparent;
+ 
+}
+
+.k-calendar td.k-state-selected .k-link {
+    color: rgb(68, 68, 68);
+}
+
+.k-calendar .k-header {
+    background-color: rgb(203, 0, 126);
+}

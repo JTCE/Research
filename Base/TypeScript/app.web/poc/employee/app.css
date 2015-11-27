@@ -1,0 +1,748 @@
+﻿
+html, body {
+    height: 100%;
+}
+
+.breadcrumb {
+    background-color: rgb(218, 218, 218);
+    height: 24px;
+    padding-top: 10px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+    .breadcrumb .inner {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1050px;
+    }
+
+        .breadcrumb .inner .container {
+            margin-left: 20px;
+        }
+
+    .breadcrumb .label {
+        color: rgb(230, 0, 126);
+    }
+
+    .breadcrumb .path {
+        color: rgb(62, 62, 62);
+        cursor: pointer;
+        padding-left: 4px;
+    }
+
+        .breadcrumb .path:hover {
+            text-decoration: underline;
+        }
+
+.clear:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.page .center {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1050px;
+}
+
+    .page .center .group {
+        font-size: 0;
+        margin-top: 32px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+        .page .center .group .name {
+            color: rgb(230, 0, 126);
+            font-size: 16px;
+            padding: 8px 8px 20px 0;
+        }
+
+        .page .center .group .tiles {
+            margin-left: -10px;
+            margin-right: -10px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+.tiles.cat3.advertisements.medium.clear {
+    margin-left: -10px;
+    margin-right: -20px;
+    padding-left: 0;
+}
+
+.page .center .group .tiles .tile {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 80px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 8px;
+    padding: 8px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    vertical-align: top;
+    width: 132px;
+    font-size: 13px;
+}
+
+.page .center .group .tiles .tile-content:hover {
+    background-color: rgb(62, 62, 62);
+    -moz-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.tiles.cat3.advertisements.medium.clear .tile-content:hover {
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    -webkit-transform: none;
+    transform: none;
+}
+
+.page .center .group .tiles .tile .top {
+    height: 1.5em;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.page .center .group .tiles .tile .bottom {
+    position: absolute;
+    bottom: 8px;
+}
+
+    .page .center .group .tiles .tile .bottom span {
+        display: block;
+    }
+
+.page .center .group .tiles .tooltip {
+    color: #F1F1F1;
+    float: left;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+    .page .center .group .tiles .tooltip div {
+        font-size: 13px;
+    }
+
+    .page .center .group .tiles .tooltip .c3 {
+        float: left;
+    }
+
+        .page .center .group .tiles .tooltip .c3.content-container {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .page .center .group .tiles .tooltip .c3 button {
+            background-color: rgb(82, 175, 50);
+            border: none;
+            border-spacing: 0;
+            font-size: 13px;
+            outline: 0;
+            padding: 10px 20px 10px 20px;
+            list-style: none;
+            text-indent: 0;
+            width: 120px;
+        }
+
+    .page .center .group .tiles .tooltip .c2 {
+        float: left;
+        width: 300px;
+    }
+
+        .page .center .group .tiles .tooltip .c2.content-container {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    .page .center .group .tiles .tooltip .c1 {
+        float: left;
+        width: 460px;
+    }
+
+        .page .center .group .tiles .tooltip .c1.content-container {
+            margin-right: 0;
+            padding-bottom: 10px;
+        }
+
+    .page .center .group .tiles .tooltip .close {
+        color: #F1F1F1;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        z-index: 1;
+    }
+
+    .page .center .group .tiles .tooltip.open {
+        height: 255px;
+        margin-bottom: 10px;
+        padding: 0;
+        padding-bottom: 20px;
+    }
+
+    .page .center .group .tiles .tooltip .title {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+    .page .center .group .tiles .tooltip .map {
+        height: 216px;
+    }
+
+        .page .center .group .tiles .tooltip .map .leaflet-popup-content {
+            color: rgb(62, 62, 62);
+        }
+
+.tile-content {
+    height: 80px;
+    margin: -8px 8px 8px 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+    .tile-content .top, .tile-content .bottom {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+.page .center .group .tiles .tooltip-content {
+    background-color: rgb(62, 62, 62);
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+    .page .center .group .tiles .tooltip-content .title {
+        margin: 10px;
+    }
+
+    .page .center .group .tiles .tooltip-content .content {
+        margin: 10px;
+    }
+
+.page .center .group .tiles .tile.marker:after {
+    left: 66px;
+    bottom: -10px;
+    position: absolute;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(62, 62, 62);
+}
+
+.page .center .group .tiles.cat1 .tile-content {
+    background-color: rgb(230, 0, 126);
+}
+
+.page .center .group .tiles.cat2 .tile-content {
+    background-color: rgb(0, 179, 188);
+}
+
+.page .center .group .tiles.cat3 .tile-content {
+    background-color: #c3c6c6;
+}
+
+.page .center .group .tiles.cat4 .tile-content {
+    background-color: rgb(126, 33, 109);
+}
+
+.page .center .group .tiles.medium .tile {
+    width: 288px;
+}
+
+.header {
+    background-color: rgb(62, 62, 62);
+    color: rgb( 255, 255, 255);
+    height: 50px;
+    position: relative;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+    .header .profiel {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: none; /*max-width: 1050px;*/
+    }
+
+        .header .profiel .inner {
+            height: 50px;
+            margin-left: 150px;
+            padding-top: 18px;
+        }
+
+        .header .profiel .logo {
+            float: left;
+            font-size: 20px;
+            margin-right: 6px;
+            margin-top: -3px;
+        }
+
+            .header .profiel .logo:before {
+                content: "\f007";
+            }
+
+        .header .profiel .label {
+            float: left;
+            margin-top: 1px;
+        }
+
+    .header .left-menu {
+        background-color: rgb(230, 0, 126);
+        color: rgb( 255, 255, 255);
+        cursor: pointer;
+        height: 32px;
+        left: 20px;
+        padding: 10px 16px 8px 16px;
+        position: absolute;
+        top: 0;
+        width: 80px;
+    }
+
+        .header .left-menu .icon {
+            font-size: 32px;
+            -webkit-transition: -webkit-transform 0.3s;
+            -moz-transition: transform 0.3s;
+            -o-transition: transform 0.3s;
+            transition: transform 0.3s;
+        }
+
+        .header .left-menu .bars:before {
+            content: "\f0c9";
+        }
+
+        .header .left-menu .back:before {
+            content: "\f061";
+        }
+
+        .header .left-menu .label {
+            font-size: 16px;
+            position: absolute;
+            right: 14px;
+            top: 17px;
+        }
+
+        .header .left-menu .sidenav.open {
+            width: 250px;
+        }
+
+        .header .left-menu .sidenav {
+            background-color: #f7f9f9;
+            border-top: 1px solid #c3c6c6;
+            -webkit-box-shadow: 0 8px 17px rgba(0,0,0,.2);
+            box-shadow: 0 8px 17px rgba(0,0,0,.2);
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 50px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            width: 0;
+            z-index: 1;
+        }
+
+        .header .left-menu .sidenav .item {
+            overflow: hidden;
+        }
+
+        .header .left-menu .sidenav .item.mypprofile {
+            display: none;
+        }
+
+        .header .left-menu .sidenav .item.signout {
+            display: none;
+        }
+
+        .header .left-menu .sidenav .item .title .myprofilesymbol,
+        .header .left-menu .sidenav .item .title .signoutsymbol {
+                    bottom: 2px;
+                    font-family: "FontAwesome";
+                    font-style: normal;
+                    font-size: 20px;
+                    height: 33px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 14px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+            .header .left-menu .sidenav .item .sub.open {
+                   max-height: 1024px;
+                   font-size: 13px;
+            }
+
+            .header .left-menu .sidenav .item .sub {
+                   max-height: 0;
+                   -webkit-transition: max-height 0.2s ease-in-out;
+                    -moz-transition: max-height 0.2s ease-in-out;
+                    -o-transition: max-height 0.2s ease-in-out;
+                    transition: max-height 0.2s ease-in-out;
+            }
+
+            .header .left-menu .sidenav .item .sub div {
+                    background: #49505a;
+                    border-bottom: 1px solid #32373e;
+                    border-left: 1px solid #32373e;
+                    border-right: 1px solid #32373e;
+                    box-shadow: rgba(255, 255, 255, 0.14902) 0 1px 0 0 inset, rgba(0, 0, 0, 0.14902) 0 1px 1px 0;
+                    color: #eeeeee;
+                    font-size: 12px;
+                    padding: 10px 20px;
+            }
+
+            .header .left-menu .sidenav .item .title {
+                border-bottom: 1px solid #c3c6c6;
+                border-left: 1px solid #c3c6c6;
+                border-right: 1px solid #c3c6c6;
+                box-shadow: rgba(255, 255, 255, 0.14902) 0 1px 0 0 inset, rgba(0, 0, 0, 0.14902) 0 1px 1px 0;
+                color: rgb(62, 62, 62);
+                padding: 16px 16px 16px 16px;
+                position: relative;
+            }
+
+                .header .left-menu .sidenav .item .title .chevron-down {
+                    bottom: 2px;
+                    font-family: "FontAwesome";
+                    font-style: normal;
+                    font-size: 20px;
+                    height: 33px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-top: 14px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+                .header .left-menu .sidenav .item .sub div:hover,
+                .header .left-menu .sidenav .item .title:hover {
+                    background-color: rgb(230, 0, 126);
+                    border-bottom: 1px solid rgb(230, 0, 126);
+                    border-left: 1px solid rgb(230, 0, 126);
+                    border-right: 1px solid rgb(230, 0, 126);
+                    color: rgb(255, 255, 255);
+                }
+
+    .header .right-menu {
+        content: "";
+        clear: both;
+        display: table;
+        height: 34px;
+        right: 20px;
+        position: absolute;
+        top: 0;
+    }
+
+        .header .right-menu .logo {
+            background-image: url('logo.png');
+            background-repeat: no-repeat;
+            float: left;
+            height: 36px;
+            margin-top: 7px;
+            width: 153px;
+        }
+
+        .header .right-menu .signout {
+            cursor: pointer;
+            font-size: 32px;
+            float: left;
+            margin-left: 32px;
+            margin-top: 8px;
+        }
+
+            .header .right-menu .signout:before {
+                content: "\f08b";
+            }
+
+.rotate {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.vertical-left-border, .vertical-right-border {
+    background: linear-gradient(to bottom, rgb(62, 62, 62) 0,#F1F1F1 25%,#F1F1F1 75%,rgb(62, 62, 62) 100%);
+    color: #F1F1F1;
+    width: 1px;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+
+
+/* BREAKPOINT 1 */
+/*
+    This breakpoint has no special styling, because minimum breakpoint is 2 tiles width (breakpoint 2).
+*/
+
+/* BREAKPOINT 2 */
+@media only screen and (max-width: 533px) {
+    .header .fa.signout {
+        display: none;
+    }
+
+    .header .profiel {
+        display: none;
+    }
+    
+    .header .left-menu .sidenav .item.mypprofile {
+        display: block;
+    }
+
+    .header .left-menu .sidenav .item.signout {
+        display: block;
+    }
+
+    .page .center .group .tiles .tile {
+        width: 50%;
+    }
+   
+    .page .center .group .tiles .tooltip.open {
+        height: 580px;
+    }
+
+    .page .center .group .tiles .tooltip .c1 {
+        width: 100%;
+    }
+
+    .page .center .group .tiles .tooltip .c2 {
+        width: 100%;
+    }
+
+    .page .center .group .tiles .tooltip .c3 {
+        width: 100%;
+    }
+
+    .tiles.cat3.advertisements.medium.clear {
+        margin-right: -10px;
+    }
+
+    .tiles.cat3.advertisements.medium.clear .tile {
+        width: 100%;
+    }
+}
+
+/* BREAKPOINT 3 */
+@media only screen and (min-width: 534px) and (max-width: 693px) {
+    .page .center .group .tiles .tile {
+        width: 33.333%;
+    }
+
+    .tiles.cat3.advertisements.medium.clear {
+        margin-right: -10px;
+    }
+
+    .tiles.cat3.advertisements.medium.clear .tile {
+        width: 66.66%;
+    }
+
+    .page .center .group .tiles .tooltip.open {
+        height: 485px;
+    }
+
+    .page .center .group .tiles .tooltip .c1 {
+        width: 100%;
+    }
+
+    .page .center .group .tiles .tooltip .c2 {
+        width: 66.66%;
+    }
+
+    .page .center .group .tiles .tooltip .c3 {
+        width: 33.33%;
+    }
+
+        .page .center .group .tiles .tooltip .c3.content-container .vertical-left-border {
+            float: left;
+            top: 15px;
+            height: 200px;
+        }
+}
+
+/* BREAKPOINT 4 */
+@media only screen and (min-width: 694px) and (max-width: 852px) {
+    .page .center .group .tiles .tile {
+        width: 25%;
+    }
+
+    .page .center .group .tiles .tooltip.open {
+        height: 310px;
+    }
+
+    .page .center .group .tiles .tooltip .c1 {
+        width: 50%;
+    }
+
+        .page .center .group .tiles .tooltip .c1 .map {
+            height: 258px;
+        }
+
+    .page .center .group .tiles .tooltip .c2 {
+        width: 50%;
+    }
+
+    .page .center .group .tiles .tooltip .c3 {
+        width: 50%;
+    }
+
+    .tiles.cat3.advertisements.medium.clear {
+        margin-right: -10px;
+    }
+
+    .tiles.cat3.advertisements.medium.clear .tile {
+        width: 50%;
+    }
+
+    .vertical-right-border {
+        float: right;
+        left: 1px;
+        top: 15px;
+        height: 300px;
+    }
+}
+
+/* BREAKPOINT 5 */
+@media only screen and (min-width: 853px) and (max-width: 1012px) {
+
+    .page .center .group .tiles .tile {
+        width: 20%;
+    }
+
+    .page .center .group .tiles .tooltip.open {
+        height: 310px;
+    }
+
+    .page .center .group .tiles .tooltip .c1 {
+        width: 60%;
+    }
+
+        .page .center .group .tiles .tooltip .c1 .map {
+            height: 258px;
+        }
+
+    .page .center .group .tiles .tooltip .c2 {
+        width: 40%;
+    }
+
+    .page .center .group .tiles .tooltip .c3 {
+        width: 40%;
+    }
+
+    .tiles.cat3.advertisements.medium.clear {
+        margin-right: -10px;
+    }
+
+    .tiles.cat3.advertisements.medium.clear .tile {
+        width: 40%;
+    }
+
+    .vertical-right-border {
+        float: right;
+        left: 1px;
+        top: 15px;
+        height: 300px;
+    }
+}
+
+/* BREAKPOINT 6 */
+@media only screen and (min-width: 1013px) {
+
+    div .tiles .cat1 {
+        margin-right: -10px;
+    }
+
+    .page .center .group .tiles .tile {
+        width: 16.66%;
+    }
+
+    .page .center .group .tiles .tooltip.open {
+        height: 255px;
+    }
+
+    .page .center .group .tiles .tooltip .c1 {
+        width: 50%;
+    }
+
+    .page .center .group .tiles .tooltip .c2 {
+        width: 33.33%;
+    }
+
+        .page .center .group .tiles .tooltip .c2 .vertical-left-border {
+            float: left;
+            top: 15px;
+            height: 250px;
+        }
+
+    .page .center .group .tiles .tooltip .c3 {
+        width: 16.66%;
+    }
+
+        .page .center .group .tiles .tooltip .c3 .vertical-left-border {
+            left: 4px;
+            float: left;
+            top: 15px;
+            height: 250px;
+        }
+
+        .page .center .group .tiles .tooltip .c3 .title,
+        .page .center .group .tiles .tooltip .c3 .content {
+            margin-left: 15px;
+        }
+    
+    .tiles.cat3.advertisements.medium.clear .tile {
+        width: 33%;
+    }
+
+    .vertical-right-border {
+        float: right;
+        left: 1px;
+        top: 15px;
+        height: 250px;
+    }
+}

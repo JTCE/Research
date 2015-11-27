@@ -1,0 +1,24 @@
+﻿/*
+    A small custom reset stylesheet is used, to fix style differences between browsers.
+*/
+html, body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px; /* Pixels worden gebruikt i.p.v. pt, omdat px voor "digital screens" is en pt voor drukwerk. 13px komt overeen met 10pt. */
+    height: 100%;
+}
+
+a, button, div, form, p, h1, h2, h3, h4, h5, h6, input, li, select, span, table, td, textarea, th, tr, ul {
+    border: 0;
+    border-image-width: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+}

@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91377ABD-F5AF-4BE8-B884-C609050B2F5D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>app.web</RootNamespace>
+    <AssemblyName>app.web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="libraries\angular\angular-animate.js" />
+    <Content Include="libraries\angular\angular-animate.min.js" />
+    <Content Include="libraries\angular\angular.min.js.map" />
+    <Content Include="libraries\angular\i18n\angular-locale_nl-nl.js" />
+    <Content Include="libraries\angular\jquery.promise.dt.js" />
+    <Content Include="libraries\fastclick\fastclick.js" />
+    <Content Include="libraries\filesaver\FileSaver.js" />
+    <Content Include="libraries\fontawesome\font-awesome.custom.css" />
+    <Content Include="libraries\fontawesome\font-awesome.css" />
+    <Content Include="libraries\fontawesome\font-awesome.min.css" />
+    <Content Include="libraries\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="libraries\html2canvas\html2canvas.js" />
+    <Content Include="libraries\jasmine\boot.js" />
+    <Content Include="libraries\jasmine\console.js" />
+    <Content Include="libraries\jasmine\jasmine-html.js" />
+    <Content Include="libraries\jasmine\jasmine.css" />
+    <Content Include="libraries\jasmine\jasmine.js" />
+    <Content Include="libraries\jasmine\jasmine_favicon.png" />
+    <Content Include="libraries\jquery\jquery.min.map" />
+    <Content Include="libraries\kendo\js\cultures\kendo.culture.nl-NL.min.js.map" />
+    <Content Include="libraries\kendo\js\kendo.all.min.js.map" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="libraries\kendo\styles\images\kendoui.ttf" />
+    <Content Include="libraries\kendo\styles\images\kendoui.woff" />
+    <Content Include="libraries\angular\jquery.promise..dt.js.map" />
+    <Content Include="libraries\angular\jquery.promise.dt.js.map" />
+    <Content Include="libraries\leaflet\angular-leaflet-directive.js" />
+    <Content Include="libraries\leaflet\angular-leaflet-directive.min.js" />
+    <Content Include="libraries\leaflet\leaflet.css" />
+    <Content Include="libraries\leaflet\leaflet.min.js" />
+    <Content Include="libraries\normalize\normalize.css" />
+    <Content Include="libraries\pdf\addhtml.js" />
+    <Content Include="libraries\pdf\addimage.js" />
+    <Content Include="libraries\pdf\annotations.js" />
+    <Content Include="libraries\pdf\autoprint.js" />
+    <Content Include="libraries\pdf\canvas.js" />
+    <Content Include="libraries\pdf\cell.js" />
+    <Content Include="libraries\pdf\context2d.js" />
+    <Content Include="libraries\pdf\from_html.js" />
+    <Content Include="libraries\pdf\javascript.js" />
+    <Content Include="libraries\pdf\jspdf.debug.js" />
+    <Content Include="libraries\pdf\jspdf.js" />
+    <Content Include="libraries\pdf\jspdf.min.js" />
+    <Content Include="libraries\pdf\outline.js" />
+    <Content Include="libraries\pdf\png.js" />
+    <Content Include="libraries\pdf\png_support.js" />
+    <Content Include="libraries\pdf\split_text_to_size.js" />
+    <Content Include="libraries\pdf\standard_fonts_metrics.js" />
+    <Content Include="libraries\pdf\svg.js" />
+    <Content Include="libraries\pdf\total_pages.js" />
+    <Content Include="libraries\pdf\zlib.js" />
+    <Content Include="packages.config" />
+    <Content Include="poc\employee\logo.png" />
+    <Content Include="poc\employee\logo2.png" />
+    <Content Include="poc\kendo\app.css" />
+    <Content Include="poc\kendo\index.html" />
+    <Content Include="poc\kendo\unittests.html" />
+    <Content Include="poc\openstreetmap\app.js.map" />
+    <Content Include="gulp.ps1" />
+    <Content Include="libraries\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="libraries\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="libraries\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="libraries\fontawesome\fontawesome-webfont.woff2" />
+    <Content Include="libraries\fontawesome\FontAwesome.otf" />
+    <Content Include="libraries\angular\angular-animate.min.js.map" />
+    <Content Include="poc\dashboard\dashboard.json" />
+    <Content Include="poc\employee\employee.json" />
+    <Content Include="chutzpah.json" />
+    <Content Include="compile.bat" />
+    <None Include="Properties\PublishProfiles\ts.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libraries\angular\angular.js" />
+    <Content Include="libraries\angular\angular.min.js" />
+    <Content Include="libraries\jquery\jquery.js" />
+    <Content Include="libraries\jquery\jquery.min.js" />
+    <Content Include="libraries\kendo\js\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="libraries\kendo\js\cultures\kendo.messages.nl-NL.js" />
+    <Content Include="libraries\kendo\js\kendo.all.min.js" />
+    <Content Include="libraries\kendo\js\messages\kendo.messages.nl-NL.min.js" />
+    <Content Include="libraries\kendo\styles\Black\editor.png" />
+    <Content Include="libraries\kendo\styles\Black\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Black\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Black\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Black\loading.gif" />
+    <Content Include="libraries\kendo\styles\Black\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Black\markers.png" />
+    <Content Include="libraries\kendo\styles\Black\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Black\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Black\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Black\sprite.png" />
+    <Content Include="libraries\kendo\styles\Black\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Black\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Black\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\editor.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\BlueOpal\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\BlueOpal\loading.gif" />
+    <Content Include="libraries\kendo\styles\BlueOpal\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\BlueOpal\markers.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\BlueOpal\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\BlueOpal\sprite.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\BlueOpal\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\editor.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Bootstrap\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Bootstrap\loading.gif" />
+    <Content Include="libraries\kendo\styles\Bootstrap\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Bootstrap\markers.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Bootstrap\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Bootstrap\sprite.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Default\editor.png" />
+    <Content Include="libraries\kendo\styles\Default\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Default\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Default\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Default\loading.gif" />
+    <Content Include="libraries\kendo\styles\Default\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Default\markers.png" />
+    <Content Include="libraries\kendo\styles\Default\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Default\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Default\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Default\sprite.png" />
+    <Content Include="libraries\kendo\styles\Default\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Default\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Default\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Fiori\editor.png" />
+    <Content Include="libraries\kendo\styles\Fiori\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Fiori\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Fiori\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Fiori\loading.gif" />
+    <Content Include="libraries\kendo\styles\Fiori\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Fiori\markers.png" />
+    <Content Include="libraries\kendo\styles\Fiori\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Fiori\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Fiori\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Fiori\sprite.png" />
+    <Content Include="libraries\kendo\styles\Fiori\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Fiori\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Fiori\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Flat\editor.png" />
+    <Content Include="libraries\kendo\styles\Flat\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Flat\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Flat\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Flat\loading.gif" />
+    <Content Include="libraries\kendo\styles\Flat\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Flat\markers.png" />
+    <Content Include="libraries\kendo\styles\Flat\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Flat\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Flat\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Flat\sprite.png" />
+    <Content Include="libraries\kendo\styles\Flat\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Flat\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Flat\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="libraries\kendo\styles\HighContrast\editor.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\HighContrast\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\HighContrast\loading.gif" />
+    <Content Include="libraries\kendo\styles\HighContrast\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\HighContrast\markers.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\HighContrast\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\HighContrast\sprite.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\HighContrast\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\images\back.png" />
+    <Content Include="libraries\kendo\styles\images\kendoui.svg" />
+    <Content Include="libraries\kendo\styles\images\wp8_icons.png" />
+    <Content Include="libraries\kendo\styles\images\wp8_inverseicons.png" />
+    <Content Include="libraries\kendo\styles\kendo.black.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.black.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.blueopal.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.blueopal.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.bootstrap.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.bootstrap.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common-bootstrap.core.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common-bootstrap.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common-fiori.core.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common-fiori.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common-material.core.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common-material.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common.core.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.common.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.black.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.blueopal.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.default.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.fiori.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.flat.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.highcontrast.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.material.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.materialblack.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.metro.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.metroblack.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.moonlight.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.silver.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.dataviz.uniform.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.default.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.default.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.fiori.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.fiori.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.flat.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.flat.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.highcontrast.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.highcontrast.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.material.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.material.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.materialblack.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.materialblack.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.metro.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.metro.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.metroblack.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.metroblack.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.all.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.android.dark.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.android.light.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.blackberry.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.common.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.fiori.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.flat.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.ios.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.material.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.materialblack.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.meego.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.mobile.wp8.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.moonlight.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.moonlight.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.rtl.css" />
+    <Content Include="libraries\kendo\styles\kendo.rtl.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.silver.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.silver.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.uniform.min.css" />
+    <Content Include="libraries\kendo\styles\kendo.uniform.mobile.min.css" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\editor.png" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\loading.gif" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\sprite.png" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\MaterialBlack\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Material\editor.png" />
+    <Content Include="libraries\kendo\styles\Material\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Material\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Material\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Material\loading.gif" />
+    <Content Include="libraries\kendo\styles\Material\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Material\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Material\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Material\sprite.png" />
+    <Content Include="libraries\kendo\styles\Material\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Material\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Material\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\editor.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\MetroBlack\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\MetroBlack\loading.gif" />
+    <Content Include="libraries\kendo\styles\MetroBlack\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\MetroBlack\markers.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\MetroBlack\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\MetroBlack\sprite.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\MetroBlack\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Metro\editor.png" />
+    <Content Include="libraries\kendo\styles\Metro\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Metro\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Metro\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Metro\loading.gif" />
+    <Content Include="libraries\kendo\styles\Metro\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Metro\markers.png" />
+    <Content Include="libraries\kendo\styles\Metro\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Metro\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Metro\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Metro\sprite.png" />
+    <Content Include="libraries\kendo\styles\Metro\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Metro\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Metro\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\editor.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Moonlight\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Moonlight\loading.gif" />
+    <Content Include="libraries\kendo\styles\Moonlight\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Moonlight\markers.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Moonlight\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Moonlight\sprite.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Moonlight\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\Silver\editor.png" />
+    <Content Include="libraries\kendo\styles\Silver\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Silver\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Silver\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Silver\loading.gif" />
+    <Content Include="libraries\kendo\styles\Silver\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Silver\markers.png" />
+    <Content Include="libraries\kendo\styles\Silver\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Silver\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Silver\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Silver\sprite.png" />
+    <Content Include="libraries\kendo\styles\Silver\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Silver\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Silver\sprite_kpi_2x.png" />
+    <Content Include="libraries\kendo\styles\textures\brushed-metal.png" />
+    <Content Include="libraries\kendo\styles\textures\dots1.png" />
+    <Content Include="libraries\kendo\styles\textures\dots10.png" />
+    <Content Include="libraries\kendo\styles\textures\dots11.png" />
+    <Content Include="libraries\kendo\styles\textures\dots12.png" />
+    <Content Include="libraries\kendo\styles\textures\dots13.png" />
+    <Content Include="libraries\kendo\styles\textures\dots2.png" />
+    <Content Include="libraries\kendo\styles\textures\dots3.png" />
+    <Content Include="libraries\kendo\styles\textures\dots4.png" />
+    <Content Include="libraries\kendo\styles\textures\dots5.png" />
+    <Content Include="libraries\kendo\styles\textures\dots6.png" />
+    <Content Include="libraries\kendo\styles\textures\dots7.png" />
+    <Content Include="libraries\kendo\styles\textures\dots8.png" />
+    <Content Include="libraries\kendo\styles\textures\dots9.png" />
+    <Content Include="libraries\kendo\styles\textures\glass-lighter.png" />
+    <Content Include="libraries\kendo\styles\textures\glass.png" />
+    <Content Include="libraries\kendo\styles\textures\highlight.png" />
+    <Content Include="libraries\kendo\styles\textures\hsv-gradient.png" />
+    <Content Include="libraries\kendo\styles\textures\hue.png" />
+    <Content Include="libraries\kendo\styles\textures\leather1.png" />
+    <Content Include="libraries\kendo\styles\textures\leather2.png" />
+    <Content Include="libraries\kendo\styles\textures\noise.png" />
+    <Content Include="libraries\kendo\styles\textures\stripe1.png" />
+    <Content Include="libraries\kendo\styles\textures\stripe2.png" />
+    <Content Include="libraries\kendo\styles\textures\stripe3.png" />
+    <Content Include="libraries\kendo\styles\textures\stripe4.png" />
+    <Content Include="libraries\kendo\styles\textures\stripe5.png" />
+    <Content Include="libraries\kendo\styles\textures\stripe6.png" />
+    <Content Include="libraries\kendo\styles\textures\transparency.png" />
+    <Content Include="libraries\kendo\styles\textures\transtexture.png" />
+    <Content Include="libraries\kendo\styles\Uniform\editor.png" />
+    <Content Include="libraries\kendo\styles\Uniform\imagebrowser.png" />
+    <Content Include="libraries\kendo\styles\Uniform\indeterminate.gif" />
+    <Content Include="libraries\kendo\styles\Uniform\loading-image.gif" />
+    <Content Include="libraries\kendo\styles\Uniform\loading.gif" />
+    <Content Include="libraries\kendo\styles\Uniform\loading_2x.gif" />
+    <Content Include="libraries\kendo\styles\Uniform\markers.png" />
+    <Content Include="libraries\kendo\styles\Uniform\markers_2x.png" />
+    <Content Include="libraries\kendo\styles\Uniform\slider-h.gif" />
+    <Content Include="libraries\kendo\styles\Uniform\slider-v.gif" />
+    <Content Include="libraries\kendo\styles\Uniform\sprite.png" />
+    <Content Include="libraries\kendo\styles\Uniform\sprite_2x.png" />
+    <Content Include="libraries\kendo\styles\Uniform\sprite_kpi.png" />
+    <Content Include="libraries\kendo\styles\Uniform\sprite_kpi_2x.png" />
+    <None Include="libraries\kendo\vsdoc\kendo.all-vsdoc.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.all.min.intellisense.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.dataviz-vsdoc.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.dataviz.min.intellisense.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.mobile-vsdoc.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.mobile.min.intellisense.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.web-vsdoc.js" />
+    <None Include="libraries\kendo\vsdoc\kendo.web.min.intellisense.js" />
+    <Content Include="poc\openstreetmap\app.js" />
+    <Content Include="poc\openstreetmap\index.html" />
+    <Content Include="poc\employee\app.css" />
+    <Content Include="poc\employee\index.html" />
+    <Content Include="poc\angular\calendar\index.html" />
+    <Content Include="poc\angular\calendar\unittests.html" />
+    <Content Include="poc\angular\calendar\app.css" />
+    <Content Include="poc\vanilla\calendar\app.css" />
+    <Content Include="poc\vanilla\calendar\index.html" />
+    <Content Include="poc\vanilla\calendar\unittests.html" />
+    <Content Include="poc\vanilla\performance\peformance.html" />
+    <Content Include="poc\_base\app.css" />
+    <Content Include="poc\_base\index.html" />
+    <Content Include="poc\tests\tests.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="poc\dashboard\dashboard.stub.cs" />
+    <Compile Include="poc\dashboard\dashboard.cs" />
+    <Compile Include="stubservice\CacheService.cs" />
+    <Compile Include="stubservice\StubInfo.cs" />
+    <Compile Include="stubservice\StubServiceController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="core\app.settings.ts" />
+    <TypeScriptCompile Include="core\app.enums.ts" />
+    <TypeScriptCompile Include="core\services\guid.service.ts" />
+    <TypeScriptCompile Include="core\services\extend.service.tests.ts" />
+    <TypeScriptCompile Include="core\services\session.storage.service.ts" />
+    <TypeScriptCompile Include="core\services\convert.service.ts" />
+    <TypeScriptCompile Include="libraries\require\require.d.ts" />
+    <TypeScriptCompile Include="poc\json2model\service.tests.ts" />
+    <TypeScriptCompile Include="poc\json2model\service.ts" />
+    <TypeScriptCompile Include="poc\kendo\app.ts" />
+    <TypeScriptCompile Include="poc\kendo\unittests.ts" />
+    <TypeScriptCompile Include="poc\angular\calendar\unittests.ts" />
+    <TypeScriptCompile Include="poc\angular\calendar\app.ts" />
+    <TypeScriptCompile Include="poc\vanilla\calendar\app.ts" />
+    <TypeScriptCompile Include="poc\vanilla\calendar\unittests.ts" />
+    <TypeScriptCompile Include="poc\tests\tests.ts" />
+    <TypeScriptCompile Include="core\services\location.service.ts" />
+    <TypeScriptCompile Include="core\services\validation.service.ts" />
+    <TypeScriptCompile Include="core\services\http.service.ts" />
+    <TypeScriptCompile Include="core\services\extend.service.ts" />
+    <TypeScriptCompile Include="core\services\ioc.service.ts" />
+    <TypeScriptCompile Include="libraries\angular\angular.d.ts" />
+    <TypeScriptCompile Include="libraries\fastclick\fastclick.d.ts" />
+    <TypeScriptCompile Include="libraries\jasmine\jasmine.d.ts" />
+    <TypeScriptCompile Include="libraries\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="libraries\angular\jquery.promise.dt.ts" />
+    <TypeScriptCompile Include="libraries\es6\es6-promise.d.ts" />
+    <TypeScriptCompile Include="libraries\es\array.d.ts" />
+    <TypeScriptCompile Include="libraries\kendo\typescript\kendo.all.d.ts" />
+    <TypeScriptCompile Include="poc\dashboard\dashboard.ts" />
+    <TypeScriptCompile Include="poc\employee\employee.model.ts" />
+    <TypeScriptCompile Include="poc\openstreetmap\app.ts" />
+    <TypeScriptCompile Include="poc\employee\app.ts" />
+    <TypeScriptCompile Include="poc\vanilla\performance\performance.ts" />
+    <TypeScriptCompile Include="poc\_base\app.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptModuleKind>commonjs</TypeScriptModuleKind>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18678</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18678/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,32 @@
+﻿CACHE MANIFEST
+
+# version {{ 2015-09-04T11:09:12.826Z }}
+
+CACHE:
+
+# html files
+aan-uitzetten-modules.html
+
+# image files
+favicon.ico
+
+# font files
+libraries/fontawesome/fontawesome-webfont.eot
+libraries/fontawesome/fontawesome-webfont.eot
+libraries/fontawesome/fontawesome-webfont.woff
+libraries/fontawesome/fontawesome-webfont.woff2
+libraries/fontawesome/fontawesome-webfont.ttf
+libraries/fontawesome/fontawesome-webfont.svg
+
+# css files
+libraries/fontawesome/font-awesome.min.css
+site.css
+
+# javascript files
+
+# JSON files
+
+FALLBACK:
+
+NETWORK:
+*

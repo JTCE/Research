@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aan- uitzetten modules</title>
+    <meta name="description" content="App">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Library styles -->
+    <link href="libraries/fontawesome/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.902/styles/kendo.material.min.css" />
+    <!-- Application styles -->
+    <link href="site.css" rel="stylesheet" />
+    <!-- Library code -->
+    <script src="https://kendo.cdn.telerik.com/2015.2.902/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2015.2.902/js/kendo.all.min.js"></script>
+    <!-- Application code -->
+    <script>
+        $(document).ready(function () {
+            var products = [{
+                ProductID: 1,
+                Werkgever: "Chai",
+                SupplierID: 1,
+                CategoryID: 1,
+                QuantityPerUnit: "10 boxes x 20 bags",
+                ZiekMelden: 18.0000,
+                WerknemerToevoegen: 39,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 2,
+                Werkgever: "Chang",
+                SupplierID: 1,
+                CategoryID: 1,
+                QuantityPerUnit: "24 - 12 oz bottles",
+                ZiekMelden: 19.0000,
+                WerknemerToevoegen: 17,
+                UnitsOnOrder: 40,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 3,
+                Werkgever: "Aniseed Syrup",
+                SupplierID: 1,
+                CategoryID: 2,
+                QuantityPerUnit: "12 - 550 ml bottles",
+                ZiekMelden: 10.0000,
+                WerknemerToevoegen: 13,
+                UnitsOnOrder: 70,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 4,
+                Werkgever: "Chef Anton's Cajun Seasoning",
+                SupplierID: 2,
+                CategoryID: 2,
+                QuantityPerUnit: "48 - 6 oz jars",
+                ZiekMelden: 22.0000,
+                WerknemerToevoegen: 53,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 5,
+                Werkgever: "Chef Anton's Gumbo Mix",
+                SupplierID: 2,
+                CategoryID: 2,
+                QuantityPerUnit: "36 boxes",
+                ZiekMelden: 21.3500,
+                WerknemerToevoegen: 0,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 6,
+                Werkgever: "Grandma's Boysenberry Spread",
+                SupplierID: 3,
+                CategoryID: 2,
+                QuantityPerUnit: "12 - 8 oz jars",
+                ZiekMelden: 25.0000,
+                WerknemerToevoegen: 120,
+                UnitsOnOrder: 0,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 7,
+                Werkgever: "Uncle Bob's Organic Dried Pears",
+                SupplierID: 3,
+                CategoryID: 7,
+                QuantityPerUnit: "12 - 1 lb pkgs.",
+                ZiekMelden: 30.0000,
+                WerknemerToevoegen: 15,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 7,
+                    CategoryName: "Produce",
+                    Description: "Dried fruit and bean curd"
+                }
+            }, {
+                ProductID: 8,
+                Werkgever: "Northwoods Cranberry Sauce",
+                SupplierID: 3,
+                CategoryID: 2,
+                QuantityPerUnit: "12 - 12 oz jars",
+                ZiekMelden: 40.0000,
+                WerknemerToevoegen: 6,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 9,
+                Werkgever: "Mishi Kobe Niku",
+                SupplierID: 4,
+                CategoryID: 6,
+                QuantityPerUnit: "18 - 500 g pkgs.",
+                ZiekMelden: 97.0000,
+                WerknemerToevoegen: 29,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 6,
+                    CategoryName: "Meat/Poultry",
+                    Description: "Prepared meats"
+                }
+            }, {
+                ProductID: 10,
+                Werkgever: "Ikura",
+                SupplierID: 4,
+                CategoryID: 8,
+                QuantityPerUnit: "12 - 200 ml jars",
+                ZiekMelden: 31.0000,
+                WerknemerToevoegen: 31,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 11,
+                Werkgever: "Queso Cabrales",
+                SupplierID: 5,
+                CategoryID: 4,
+                QuantityPerUnit: "1 kg pkg.",
+                ZiekMelden: 21.0000,
+                WerknemerToevoegen: 22,
+                UnitsOnOrder: 30,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 12,
+                Werkgever: "Queso Manchego La Pastora",
+                SupplierID: 5,
+                CategoryID: 4,
+                QuantityPerUnit: "10 - 500 g pkgs.",
+                ZiekMelden: 38.0000,
+                WerknemerToevoegen: 86,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 13,
+                Werkgever: "Konbu",
+                SupplierID: 6,
+                CategoryID: 8,
+                QuantityPerUnit: "2 kg box",
+                ZiekMelden: 6.0000,
+                WerknemerToevoegen: 24,
+                UnitsOnOrder: 0,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 14,
+                Werkgever: "Tofu",
+                SupplierID: 6,
+                CategoryID: 7,
+                QuantityPerUnit: "40 - 100 g pkgs.",
+                ZiekMelden: 23.2500,
+                WerknemerToevoegen: 35,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 7,
+                    CategoryName: "Produce",
+                    Description: "Dried fruit and bean curd"
+                }
+            }, {
+                ProductID: 15,
+                Werkgever: "Genen Shouyu",
+                SupplierID: 6,
+                CategoryID: 2,
+                QuantityPerUnit: "24 - 250 ml bottles",
+                ZiekMelden: 15.5000,
+                WerknemerToevoegen: 39,
+                UnitsOnOrder: 0,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 16,
+                Werkgever: "Pavlova",
+                SupplierID: 7,
+                CategoryID: 3,
+                QuantityPerUnit: "32 - 500 g boxes",
+                ZiekMelden: 17.4500,
+                WerknemerToevoegen: 29,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 17,
+                Werkgever: "Alice Mutton",
+                SupplierID: 7,
+                CategoryID: 6,
+                QuantityPerUnit: "20 - 1 kg tins",
+                ZiekMelden: 39.0000,
+                WerknemerToevoegen: 0,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 6,
+                    CategoryName: "Meat/Poultry",
+                    Description: "Prepared meats"
+                }
+            }, {
+                ProductID: 18,
+                Werkgever: "Carnarvon Tigers",
+                SupplierID: 7,
+                CategoryID: 8,
+                QuantityPerUnit: "16 kg pkg.",
+                ZiekMelden: 62.5000,
+                WerknemerToevoegen: 42,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 19,
+                Werkgever: "Teatime Chocolate Biscuits",
+                SupplierID: 8,
+                CategoryID: 3,
+                QuantityPerUnit: "10 boxes x 12 pieces",
+                ZiekMelden: 9.2000,
+                WerknemerToevoegen: 25,
+                UnitsOnOrder: 0,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 20,
+                Werkgever: "Sir Rodney's Marmalade",
+                SupplierID: 8,
+                CategoryID: 3,
+                QuantityPerUnit: "30 gift boxes",
+                ZiekMelden: 81.0000,
+                WerknemerToevoegen: 40,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 21,
+                Werkgever: "Sir Rodney's Scones",
+                SupplierID: 8,
+                CategoryID: 3,
+                QuantityPerUnit: "24 pkgs. x 4 pieces",
+                ZiekMelden: 10.0000,
+                WerknemerToevoegen: 3,
+                UnitsOnOrder: 40,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 22,
+                Werkgever: "Gustaf's Knäckebröd",
+                SupplierID: 9,
+                CategoryID: 5,
+                QuantityPerUnit: "24 - 500 g pkgs.",
+                ZiekMelden: 21.0000,
+                WerknemerToevoegen: 104,
+                UnitsOnOrder: 0,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 23,
+                Werkgever: "Tunnbröd",
+                SupplierID: 9,
+                CategoryID: 5,
+                QuantityPerUnit: "12 - 250 g pkgs.",
+                ZiekMelden: 9.0000,
+                WerknemerToevoegen: 61,
+                UnitsOnOrder: 0,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 24,
+                Werkgever: "Guaraná Fantástica",
+                SupplierID: 10,
+                CategoryID: 1,
+                QuantityPerUnit: "12 - 355 ml cans",
+                ZiekMelden: 4.5000,
+                WerknemerToevoegen: 20,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 25,
+                Werkgever: "NuNuCa Nuß-Nougat-Creme",
+                SupplierID: 11,
+                CategoryID: 3,
+                QuantityPerUnit: "20 - 450 g glasses",
+                ZiekMelden: 14.0000,
+                WerknemerToevoegen: 76,
+                UnitsOnOrder: 0,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 26,
+                Werkgever: "Gumbär Gummibärchen",
+                SupplierID: 11,
+                CategoryID: 3,
+                QuantityPerUnit: "100 - 250 g bags",
+                ZiekMelden: 31.2300,
+                WerknemerToevoegen: 15,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 27,
+                Werkgever: "Schoggi Schokolade",
+                SupplierID: 11,
+                CategoryID: 3,
+                QuantityPerUnit: "100 - 100 g pieces",
+                ZiekMelden: 43.9000,
+                WerknemerToevoegen: 49,
+                UnitsOnOrder: 0,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 28,
+                Werkgever: "Rössle Sauerkraut",
+                SupplierID: 12,
+                CategoryID: 7,
+                QuantityPerUnit: "25 - 825 g cans",
+                ZiekMelden: 45.6000,
+                WerknemerToevoegen: 26,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 7,
+                    CategoryName: "Produce",
+                    Description: "Dried fruit and bean curd"
+                }
+            }, {
+                ProductID: 29,
+                Werkgever: "Thüringer Rostbratwurst",
+                SupplierID: 12,
+                CategoryID: 6,
+                QuantityPerUnit: "50 bags x 30 sausgs.",
+                ZiekMelden: 123.7900,
+                WerknemerToevoegen: 0,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 6,
+                    CategoryName: "Meat/Poultry",
+                    Description: "Prepared meats"
+                }
+            }, {
+                ProductID: 30,
+                Werkgever: "Nord-Ost Matjeshering",
+                SupplierID: 13,
+                CategoryID: 8,
+                QuantityPerUnit: "10 - 200 g glasses",
+                ZiekMelden: 25.8900,
+                WerknemerToevoegen: 10,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 31,
+                Werkgever: "Gorgonzola Telino",
+                SupplierID: 14,
+                CategoryID: 4,
+                QuantityPerUnit: "12 - 100 g pkgs",
+                ZiekMelden: 12.5000,
+                WerknemerToevoegen: 0,
+                UnitsOnOrder: 70,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 32,
+                Werkgever: "Mascarpone Fabioli",
+                SupplierID: 14,
+                CategoryID: 4,
+                QuantityPerUnit: "24 - 200 g pkgs.",
+                ZiekMelden: 32.0000,
+                WerknemerToevoegen: 9,
+                UnitsOnOrder: 40,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 33,
+                Werkgever: "Geitost",
+                SupplierID: 15,
+                CategoryID: 4,
+                QuantityPerUnit: "500 g",
+                ZiekMelden: 2.5000,
+                WerknemerToevoegen: 112,
+                UnitsOnOrder: 0,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 34,
+                Werkgever: "Sasquatch Ale",
+                SupplierID: 16,
+                CategoryID: 1,
+                QuantityPerUnit: "24 - 12 oz bottles",
+                ZiekMelden: 14.0000,
+                WerknemerToevoegen: 111,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 35,
+                Werkgever: "Steeleye Stout",
+                SupplierID: 16,
+                CategoryID: 1,
+                QuantityPerUnit: "24 - 12 oz bottles",
+                ZiekMelden: 18.0000,
+                WerknemerToevoegen: 20,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 36,
+                Werkgever: "Inlagd Sill",
+                SupplierID: 17,
+                CategoryID: 8,
+                QuantityPerUnit: "24 - 250 g  jars",
+                ZiekMelden: 19.0000,
+                WerknemerToevoegen: 112,
+                UnitsOnOrder: 0,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 37,
+                Werkgever: "Gravad lax",
+                SupplierID: 17,
+                CategoryID: 8,
+                QuantityPerUnit: "12 - 500 g pkgs.",
+                ZiekMelden: 26.0000,
+                WerknemerToevoegen: 11,
+                UnitsOnOrder: 50,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 38,
+                Werkgever: "Côte de Blaye",
+                SupplierID: 18,
+                CategoryID: 1,
+                QuantityPerUnit: "12 - 75 cl bottles",
+                ZiekMelden: 263.5000,
+                WerknemerToevoegen: 17,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 39,
+                Werkgever: "Chartreuse verte",
+                SupplierID: 18,
+                CategoryID: 1,
+                QuantityPerUnit: "750 cc per bottle",
+                ZiekMelden: 18.0000,
+                WerknemerToevoegen: 69,
+                UnitsOnOrder: 0,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 40,
+                Werkgever: "Boston Crab Meat",
+                SupplierID: 19,
+                CategoryID: 8,
+                QuantityPerUnit: "24 - 4 oz tins",
+                ZiekMelden: 18.4000,
+                WerknemerToevoegen: 123,
+                UnitsOnOrder: 0,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 41,
+                Werkgever: "Jack's New England Clam Chowder",
+                SupplierID: 19,
+                CategoryID: 8,
+                QuantityPerUnit: "12 - 12 oz cans",
+                ZiekMelden: 9.6500,
+                WerknemerToevoegen: 85,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 42,
+                Werkgever: "Singaporean Hokkien Fried Mee",
+                SupplierID: 20,
+                CategoryID: 5,
+                QuantityPerUnit: "32 - 1 kg pkgs.",
+                ZiekMelden: 14.0000,
+                WerknemerToevoegen: 26,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 43,
+                Werkgever: "Ipoh Coffee",
+                SupplierID: 20,
+                CategoryID: 1,
+                QuantityPerUnit: "16 - 500 g tins",
+                ZiekMelden: 46.0000,
+                WerknemerToevoegen: 17,
+                UnitsOnOrder: 10,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 44,
+                Werkgever: "Gula Malacca",
+                SupplierID: 20,
+                CategoryID: 2,
+                QuantityPerUnit: "20 - 2 kg bags",
+                ZiekMelden: 19.4500,
+                WerknemerToevoegen: 27,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 45,
+                Werkgever: "Rogede sild",
+                SupplierID: 21,
+                CategoryID: 8,
+                QuantityPerUnit: "1k pkg.",
+                ZiekMelden: 9.5000,
+                WerknemerToevoegen: 5,
+                UnitsOnOrder: 70,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 46,
+                Werkgever: "Spegesild",
+                SupplierID: 21,
+                CategoryID: 8,
+                QuantityPerUnit: "4 - 450 g glasses",
+                ZiekMelden: 12.0000,
+                WerknemerToevoegen: 95,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 47,
+                Werkgever: "Zaanse koeken",
+                SupplierID: 22,
+                CategoryID: 3,
+                QuantityPerUnit: "10 - 4 oz boxes",
+                ZiekMelden: 9.5000,
+                WerknemerToevoegen: 36,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 48,
+                Werkgever: "Chocolade",
+                SupplierID: 22,
+                CategoryID: 3,
+                QuantityPerUnit: "10 pkgs.",
+                ZiekMelden: 12.7500,
+                WerknemerToevoegen: 15,
+                UnitsOnOrder: 70,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 49,
+                Werkgever: "Maxilaku",
+                SupplierID: 23,
+                CategoryID: 3,
+                QuantityPerUnit: "24 - 50 g pkgs.",
+                ZiekMelden: 20.0000,
+                WerknemerToevoegen: 10,
+                UnitsOnOrder: 60,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 50,
+                Werkgever: "Valkoinen suklaa",
+                SupplierID: 23,
+                CategoryID: 3,
+                QuantityPerUnit: "12 - 100 g bars",
+                ZiekMelden: 16.2500,
+                WerknemerToevoegen: 65,
+                UnitsOnOrder: 0,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 51,
+                Werkgever: "Manjimup Dried Apples",
+                SupplierID: 24,
+                CategoryID: 7,
+                QuantityPerUnit: "50 - 300 g pkgs.",
+                ZiekMelden: 53.0000,
+                WerknemerToevoegen: 20,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 7,
+                    CategoryName: "Produce",
+                    Description: "Dried fruit and bean curd"
+                }
+            }, {
+                ProductID: 52,
+                Werkgever: "Filo Mix",
+                SupplierID: 24,
+                CategoryID: 5,
+                QuantityPerUnit: "16 - 2 kg boxes",
+                ZiekMelden: 7.0000,
+                WerknemerToevoegen: 38,
+                UnitsOnOrder: 0,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 53,
+                Werkgever: "Perth Pasties",
+                SupplierID: 24,
+                CategoryID: 6,
+                QuantityPerUnit: "48 pieces",
+                ZiekMelden: 32.8000,
+                WerknemerToevoegen: 0,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: true,
+                Category: {
+                    CategoryID: 6,
+                    CategoryName: "Meat/Poultry",
+                    Description: "Prepared meats"
+                }
+            }, {
+                ProductID: 54,
+                Werkgever: "Tourtière",
+                SupplierID: 25,
+                CategoryID: 6,
+                QuantityPerUnit: "16 pies",
+                ZiekMelden: 7.4500,
+                WerknemerToevoegen: 21,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 6,
+                    CategoryName: "Meat/Poultry",
+                    Description: "Prepared meats"
+                }
+            }, {
+                ProductID: 55,
+                Werkgever: "Pâté chinois",
+                SupplierID: 25,
+                CategoryID: 6,
+                QuantityPerUnit: "24 boxes x 2 pies",
+                ZiekMelden: 24.0000,
+                WerknemerToevoegen: 115,
+                UnitsOnOrder: 0,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 6,
+                    CategoryName: "Meat/Poultry",
+                    Description: "Prepared meats"
+                }
+            }, {
+                ProductID: 56,
+                Werkgever: "Gnocchi di nonna Alice",
+                SupplierID: 26,
+                CategoryID: 5,
+                QuantityPerUnit: "24 - 250 g pkgs.",
+                ZiekMelden: 38.0000,
+                WerknemerToevoegen: 21,
+                UnitsOnOrder: 10,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 57,
+                Werkgever: "Ravioli Angelo",
+                SupplierID: 26,
+                CategoryID: 5,
+                QuantityPerUnit: "24 - 250 g pkgs.",
+                ZiekMelden: 19.5000,
+                WerknemerToevoegen: 36,
+                UnitsOnOrder: 0,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 58,
+                Werkgever: "Escargots de Bourgogne",
+                SupplierID: 27,
+                CategoryID: 8,
+                QuantityPerUnit: "24 pieces",
+                ZiekMelden: 13.2500,
+                WerknemerToevoegen: 62,
+                UnitsOnOrder: 0,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 59,
+                Werkgever: "Raclette Courdavault",
+                SupplierID: 28,
+                CategoryID: 4,
+                QuantityPerUnit: "5 kg pkg.",
+                ZiekMelden: 55.0000,
+                WerknemerToevoegen: 79,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 60,
+                Werkgever: "Camembert Pierrot",
+                SupplierID: 28,
+                CategoryID: 4,
+                QuantityPerUnit: "15 - 300 g rounds",
+                ZiekMelden: 34.0000,
+                WerknemerToevoegen: 19,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 61,
+                Werkgever: "Sirop d'érable",
+                SupplierID: 29,
+                CategoryID: 2,
+                QuantityPerUnit: "24 - 500 ml bottles",
+                ZiekMelden: 28.5000,
+                WerknemerToevoegen: 113,
+                UnitsOnOrder: 0,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 62,
+                Werkgever: "Tarte au sucre",
+                SupplierID: 29,
+                CategoryID: 3,
+                QuantityPerUnit: "48 pies",
+                ZiekMelden: 49.3000,
+                WerknemerToevoegen: 17,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 63,
+                Werkgever: "Vegie-spread",
+                SupplierID: 7,
+                CategoryID: 2,
+                QuantityPerUnit: "15 - 625 g jars",
+                ZiekMelden: 43.9000,
+                WerknemerToevoegen: 24,
+                UnitsOnOrder: 0,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 64,
+                Werkgever: "Wimmers gute Semmelknödel",
+                SupplierID: 12,
+                CategoryID: 5,
+                QuantityPerUnit: "20 bags x 4 pieces",
+                ZiekMelden: 33.2500,
+                WerknemerToevoegen: 22,
+                UnitsOnOrder: 80,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 5,
+                    CategoryName: "Grains/Cereals",
+                    Description: "Breads, crackers, pasta, and cereal"
+                }
+            }, {
+                ProductID: 65,
+                Werkgever: "Louisiana Fiery Hot Pepper Sauce",
+                SupplierID: 2,
+                CategoryID: 2,
+                QuantityPerUnit: "32 - 8 oz bottles",
+                ZiekMelden: 21.0500,
+                WerknemerToevoegen: 76,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 66,
+                Werkgever: "Louisiana Hot Spiced Okra",
+                SupplierID: 2,
+                CategoryID: 2,
+                QuantityPerUnit: "24 - 8 oz jars",
+                ZiekMelden: 17.0000,
+                WerknemerToevoegen: 4,
+                UnitsOnOrder: 100,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }, {
+                ProductID: 67,
+                Werkgever: "Laughing Lumberjack Lager",
+                SupplierID: 16,
+                CategoryID: 1,
+                QuantityPerUnit: "24 - 12 oz bottles",
+                ZiekMelden: 14.0000,
+                WerknemerToevoegen: 52,
+                UnitsOnOrder: 0,
+                ReorderLevel: 10,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 68,
+                Werkgever: "Scottish Longbreads",
+                SupplierID: 8,
+                CategoryID: 3,
+                QuantityPerUnit: "10 boxes x 8 pieces",
+                ZiekMelden: 12.5000,
+                WerknemerToevoegen: 6,
+                UnitsOnOrder: 10,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 3,
+                    CategoryName: "Confections",
+                    Description: "Desserts, candies, and sweet breads"
+                }
+            }, {
+                ProductID: 69,
+                Werkgever: "Gudbrandsdalsost",
+                SupplierID: 15,
+                CategoryID: 4,
+                QuantityPerUnit: "10 kg pkg.",
+                ZiekMelden: 36.0000,
+                WerknemerToevoegen: 26,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 70,
+                Werkgever: "Outback Lager",
+                SupplierID: 7,
+                CategoryID: 1,
+                QuantityPerUnit: "24 - 355 ml bottles",
+                ZiekMelden: 15.0000,
+                WerknemerToevoegen: 15,
+                UnitsOnOrder: 10,
+                ReorderLevel: 30,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 71,
+                Werkgever: "Flotemysost",
+                SupplierID: 15,
+                CategoryID: 4,
+                QuantityPerUnit: "10 - 500 g pkgs.",
+                ZiekMelden: 21.5000,
+                WerknemerToevoegen: 26,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 72,
+                Werkgever: "Mozzarella di Giovanni",
+                SupplierID: 14,
+                CategoryID: 4,
+                QuantityPerUnit: "24 - 200 g pkgs.",
+                ZiekMelden: 34.8000,
+                WerknemerToevoegen: 14,
+                UnitsOnOrder: 0,
+                ReorderLevel: 0,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 4,
+                    CategoryName: "Dairy Products",
+                    Description: "Cheeses"
+                }
+            }, {
+                ProductID: 73,
+                Werkgever: "Röd Kaviar",
+                SupplierID: 17,
+                CategoryID: 8,
+                QuantityPerUnit: "24 - 150 g jars",
+                ZiekMelden: 15.0000,
+                WerknemerToevoegen: 101,
+                UnitsOnOrder: 0,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 8,
+                    CategoryName: "Seafood",
+                    Description: "Seaweed and fish"
+                }
+            }, {
+                ProductID: 74,
+                Werkgever: "Longlife Tofu",
+                SupplierID: 4,
+                CategoryID: 7,
+                QuantityPerUnit: "5 kg pkg.",
+                ZiekMelden: 10.0000,
+                WerknemerToevoegen: 4,
+                UnitsOnOrder: 20,
+                ReorderLevel: 5,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 7,
+                    CategoryName: "Produce",
+                    Description: "Dried fruit and bean curd"
+                }
+            }, {
+                ProductID: 75,
+                Werkgever: "Rhönbräu Klosterbier",
+                SupplierID: 12,
+                CategoryID: 1,
+                QuantityPerUnit: "24 - 0.5 l bottles",
+                ZiekMelden: 7.7500,
+                WerknemerToevoegen: 125,
+                UnitsOnOrder: 0,
+                ReorderLevel: 25,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 76,
+                Werkgever: "Lakkalikööri",
+                SupplierID: 23,
+                CategoryID: 1,
+                QuantityPerUnit: "500 ml",
+                ZiekMelden: 18.0000,
+                WerknemerToevoegen: 57,
+                UnitsOnOrder: 0,
+                ReorderLevel: 20,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 1,
+                    CategoryName: "Beverages",
+                    Description: "Soft drinks, coffees, teas, beers, and ales"
+                }
+            }, {
+                ProductID: 77,
+                Werkgever: "Original Frankfurter grüne Soße",
+                SupplierID: 12,
+                CategoryID: 2,
+                QuantityPerUnit: "12 boxes",
+                ZiekMelden: 13.0000,
+                WerknemerToevoegen: 32,
+                UnitsOnOrder: 0,
+                ReorderLevel: 15,
+                WerknemerMuteren: false,
+                Category: {
+                    CategoryID: 2,
+                    CategoryName: "Condiments",
+                    Description: "Sweet and savory sauces, relishes, spreads, and seasonings"
+                }
+            }];
+
+            $("#grid").kendoGrid({
+                dataSource: {
+                    data: products,
+                    schema: {
+                        model: {
+                            fields: {
+                                Werkgever: { type: "string" },
+                                ZiekMelden: { type: "number" },
+                                WerknemerToevoegen: { type: "number" },
+                                WerknemerMuteren: { type: "boolean" }
+                            }
+                        }
+                    },
+                    pageSize: 6
+                },
+                scrollable: false,
+                sortable: true,
+                filterable: false,
+                pageable: {
+                    input: true,
+                    numeric: false
+                },
+                columns: [
+                    "Werkgever",
+                    { field: "ZiekMelden", title: "Ziek melden", format: "{0:c}", width: "130px" },
+                    { field: "WerknemerToevoegen", title: "Werknemer toevoegen", width: "130px" },
+                    { field: "WerknemerMuteren", title: "Werknemer muteren", width: "130px" }
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="title">Informatie</div>
+        </div>
+        <div class="content">
+            <div id="grid"></div>
+        </div>
+        <div class="action">
+            <a href="#">Download informatie</a>
+        </div>
+    </div>
+</body>
+</html>

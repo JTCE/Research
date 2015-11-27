@@ -1,0 +1,246 @@
+﻿
+body {
+	background-color: rgb(243, 243, 243);
+	padding: 20px;
+}
+
+.hto-card {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.258824) 0 2px 5px 0;
+	-webkit-font-smoothing: antialiased;
+	background-color: rgb(255, 255, 255);
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	box-shadow: rgba(0, 0, 0, 0.258824) 0 2px 5px 0;
+	padding: 12px;
+}
+
+#hto-error-notification {
+	background-color: rgb(252, 248, 227);
+	border-bottom-color: rgb(250, 235, 204);
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-image-outset: 0;
+	border-image-repeat: stretch;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 1;
+	border-left-color: rgb(250, 235, 204);
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-color: rgb(250, 235, 204);
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-color: rgb(250, 235, 204);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: rgb(138, 109, 59);
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 0;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 35px;
+	padding-top: 10px;
+}
+
+	#hto-error-notification .hto-close-button {
+		-webkit-appearance: none;
+		-webkit-background-clip: border-box;
+		-webkit-background-origin: padding-box;
+		align-items: flex-start;
+		background-attachment: scroll;
+		-moz-background-clip: border-box;
+		background-clip: border-box;
+		background-color: rgba(0, 0, 0, 0);
+		background-image: none;
+		-moz-background-origin: padding-box;
+		background-origin: padding-box;
+		background-size: auto;
+		border-bottom-color: rgb(138, 109, 59);
+		border-bottom-style: none;
+		border-bottom-width: 0;
+		border-image-outset: 0;
+		border-image-repeat: stretch;
+		border-image-slice: 100%;
+		border-image-source: none;
+		border-image-width: 1;
+		border-left-color: rgb(138, 109, 59);
+		border-left-style: none;
+		border-left-width: 0;
+		border-right-color: rgb(138, 109, 59);
+		border-right-style: none;
+		border-right-width: 0;
+		border-top-color: rgb(138, 109, 59);
+		border-top-style: none;
+		border-top-width: 0;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		color: rgb(138, 109, 59);
+		cursor: pointer;
+		display: block;
+		float: right;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: 21px;
+		font-stretch: normal;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: bold;
+		height: 21px;
+		letter-spacing: normal;
+		line-height: 21px;
+		opacity: 0.80;
+		overflow-x: visible;
+		overflow-y: visible;
+		position: relative;
+		right: -21px;
+		text-align: center;
+		text-indent: 0;
+		text-rendering: auto;
+		text-shadow: rgb(255, 255, 255) 0 1px 0;
+		text-transform: none;
+		top: -2px;
+		width: 12.265625px;
+		word-spacing: 0;
+	}
+
+	#hto-error-notification .hto-detail {
+		display: none;
+		font-size: 12px;
+		padding-top: 10px;
+	}
+
+	#hto-error-notification .hto-read-more-button {
+		-webkit-appearance: none;
+		-webkit-background-clip: border-box;
+		-webkit-background-origin: padding-box;
+		background-attachment: scroll;
+		-moz-background-clip: border-box;
+		background-clip: border-box;
+		background-color: rgba(0, 0, 0, 0);
+		background-image: none;
+		-moz-background-origin: padding-box;
+		background-origin: padding-box;
+		background-size: auto;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		color: rgb(138, 109, 59);
+		cursor: pointer;
+		display: block;
+		margin-top: 6px;
+		opacity: 0.80;
+		text-align: center;
+		text-indent: 0;
+		text-rendering: auto;
+		text-shadow: rgb(255, 255, 255) 0 1px 0;
+		text-transform: none;
+	}
+
+
+.hto-flex {
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+.hto-flex-center {
+	align-items: center;
+}
+
+.hto-flex-item-fixed {
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	padding: 0 12px 0 0;
+}
+
+.hto-input-text {
+	-webkit-appearance: none;
+	-webkit-background-clip: border-box;
+	-webkit-background-origin: padding-box;
+	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: text;
+	-webkit-writing-mode: horizontal-tb;
+	background-attachment: scroll;
+	-moz-background-clip: border-box;
+	background-clip: border-box;
+	background-color: rgba(0, 0, 0, 0);
+	background-image: none;
+	-moz-background-origin: padding-box;
+	background-origin: padding-box;
+	background-size: auto;
+	border-bottom-color: rgba(0, 0, 0, 0.117647);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-style: inset;
+	border-bottom-width: 1px;
+	border-image-outset: 0;
+	border-image-repeat: stretch;
+	border-image-slice: 100%;
+	border-image-source: none;
+	border-image-width: 1;
+	border-left-color: rgba(0, 0, 0, 0.117647);
+	border-left-style: inset;
+	border-left-width: 0;
+	border-right-color: rgba(0, 0, 0, 0.117647);
+	border-right-style: inset;
+	border-right-width: 0;
+	border-top-color: rgba(0, 0, 0, 0.117647);
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-top-style: inset;
+	border-top-width: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: rgba(0, 0, 0, 0.870588);
+	cursor: auto;
+	letter-spacing: normal;
+	line-height: 26px;
+	margin: 0 0 10px 0;
+	padding-bottom: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	text-align: start;
+	text-indent: 0;
+	text-shadow: none;
+	text-transform: none;
+	vertical-align: baseline;
+    width: 100%;
+	word-spacing: 0;
+}
+
+.hto-h3 {
+	color: rgb(97, 97, 97);
+	font-size: 20px;
+}
+
+.hto-h4 {
+	color: rgb(97, 97, 97);
+	font-size: 16px;
+}
+
+
+.hto-seperate-block {
+	margin-bottom: 20px;
+}
+
+.hto-text-highlight {
+	color: steelblue;
+}
+
+.hto-text-small {
+	font-size: 10px;
+}

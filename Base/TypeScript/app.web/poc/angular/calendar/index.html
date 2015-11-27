@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular TypeScript calendar</title>
+    <link href="app.css" rel="stylesheet" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-controller="main">
+    <input type="text" />
+    <calendar ng-cloak>
+        <month ng-repeat="month in vm.months">
+            <div class="header">{{ month.title }}</div>
+            <table>
+                <thead>
+                    <tr><th ng-repeat="dayOfWeek in month.daysOfWeek">{{ dayOfWeek }}</th></tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="week in month.weeks">
+                        <td ng-class="{ disabled: day.isDisabled }" ng-repeat="day in week.days">{{ day.dayOfMonth }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </month>
+    </calendar>
+
+    <script src="https://code.angularjs.org/1.4.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

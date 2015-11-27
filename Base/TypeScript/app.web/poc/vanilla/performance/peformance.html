@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Performance test page.</title>
+    <style>
+        .clear {
+            content: "";
+            display: block; 
+            clear: both;
+        }
+
+        .item {
+            float: left;
+            padding: 2px;
+        }
+
+        .error {
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <button id="executeButton">Execute</button>
+    <board id="board" class="clear"></board>
+    
+    <script src="/poc/vanilla/performance/performance.js"></script>
+</body>
+</html>

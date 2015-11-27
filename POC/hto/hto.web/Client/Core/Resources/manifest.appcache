@@ -1,0 +1,78 @@
+﻿CACHE MANIFEST
+
+# version {{ 2015-08-25T09:37:38.826Z }}
+
+CACHE:
+
+# html files
+/index.html
+/mobile.html
+/Client/Core/Directives/Login/login.html
+/Client/Core/Directives/Signature/canvas.html
+/Client/Core/Directives/Signature/color-selector.html
+/Client/Desktop/desktop.html
+/Client/Mobile/mobile.html
+
+# image files
+/favicon.ico
+/Client/Core/Images/icon.png
+/Client/Core/Images/icon_114x114.png
+/Client/Core/Images/icon_144x144.png
+/Client/Core/Images/icon_196x196.png
+/Client/Core/Images/icon_256x256.png
+/Client/Core/Images/icon_36x36.png
+/Client/Core/Images/icon_48x48.png
+/Client/Core/Images/icon_57X57.png
+/Client/Core/Images/icon_72x72.png
+/Client/Core/Images/icon_96x96.png
+
+# font files
+/Client/Libraries/Fontawesome/fontawesome-webfont.eot
+/Client/Libraries/Fontawesome/fontawesome-webfont.eot
+/Client/Libraries/Fontawesome/fontawesome-webfont.woff
+/Client/Libraries/Fontawesome/fontawesome-webfont.woff2
+/Client/Libraries/Fontawesome/fontawesome-webfont.ttf
+/Client/Libraries/Fontawesome/fontawesome-webfont.svg
+
+# css files
+/Client/Libraries/Bootstrap/bootstrap.min.css
+/Client/Libraries/Fontawesome/font-awesome.min.css
+/Client/Core/Styles/reset.css
+/Client/Core/Styles/app.css
+/Client/Core/Directives/Login/login.css
+/Client/Core/Directives/Signature/signature.css
+
+# javascript files
+/Client/Core/namespaces.js
+/Client/Core/Services/global.error.handling.js
+/Client/Core/Services/appcache.js
+/Client/Libraries/Modernizr/modernizr-2.8.3.js
+/Client/Libraries/Jquery/jquery-2.1.4.min.js
+/Client/Libraries/Jquery/jquery.signalR-2.2.0.min.js
+/Client/Core/Signalr/server.js
+/Client/Libraries/Angular/angular.min.js
+/Client/Libraries/Angular/angular-cookies.min.js
+/Client/Libraries/Fastclick/fastclick.js
+/Client/Core/Enums/enums.js
+/Client/Core/Settings/settings.js
+/Client/Core/Services/geolocation.js
+/Client/Core/Services/canvas.js
+/Client/Core/Models/user.js
+/Client/Core/Models/app.js
+/Client/Core/Models/chatMessage.js
+/Client/Core/Models/signatureMessage.js
+/Client/Core/Modules/hto.js
+/Client/Core/Directives/focus.js
+/Client/Core/Directives/Signature/angular-canvas-painter.js
+/Client/Core/Directives/Signature/signature.controller.js
+/Client/Desktop/desktop.js
+/Client/Mobile/mobile.js
+/Client/Core/Directives/Login/login.js
+
+# JSON files
+/Client/Core/Resources/manifest.json
+
+FALLBACK:
+
+NETWORK:
+*

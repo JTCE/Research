@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <page>
+        <login>
+            <label>{{ resources.userName }}</label>
+            <textbox>{{ user.name }}</textbox>
+            <label>{{ resources.userPassword }}</label>
+            <textbox>{{ user.password }}</textbox>
+            <button am-on-click="user.login">{{ resources.submit }}</button>
+        </login>
+    </page>
+
+    <script>
+
+        var store = {
+            items: [
+                {
+                    type: "app.appointment",
+                    guid: "UniqueId",
+                    startDate: "2015-05-19"   
+                },
+                {
+                    type: "app.appointment",
+                    guid: "UniqueId",
+                    startDate: "2015-05-20"
+                },
+                {
+                    type: "app.page",
+                    guid: "UniqueId",
+                    template: "login.html"
+                },
+                {
+                    type: "app.resource",
+                    guid: "UniqueId",
+                    userName: "Enter username",
+                    userPassword: "Enter password"
+                },
+                {
+                    type: "app.user",
+                    guid: "UniqueId",
+                    name: "Roel van Lisdonk",
+                    password: "Dit is een test"
+                }
+            ]
+        }
+
+        var vm = {
+            page: "UniqueId",
+            appointments: [
+                "UniqueId",
+                "UniqueId",
+                "UniqueId",
+                "UniqueId"
+            ],
+            resources: "UniqueId",
+            user: "UniqueId"
+        };
+
+        // On every request animationframe apply cumulated DOM patches:
+        var patches = [];
+
+        var virtualDom = {
+            html: {
+                content: {
+                    items: {
+                        head: {},
+                        body: {
+                            page: {
+                                login: {
+                                    label: {
+                                        text: vm.resources.userName
+                                    },
+                                    textbox: {
+                                        text: vm.user.name
+                                    },
+                                    label: {
+                                        text: vm.resources.userPassword
+                                    },
+                                    textbox: {
+                                        text: vm.resources.userPassword
+                                    },
+                                    button: {
+                                        properties: {
+                                            "am-on-click": user.login
+                                        },
+                                        text: vm.resources.submit
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    template: ""
+                },
+                dateFields: [
+                    { 
+                        guid: "guid",
+                        fielName: "name"
+                    }
+                ],
+                properties: {
+                    "am-class": {
+                        value: "",
+                        dateFields: [
+                            {
+                                storeItem: {}, // This is value can be used for dirty checking.
+                                fielName: "name"
+                            }
+                        ]
+                    }
+                },
+                template: ""
+            }
+        }
+
+        var app = new App(store.items, vm);
+        app.start();
+    </script>
+</body>
+</html>

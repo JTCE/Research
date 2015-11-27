@@ -1,0 +1,10 @@
+{
+  "name": "Gulp",
+  "version": "0.0.0",
+  "description": "Gulp",
+  "main": "app.js",
+  "author": {
+    "name": "roel",
+    "email": "roelvanlisdonk@msn.com"
+  }
+}

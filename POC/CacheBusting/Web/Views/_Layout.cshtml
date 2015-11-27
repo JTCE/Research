@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Testing bundeling, minification and cache busting" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test cache busting</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    @Web.Common.Bundle.RenderStyles("~/Home/css")
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+    @Web.Common.Bundle.RenderScripts("~/Home/js")
+</body>
+</html>

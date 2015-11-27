@@ -1,0 +1,24 @@
+﻿{
+    "app.models.dashboard":
+    {
+        "subTitle": {   "type": "string", "en": "This is the dashboard subtitle.",  "nl": "Dit is de subtitel van het dashboard." },
+        "title": {      "type": "string", "en": "This is the dashboard title.",     "nl": "Dit is de titel van het dashboard." },
+        "widgets":
+        {
+            "type":     "array",
+            "itemType": "app.models.widget",
+            "items":
+            [
+                {
+                    "name": { "en": "Research", "nl": "Onderzoek" }
+                }
+            ]
+        }
+    },
+    "app.models.widget":
+    {
+        "name": { "type": "string" }
+    }
+}
+
+

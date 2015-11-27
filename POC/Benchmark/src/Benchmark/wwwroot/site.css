@@ -1,0 +1,46 @@
+﻿
+* {
+    border: 0;
+    outline: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button.action {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background-color: rgb(15, 157, 88);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.258824) 0 2px 5px 0;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 24px;
+    height: 36px;
+    line-height: 36px;
+    min-width: 88px;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+}
+
+button.action:active{
+	padding-top: 4px;
+}
+
+.page {
+    margin: 40px;
+}
+
+.page .content {
+    margin-top: 40px;
+}
+
+.page .footer {
+    margin-top: 40px;
+}

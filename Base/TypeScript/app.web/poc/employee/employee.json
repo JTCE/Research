@@ -1,0 +1,159 @@
+﻿{
+    "data": [
+        { "breadcrumb.item[0]": [ "Home", "Home" ] },
+        { "breadcrumb.label": [ "You are here", "U bent hier" ] },
+        { "groups[0].title": [ "Don't forget", "Niet vergeten" ] },
+        { "groups[0].tiles[0].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[0].footer2": [ "Tu 02 May 2015", "Di 02 mei 2015" ] },
+        { "groups[0].tiles[0].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[0].title": [ "Appointment", "Afspraak" ] },
+        { "groups[0].tiles[1].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[1].footer2": [ "We 03 May 2015", "Wo 03 mei 2015" ] },
+        { "groups[0].tiles[1].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[1].title": [ "Reading advise", "Leesadvies" ] },
+        { "groups[0].tiles[2].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[2].footer2": [ "Th 04 May 2015", "Do 04 mei 2015" ] },
+        { "groups[0].tiles[2].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[2].title": [ "Appointment", "Afspraak" ] },
+        { "groups[0].tiles[3].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[3].footer2": [ "Fr 05 May 2015", "Vr 05 mei 2015" ] },
+        { "groups[0].tiles[3].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[3].title": [ "Reading advise", "Leesadvies" ] },
+        { "groups[0].tiles[4].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[4].footer2": [ "Sa 06 May 2015", "Za 06 mei 2015" ] },
+        { "groups[0].tiles[4].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[4].title": [ "Appointment", "Afspraak" ] },
+        { "groups[0].tiles[5].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[5].footer2": [ "Su 07 May 2015", "Zo 07 mei 2015" ] },
+        { "groups[0].tiles[5].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[5].title": [ "Reading advise", "Leesadvies" ] },
+        { "groups[0].tiles[6].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[6].footer2": [ "Mo 08 May 2015", "Ma 08 mei 2015" ] },
+        { "groups[0].tiles[6].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[6].title": [ "Appointment", "Afspraak" ] },
+        { "groups[0].tiles[7].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[7].footer2": [ "Tu 09 May 2015", "Di 09 mei 2015" ] },
+        { "groups[0].tiles[7].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[7].title": [ "Reading advise", "Leesadvies" ] },
+        { "groups[0].tiles[8].footer1": [ "11:40", "11:40" ] },
+        { "groups[0].tiles[8].footer2": [ "Wo 10 May 2015", "Wo 10 mei 2015" ] },
+        { "groups[0].tiles[8].subtitle": [ "Doctor", "Bedrijfsarts" ] },
+        { "groups[0].tiles[8].title": [ "Appointment", "Afspraak" ] },
+        { "groups[1].title": [ "My documents", "Mijn dossier" ] },
+        { "groups[1].tiles[0].title": [ "Advices", "Adviezen" ] },
+        { "groups[1].tiles[1].title": [ "Medication", "Medicijnen" ] },
+        { "groups[1].tiles[2].title": [ "Prevention", "Preventiedossier" ] },
+        { "groups[1].tiles[3].title": [ "Absenteeism", "Verzuimkalender" ] },
+        { "groups[1].tiles[4].title": [ "WGA documents", "WGA dossier" ] },
+        { "groups[2].title": [ "Advertorials", "Advertorials" ] },
+        { "groups[2].tiles[0].title": [ "Advertorial 1", "Advertentie 1" ] },
+        { "groups[2].tiles[1].title": [ "Advertorial 2", "Advertentie 2" ] },
+        { "groups[2].tiles[2].title": [ "Advertorial 3", "Advertentie 3" ] },
+        { "groups[2].title": [ "Create appointment with", "Afspraak maken met" ] },
+        { "groups[2].tiles[0].title": [ "Docter", "Bedrijfsarts" ] },
+        { "groups[2].tiles[1].title": [ "Casemanager", "Casemanager" ] },
+        { "groups[2].tiles[2].title": [ "Confidant", "Vertrouwenspersoon" ] },
+        { "map.center.lat": [ "53.069334", "53.069334" ] },
+        { "map.center.lng": [ "5.538259", "5.538259" ] },
+        { "map.center.zoom": [ "15", "15" ] },
+        { "map.defaults.scrollWheelZoom": [ "true", "true" ] },
+        { "map.markers.draggable": [ "true", "true" ] },
+        { "map.markers.focus": [ "true", "true" ] },
+        { "map.markers.lat": [ "53.069334", "53.069334" ] },
+        { "map.markers.lng": [ "5.538259", "5.538259" ] },
+        { "map.markers.message": [ "De vormfabriek", "Zorg van de Zaak" ] },
+        { "menu.items[0].items[0].title": [ "Appointment", "Afspraak" ] },
+        { "menu.items[0].items[1].title": [ "Reading advise", "Leesadvies" ] },
+        { "menu.items[0].items[2].title": [ "Appointment", "Afspraak" ] },
+        { "menu.items[0].items[3].title": [ "Reading advise", "Leesadvies" ] },
+        { "menu.items[0].items[4].title": [ "Appointment", "Afspraak" ] },
+        { "menu.items[0].items[5].title": [ "Reading advise", "Leesadvies" ] },
+        { "menu.items[0].items[6].title": [ "Appointment", "Afspraak" ] },
+        { "menu.items[0].items[7].title": [ "Reading advise", "Leesadvies" ] },
+        { "menu.items[0].items[8].title": [ "Appointment", "Afspraak" ] },
+        { "menu.items[0].subMenuVisible": [ "false", "false" ] },
+        { "menu.items[0].title": [ "Don't forget", "Niet vergeten" ] },
+        { "menu.items[1].items[0].title": [ "Advices", "Adviezen" ] },
+        { "menu.items[1].items[1].title": [ "Medication", "Medicijnen" ] },
+        { "menu.items[1].items[2].title": [ "Prevention", "Preventiedossier" ] },
+        { "menu.items[1].items[3].title": [ "Absenteeism", "Verzuimkalender" ] },
+        { "menu.items[1].items[4].title": [ "WGA documents", "WGA dossier" ] },
+        { "menu.items[1].subMenuVisible": [ "false", "false" ] },
+        { "menu.items[1].title": [ "My Documents", "Mijn dossier" ] },
+        { "menu.items[2].items[0].title": [ "Advertorial 1", "Advertentie 1" ] },
+        { "menu.items[2].items[1].title": [ "Advertorial 2", "Advertentie 2" ] },
+        { "menu.items[2].items[2].title": [ "Advertorial 3", "Advertentie 3" ] },
+        { "menu.items[2].subMenuVisible": [ "false", "false" ] },
+        { "menu.items[2].title": [ "Advertorials", "Advertorials" ] },
+        { "menu.items[3].items[0].title": [ "Docter", "Bedrijfsarts" ] },
+        { "menu.items[3].items[1].title": [ "Casemanager", "Casemanager" ] },
+        { "menu.items[3].items[2].title": [ "Confidant", "Vertrouwenspersoon" ] },
+        { "menu.items[3].subMenuVisible": [ "false", "false" ] },
+        { "menu.items[3].title": [ "Create appointment with", "Afspraak maken met" ] },
+        { "menu.items[4].subMenuVisible": [ "false", "false" ] },
+        { "menu.items[4].title": [ "My profile", "Mijn profiel" ] },
+        { "menu.items[5].subMenuVisible": [ "false", "false" ] },
+        { "menu.items[5].title": [ "Sign out", "Afmelden" ] },
+        { "profile.label": [ "My profile", "Mijn profiel"] }
+    ],
+    "types": {
+        "app.models.Landingpage": {
+            "breadcrumb": { "type": "app.models.Breadcrumb" },
+            "groups": { "type": "array", "itemType": "app.models.Group" },
+            "map": { "type": "app.models.Map" },
+            "menu": { "type": "app.models.Menu" },
+            "profile": { "type": "app.models.Profile" },
+            "useCustomStyles": { "type": "bool" }
+        },
+        "app.models.Breadcrumb": {
+            "items": { "type": "array", "itemType": "string" },
+            "label": { "type": "string" }
+        },
+        "app.models.Group": {
+            "tiles": { "type": "array", "itemType": "app.models.Tile" },
+            "title": { "type": "string" }
+        },
+        "app.models.Map": {
+            "center": { "type": "app.models.MapCenter" },
+            "defaults": { "type": "app.models.MapDefaults" },
+            "markers": { "type": "app.models.MapMarker" }
+        },
+        "app.models.MapCenter": {
+            "lat": { "type": "decimal" },
+            "lng": { "type": "decimal" },
+            "zoom": { "type": "int" }
+        },
+        "app.models.MapDefaults": {
+            "scrollWheelZoom": { "type": "bool" }
+        },
+        "app.models.MapMarker": {
+            "draggable": { "type": "bool" },
+            "focus": { "type": "bool" },
+            "lat": { "type": "decimal" },
+            "lng": { "type": "decimal" },
+            "message": { "type": "string" }
+        },
+        "app.models.Menu": {
+            "items": { "type": "array", "itemType": "app.models.MenuItem" },
+            "label": { "type": "string" },
+            "visible": { "type": "bool" }
+        },
+        "app.models.MenuItem": {
+            "items": { "type": "array", "itemType": "app.models.MenuItem" },
+            "title": { "type": "string" }
+        },
+        "app.models.Profile": {
+            "label": { "type": "string" }
+        },
+        "app.models.Tile": {
+            "footer1": { "type": "string" },
+            "footer2": { "type": "string" },
+            "subtitle": { "type": "string" },
+            "title": { "type": "string" },
+            "tooltip": { "type": "app.models.Tooltip" }
+        },
+        "app.models.Tooltip": {
+            "visible": { "type": "bool" }
+        }
+    }
+}

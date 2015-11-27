@@ -1,0 +1,177 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Library styles -->
+    <link rel="stylesheet" href="/libraries/normalize/normalize.css" />
+    <link rel="stylesheet" href="/libraries/fontawesome/font-awesome.custom.css" />
+    <link rel="stylesheet" href="/libraries/leaflet/leaflet.css">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="app.css" />
+</head>
+<body ng-controller="MainController" ng-click="vm.reset($event)">
+    <div class="header">
+        <div class="left-menu" ng-click="vm.menu.toggle($event)">
+            <i class="fa bars" ng-class="{rotate: vm.menu.visible}"></i>
+            <span class="label">Menu</span>
+            <div class="sidenav" ng-class="{open: vm.menu.visible}">
+                <div class="item">Actielijst</div>
+                <div class="item">Agenda</div>
+                <div class="item">Dashboard</div>
+                <div class="item">Documenten</div>
+                <div class="item">Taken</div>
+            </div>
+        </div>
+        <div class="right-menu">
+            <span class="logo"></span>
+            <div class="fa signout"></div>
+        </div>
+        <div class="profiel">
+            <div class="inner">Mijn Profiel</div>
+            <!--<div class="logo">Logo</div>
+            <div class="label">Mijn profiel</div>-->
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <div class="inner">
+            <div class="container">
+                <span class="label">U bent hier:</span><span class="path">Home</span>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="center">
+            <div class="group">
+                <div class="name">Niet vergeten</div>
+                <div class="tiles cat1">
+                    <div class="tile" ng-class="{marker: vm.tooltip.visible}" ng-click="vm.tooltip.toggle($event)">
+                        Afspraak bedrijfsarts<br><br>Di 02 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tooltip clear" ng-class="{open: vm.tooltip.visible}">
+                        <div class="close" ng-click="vm.tooltip.hide($event)">X</div>
+                        <div class="c3">
+                            <div class="title">Waar is de afspraak?</div>
+                            <leaflet markers="vm.map.markers" center="vm.map.center" class="map"></leaflet>
+                        </div>
+                        <div class="vertical-right-border"></div>
+                        <div class="c2">
+                            <div class="title">Informatie</div>
+                            <div>
+                                Je hebt een afspraak met:
+                                <br>
+                                - Dhr. F.A. Kunnen, bedrijfsarts
+                                <br>
+                                - Dinsdag 04 mei 2015 om 14:15 uur
+                                <br>
+                                - Beneluxlaan 901, 5544 EK Utrecht
+                                <br>
+                                <br>
+                                Bijzonderheden bij de afspraak:
+                                <br>
+                                - U meldt zich bij de receptie van Zorg van de Zaak aan de groen kant
+                                <br>
+                                <br>
+                                Voor dienstverband bij werkgever:
+                                <br>
+                                - Johanssen Verkeersregelmaatschappij
+                            </div>
+                        </div>
+                        <div class="vertical-right-border"></div>
+                        <div class="c1">
+                            <div class="title">Uw actie</div>
+                            <button>Download pdf</button>
+                        </div>
+                    </div>
+                    <div class="tile">
+                        Leesadvies bedrijfsarts<br><br>Wo 03 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Afspraak bedrijfsarts<br><br>Do 04 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Leesadvies bedrijfsarts<br><br>Vr 05 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Afspraak bedrijfsarts<br><br>Za 06 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Leesadvies bedrijfsarts<br><br>Zo 07 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Afspraak bedrijfsarts<br><br>Ma 08 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Leesadvies bedrijfsarts<br><br>Di 09 mei 2015<br>11:40 uur
+                    </div>
+                    <div class="tile">
+                        Afspraak bedrijfsarts<br><br>Wo 10 mei 2015<br>11:40 uur
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">Mijn dossier</div>
+                <div class="tiles cat2 clear">
+                    <div class="tile">
+                        Verzuimkalender
+                    </div>
+                    <div class="tile">
+                        Adviezen
+                    </div>
+                    <div class="tile">
+                        Preventiedossier
+                    </div>
+                    <div class="tile">
+                        WGA dossier
+                    </div>
+                    <div class="tile">
+                        Medicijnen
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">Advertorial</div>
+                <div class="tiles cat3 medium clear">
+                    <div class="tile">
+                        Advertentie
+                    </div>
+                    <div class="tile">
+                        Advertentie
+                    </div>
+                    <div class="tile">
+                        Advertentie
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">Afspraak maken met</div>
+                <div class="tiles cat4 clear">
+                    <div class="tile">
+                        Bedrijfsarts
+                    </div>
+                    <div class="tile">
+                        Vertrouwenspersoon
+                    </div>
+                    <div class="tile">
+                        Casemanager
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Library scripts -->
+    <script type="text/javascript" src="/libraries/fastclick/fastclick.js"></script>
+    <script type="text/javascript" src="/libraries/leaflet/leaflet.min.js"></script>
+    <script type="text/javascript" src="/libraries/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/libraries/leaflet/angular-leaflet-directive.min.js"></script>
+
+    <!-- App scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

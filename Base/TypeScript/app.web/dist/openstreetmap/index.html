@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>app</title>
+
+    <!-- Library styles -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+
+    <!-- app styles -->
+    <style>
+        body {
+            padding: 20px;
+        }
+        .app-title {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+        }
+        .app-map {
+            height: 500px;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-title">Onderstaande toont de Zorg van de Zaak locatie op OpenStreetMap</div>
+    <div ng-controller="DraggingMarkersController" class="app-map">
+        <leaflet markers="markers" center="center" class="app-map"></leaflet>
+    </div>
+
+    <!-- Library scripts -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="/libraries/leaflet/angular-leaflet-directive.min.js"></script>
+
+    <!-- App scripts -->
+    <script src="/poc/openstreetmap/app.js"></script>
+</body>
+</html>

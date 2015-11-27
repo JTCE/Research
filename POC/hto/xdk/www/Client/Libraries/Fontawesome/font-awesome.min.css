@@ -1,0 +1,56 @@
+
+/* 
+    LET OP
+    Dit is een custom build van de font-awesome.css
+    Het is dus niet zomaar de geminifiseerde versie.
+    Alle iconen en classes die we niet gebruiken zijn verwijderd.
+*/
+
+@font-face {
+  font-family: 'FontAwesome'; /* IE9 Compat Modes */
+  src: url('fontawesome-webfont.eot');
+  src: url('fontawesome-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fontawesome-webfont.woff') format('woff'),
+       url('fontawesome-webfont.woff2') format('woff2'),
+       url('fontawesome-webfont.ttf') format('truetype'),
+       url('fontawesome-webfont.svg') format('svg');
+}
+
+.fa {
+    font-style: normal; /* So we can use the [i] tag. */
+    padding-right: 4px;
+}
+.fa:before {
+    font-family: 'FontAwesome';
+    font-style: normal; /* So we can use the [i] tag. */
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+.fa-5x {
+  font-size: 5em;
+}
+
+/*
+    Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen readers do not read off random characters that represent icons
+*/
+.fa-area-chart:before
+{
+  content: "\f1fe";
+}
+.fa-desktop:before {
+  content: "\f108";
+}
+.fa-laptop:before {
+  content: "\f109";
+}
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: "\f10b";
+}

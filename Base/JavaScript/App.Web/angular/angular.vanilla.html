@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular - jQuery</title>
+    
+    <!-- App styles -->
+    <style>
+        html, body {
+            background-color: #F1F1F1;
+            font-family: "Open Sans", sans-serif;
+            font-size: 13px;
+            height: 100%;
+        }
+
+        a, div, p, h1, h2, h3, h4, h5, h6, input, li, select, span, table, td, textarea, th, tr, ul {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        form {
+            padding-top: 20px;
+        }
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <!-- Library scripts -->
+    <script src="https://code.angularjs.org/1.4.1/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.1/angular-animate.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.1/angular-sanitize.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.1/i18n/angular-locale_nl-nl.js"></script>
+</head>
+<body ng-cloak>
+    <div ng-controller="main">
+        <h1>{{ title }}</h1>
+        <form novalidate="novalidate">
+            <div><input type="number" ng-model="price" /></div>
+            <br />
+            <div>{{ price | currency }}</div>
+        </form>
+    </div>
+    
+    <!-- App scripts -->
+    <script src="angular.vanilla.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<h1>Desktop V5</h1>
+<div class="hto-seperate-block">
+	U bent inglogd als <span class="hto-text-highlight">{{ app.user.name }}</span>
+</div>
+<div class="hto-seperate-block">
+	<button class="btn" ng-click="app.signOut()">Afmelden</button>
+</div>
+<div class="hto-seperate-block hto-card">
+    <div class="hto-h3">Chat</div>
+    <div class="hto-seperate-block">
+        <input class="hto-input-text" ng-model="app.chatMessage" />
+        <br />
+        <button class="btn" ng-click="app.sendChat()">Versturen</button>
+    </div>
+    <div class="hto-seperate-block hto-flex hto-flex-center" ng-repeat="message in app.chatMessages track by $index">
+        <div class="hto-flex-item-fixed"><i class="fa fa-laptop fa-3x"></i></div>
+        <div class="hto-flex-item-fixed">
+            <div class="hto-h4">{{ message.Message }}</div>
+            <div class="hto-text-small">Ontvangen: {{ message.ReceivedDateTime | date : "dd-MM-yyyy HH:mm:ss" }}</div>
+            <div class="hto-text-small">Verstuurd: {{ message.SendDateTime | date : "dd-MM-yyyy HH:mm:ss" }}</div>
+        </div>
+    </div>
+</div>
+<div class="hto-seperate-block" ng-if="app.latitude">
+    De hantekening is gezet op de locatie: (latitude, longitude): ({{ app.latitude }}°, {{ app.longitude }}°).
+</div>
+<div class="hto-seperate-block" ng-if="app.latitude">
+    <img id="locationImage" ng-src="{{ app.locationImageUrl }}" />
+</div>
+<div class="hto-seperate-block" ng-if="app.latitude">
+    <img id="signatureImage" ng-src="{{ app.signatureImageDataUrl }}" />
+</div>
+<div class="hto-seperate-block" ng-if="app.receivedDateTime">
+	Laatst ontvangen bericht: {{ app.receivedDateTime }}
+</div>
+<div class="hto-seperate-block" ng-if="app.sendDateTime">
+	Laatst verzonden bericht: {{ app.sendDateTime }}
+</div>
+<div class="hto-seperate-block" ng-repeat="message in app.messages track by $index">
+	{{ message }}
+</div>

@@ -1,0 +1,13 @@
+﻿{
+  "Compile": {
+    "Extensions": [".ts"],
+    "ExtensionsWithNoOutput": [".d.ts"],
+    "Executable": "compile.bat"
+   },
+  "References": [
+    {"Includes": ["*/poc/json2model/*.ts"], "Excludes": ["*/poc/json2model/*.d.ts"] }
+  ],
+  "Tests": [
+    { "Includes": ["*/poc/json2model/*.ts"], "Excludes": ["*/poc/json2model/*.d.ts"] }
+  ]
+}

@@ -1,0 +1,24 @@
+﻿<div hto-login>
+    <div class="container">
+        <div id="login-wraper">
+            <form class="form login-form">
+                <div class="legend"><span class="blue">{{ app.title }}</span></div>
+
+                <div class="login-form-body">
+                    <label>{{ app.user.nameLabel }}</label>
+                    <input hto-focus ng-model="app.user.name" type="text">
+                    <label>{{ app.user.passwordLabel }}</label>
+                    <input ng-model="app.user.password" type="password">
+                </div>
+
+                <div class="footer">
+                    <label class="rememberMeLabel">
+                        <input type="checkbox" class="rememberMeCheckbox" ng-model="app.user.rememberMe"> Remember me
+                    </label>
+
+                    <button class="btn btn-success" ng-click="app.authenticate()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
