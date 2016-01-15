@@ -1,0 +1,7 @@
+{
+  "name": "ASP.NET",
+  "private": true,
+  "dependencies": {
+    "system.js": "~0.19.16"
+  }
+}
