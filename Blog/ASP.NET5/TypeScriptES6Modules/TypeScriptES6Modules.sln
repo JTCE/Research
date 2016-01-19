@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{54792D99-3CBA-4EE1-9140-62A209D1A098}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A07CD670-9B82-4B99-BCC5-2D3D4AB42DD8}"
@@ -10,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
+=======
+>>>>>>> origin/master
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TypeScriptES6Modules", "src\TypeScriptES6Modules\TypeScriptES6Modules.xproj", "{6C2CCC9E-7D66-46D0-9C31-4D0DEEFDBDEF}"
 EndProject
 Global
@@ -26,7 +29,10 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 	GlobalSection(NestedProjects) = preSolution
 		{6C2CCC9E-7D66-46D0-9C31-4D0DEEFDBDEF} = {54792D99-3CBA-4EE1-9140-62A209D1A098}
 	EndGlobalSection
+=======
+>>>>>>> origin/master
 EndGlobal

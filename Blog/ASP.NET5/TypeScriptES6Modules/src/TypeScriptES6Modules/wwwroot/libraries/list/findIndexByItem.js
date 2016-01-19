@@ -1,5 +1,4 @@
 System.register([], function(exports_1) {
-    "use strict";
     /**
      * Find the first index of an item in a list, by checking on exact equality (===).
      * @param item
