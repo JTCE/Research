@@ -21,11 +21,11 @@ namespace AM
         public void Configure(IApplicationBuilder app)
         {
             app.UseIISPlatformHandler();
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseStaticFiles();
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World 6!");
+            //});
         }
 
         // Entry point for the application.
