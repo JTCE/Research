@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Cycle poc</title>
+</head>
+<body>
+    Cycle poc
+    <script src="/libraries/es5-shim/es5-shim.min.js"></script>
+    <script src="/libraries/es6-shim/es6-shim.min.js"></script>
+    <script src="/libraries/es6-shim/es6-shim.min.js"></script>
+    <script src="/libraries/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            baseURL: '.',
+            packages: {
+                '.': {
+                    defaultExtension: 'js'
+                }
+            },
+            meta: {
+                '*': {
+                    format: 'register'
+                }
+            }
+        });
+        System.import('core/app.js').then(function (app) {
+            app.start();
+        });
+    </script>
+</body>
+</html>

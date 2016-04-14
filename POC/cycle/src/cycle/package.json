@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "name": "ASPNET",
+  "private": true,
+  "dependencies": {
+    "@cycle/core": "*",
+    "@cycle/dom": "*",
+    "es5-shim": "*",
+    "es6-shim": "*",
+    "rx": "*",
+    "systemjs": "*"
+  },
+  "devDependencies": {
+  }
+}
