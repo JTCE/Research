@@ -1,0 +1,12 @@
+{
+	"version": "1.0.0",
+	"name": "Research",
+	"private": true,
+  "devDependencies": {
+    "gulp": ">=3.9.1",
+    "webpack-stream": ">=3.1.0"
+  },
+  "dependencies": {
+    "webpack": ">=1.12.15"
+  }
+}
