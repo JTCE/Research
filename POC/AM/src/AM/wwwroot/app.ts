@@ -1,28 +1,4 @@
-﻿/**
- * Notes:
- * More on typed css => https://www.npmjs.com/package/ts-style
- * Fetch service: https://github.com/ModuleLoader/es6-module-loader/blob/master/src/system-fetch.js
- * - Remove subscriptions, when removing compontent.
- * - Decrease style counter, when 0, remove styles from head.
- */
-module app {
-    var doc: Document = document;
-    
-
-    function start() {
-        console.log("app started.");
-
-        // Create styles
-        var div = document.createElement("div");
-
-        // Show message.
-        var div = document.createElement("div");
-        div.innerText = "Hello world!";
-        doc.body.appendChild(div);
-    }
-
-    start();
-}
+﻿
 
 module app.styles {
     export var colors = {
@@ -44,8 +20,15 @@ module app.components.login {
     };
 
     // TODO: call css.process(styles) to generated scoped css classes.
+}
 
-    
+module app {
+    export var resources = {
+        loginEmail: "E-mailadres",
+        loginForgotPassword: "Wachtwoord vergeten?",
+        loginIntroduction: "Welkom op het Zorg van de Zaak online portaal. Als u zich eerder hebt aangemeld, kunt u met uw logingegevens toegang krijgen tot het portaal. Als u nog niet eerder aangemeld bent, kunt u (mits u hiertoe rechten heeft) zich aanmelden binnen het portaal. Volg daarvoor de instructies na Aanmelden.",
+        loginPassword: "Wachtwoord"
+    };
 }
 
 module am.css {
@@ -67,8 +50,7 @@ module am.css {
                 content += " {";
             }
         }
-
-
+        
         var stylesElement = document.createElement("styles");
         //stylesElement.innerText = content;
         //element.appendChild(stylesElement);
@@ -81,4 +63,79 @@ module am.text {
     export function toSnakeCase(text: string): string {
         return text.split(/(?=[A-Z])/).join("-").toLowerCase();
     }
+}
+
+
+/**
+ * Notes:
+ * More on typed css => https://www.npmjs.com/package/ts-style
+ * Fetch service: https://github.com/ModuleLoader/es6-module-loader/blob/master/src/system-fetch.js
+ * - Remove subscriptions, when removing compontent.
+ * - Decrease style counter, when 0, remove styles from head.
+ */
+module app {
+    var doc: Document = document;
+
+    function renderInfo(login: HTMLDivElement) {
+        var info = document.createElement("button");
+        info.classList.add("info");
+        login.appendChild(info);
+    }
+
+    function renderButtons(login: HTMLDivElement) {
+    }
+
+    function renderEmail(login: HTMLDivElement) {
+        var label = document.createElement("div");
+        label.classList.add("label");
+        label.innerText = app.resources.loginEmail;
+        login.appendChild(label);
+
+        var textbox = document.createElement("input");
+        textbox.classList.add("textbox");
+        login.appendChild(textbox);
+    }
+    
+    function renderIntroduction(login: HTMLDivElement) {
+        var introduction = document.createElement("div");
+        introduction.innerText = app.resources.loginIntroduction;
+        introduction.classList.add("introduction");
+        login.appendChild(introduction);
+    }
+
+    function renderLogin(body: HTMLElement) {
+        var login = document.createElement("div");
+        login.classList.add("login");
+        renderLogo(login);
+        renderInfo(login);
+        renderIntroduction(login);
+        renderEmail(login);
+        renderPassword(login);
+        renderButtons(login);
+        body.appendChild(login);
+    }
+
+    function renderLogo(login: HTMLDivElement) {
+        var logo = document.createElement("div");
+        logo.classList.add("logo");
+        login.appendChild(logo);
+    }
+
+    function renderPassword(login: HTMLDivElement) {
+    }
+
+
+
+    function start() {
+        console.log("app started.");
+
+        renderLogin(doc.body);
+        
+        // Create email label.
+        //var emailLabel = document.createElement("div");
+        //info.classList.add("info");
+        //login.appendChild(info);   
+    }
+
+    start();
 }
