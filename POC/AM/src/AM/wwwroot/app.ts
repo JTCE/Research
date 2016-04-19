@@ -1,5 +1,4 @@
 ﻿
-
 module app.styles {
     export var colors = {
         dark: "rgba(126, 33, 109, 0.95)"
@@ -128,7 +127,7 @@ module app {
 
     function start() {
         console.log("app started.");
-
+        
         renderLogin(doc.body);
         
         // Create email label.

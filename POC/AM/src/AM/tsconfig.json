@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "system",
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,
