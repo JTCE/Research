@@ -5,9 +5,9 @@
     
     interface IInfo {
         counter: number;
-        done: (message: string) => void,
-        moduleName: string,
-        parentModuleInfo?: IInfo,
+        done: (info: IInfo) => void,
+        mod: IModule,
+        parentInfo?: IInfo,
         total: number;
     }
 
@@ -17,7 +17,7 @@
     }
 
     var modules = [
-        { name: "module1", deps: ["module1_1", "module1_2", "module1_3"] },
+        { name: "module1", deps: ["module1_1", "module1_2", "module1_3", "module2", "module3"] },
         { name: "module1_1", deps: [] },
         { name: "module1_2", deps: [] },
         { name: "module1_3", deps: [] },
@@ -40,141 +40,73 @@
 
     var module1 = getModule("module1");
 
-    var info: IInfo = {
+    var rootInfo: IInfo = {
         counter: 0,
         done: endTreeLoading,
-        moduleName: "toSnakeCase",
-        parentModuleInfo: null,
+        mod: module1,
+        parentInfo: null,
         total: module1.deps.length
     };
-    loadModule(module1, info);
+    
+    loadModule(module1, rootInfo);
 
-    
-    
-    function loadDependencies(deps: Array<string>, info: IInfo) {
-        
-        for (var i = 0; i < deps.length; i++) {
-            //var dep = deps[i];
-            //var childInfo: IInfo = {
-            //    counter: 0,
-            //    done: dependencyLoaded,
-            //    moduleName: "toSnakeCase",
-            //    parentModuleInfo: null,
-            //    total: toSnakeCase.deps.length
-            //};
-            //loadDependency(dep, info);
+    function fakeFetchAndLoad(mod: IModule, info: IInfo) {
+
+        var isRootModule = (info.parentInfo === null);
+        var hasDepedencies = (mod.deps.length > 0);
+        if (isRootModule && !hasDepedencies) {
+            info.done(info);
+        }
+
+        if (!isRootModule && !hasDepedencies) {
+            info.done(info);
+            updateParentInfo(info);
+        }
+
+        if (hasDepedencies) {
+            loadDependencies(mod.deps, info);
         }
     }
 
-    function loadModule(module: IModule, info: IInfo) {
-
-        //if (Array.isArray(dep)) {
-        //    var inf: IInfo = {
-        //        counter: 0,
-        //        done: dependencyLoaded,
-        //        total: dep.length
-        //    };
-        //    loadDependencies(dep, inf);
-        //} else {
-        //    setTimeout(function (dep2, info2) {
-        //        info2.counter = info2.counter + 1;
-        //        dependencyLoaded(dep2);
-        //        if (info2.counter === info2.total) {
-        //            info2.done(dep);
-        //        }
-        //        // Check if we are done.
-        //    }, 100, dep, info);
-        //}
+    function updateParentInfo(info: IInfo) {
+        var parentInfo = info.parentInfo;
+        if (parentInfo) {
+            parentInfo.counter += 1;
+            if (parentInfo.counter === parentInfo.total) {
+                parentInfo.done(parentInfo);
+                if (parentInfo.parentInfo) {
+                    updateParentInfo(parentInfo);
+                }
+            }
+        }
     }
 
+    function loadModule(mod: IModule, info: IInfo) {      
+        setTimeout(fakeFetchAndLoad, 100, mod, info);
+    }
     
-    
-    function endTreeLoading(message: string) {
-        console.log("End tree loading: " + message);
+    function loadDependencies(deps: Array<string>, parentInfo: IInfo) {
+        
+        for (var i = 0; i < deps.length; i++) {
+            var dep: string = deps[i];
+            var mod = getModule(dep);
+            var childInfo: IInfo = {
+                counter: 0,
+                done: dependencyLoaded,
+                mod: mod,
+                parentInfo: parentInfo,
+                total: mod.deps.length
+            };
+            loadModule(mod, childInfo);
+        }
     }
 
-    function dependencyLoaded(dep: string) {
-        console.log("Dependency loaded: " + dep);
+    function endTreeLoading(info: IInfo) {
+        console.log("End tree loading: " + info.mod.name);
     }
 
+    function dependencyLoaded(info: IInfo) {
+        console.log("Dependency loaded: " + info.mod.name);
+    }
 })();
 
-
-
-
-
-//interface IModule {
-//    deps: Array<string>
-//}
-
-    //var module_1: IModule = {
-    //    deps: [
-    //        "module_1_1",
-    //        "module_1_2",
-    //        "module_1_3"
-    //    ]
-    //};
-
-    //var module_1_1: IModule = {
-    //    deps: [
-    //    ]
-    //};
-
-    //var module_1_2: IModule = {
-    //    deps: [
-    //    ]
-    //};
-
-    //var module_1_3: IModule = {
-    //    deps: [
-    //    ]
-    //};
-
-    //var module_2: IModule = {
-    //    deps: [
-    //    ]
-    //};
-
-    //var module_3: IModule = {
-    //    deps: [
-    //        "module_3_1",
-    //        "module_3_2"
-    //    ]
-    //};
-
-    //var module_3_1: IModule = {
-    //    deps: [
-    //        "module_3_1_1"
-    //    ]
-    //};
-
-    //var module_3_1_1: IModule = {
-    //    deps: [
-    //    ]
-    //};
-
-    //var module_3_2: IModule = {
-    //    deps: [
-    //    ]
-    //};
-
-    //var toSnakeCase: IModule = {
-    //    deps: [
-    //        "module_1",
-    //        "module_2",
-    //        "module_3"
-    //    ]
-    //};
-
-    //var register = {
-    //    module_1: module_1, 
-    //    module_1_1: module_1_1,
-    //    module_1_2: module_1_2,
-    //    module_1_3: module_1_3,
-    //    module_2: module_2,
-    //    module_3: module_3,
-    //    module_3_1: module_3_1,
-    //    module_3_1_1: module_3_1_1,
-    //    module_3_2: module_3_2,
-    //    toSnakeCase: toSnakeCase
-    //};
