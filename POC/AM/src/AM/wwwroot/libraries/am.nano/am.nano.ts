@@ -1,4 +1,4 @@
-﻿module system.nano {
+﻿module am.nano {
     "use strict";
 
     /**
@@ -89,11 +89,7 @@
         additionalData?: any;
         data: string;
     }
-
-
-
-
-
+    
     var seen = Object.create(null);
     var internalRegistry = Object.create(null);
     var externalRegistry = Object.create(null);
@@ -116,61 +112,93 @@
     function has(name) {
         return !!externalRegistry[name] || !!internalRegistry[name];
     }
+    
+    export function load(name: string, onSuccess: (mod: any) => void) {
+        var endModuleLoading = onSuccess;
+        var normalizedName = normalizeName(name, []);
+        var mod = get(normalizedName);
+        if (mod) {
+            endModuleLoading(mod);
+        } else {
+            loadInternal(name);
+        }
+    }
+
+    function loadInternal(name: string) {
+        var url: string = (System.baseURL || '/') + name + '.js';
+        fetchAndEval(url, function () {
+            var mod = internalRegistry[name];
+            if (!mod) {
+                throw new Error('Error loading module ' + name);
+            }
+            //visitTree(mod.deps, loadInternal
+        });
+    }
+
+    //function loadDependencies(mod: any, info: IDepedenciesLoadInfo) {
+    //    var depsToLoadCount = mod.deps.length;
         
-    function evalModule(result: IFetchSuccessResult) {
-        eval(result.data);
+    //    for (var i = 0; i < depsToLoadCount; i++) {
+    //        var depName = mod.deps[i];
+    //        var dependencyLoaded = (externalRegistry[depName] || internalRegistry[depName]);
+    //        if (dependencyLoaded) {
+                
+    //        } else {
+    //            loadInternal(depName, info);
+    //        }
+    //    }
+    //}
 
-        var handleModuleLoaded = result.additionalData.handleModuleLoaded;
-        var name = result.additionalData.name;
+    // http://www.2ality.com/2012/06/continuation-passing-style.html
 
+    function parMapCps(arrayLike, func, done) {
+        var resultCount = 0;
+        var resultArray = new Array(arrayLike.length);
+        for (var i = 0; i < arrayLike.length; i++) {
+            func(arrayLike[i], i, maybeDone.bind(null, i));  // (*)
+        }
+        function maybeDone(index, result) {
+            resultArray[index] = result;
+            resultCount++;
+            if (resultCount === arrayLike.length) {
+                done(resultArray);
+            }
+        }
+    }
+
+    function done(result) {
+        console.log("RESULT: " + result);  // RESULT: ONE,TWO,THREE
+    }
+
+    
+
+    
+    interface IFetchAndEvalInfo {
+        onFetchAndEvalSuccess: () => void;
+    }
+
+    function fetchAndEval(name: string, onSuccess: any) {
+        var url = (System.baseURL || '/') + name + '.js';
+        var info: IFetchAndEvalInfo = {
+            onFetchAndEvalSuccess: onSuccess
+        };
+        fetch({ url: url, onSuccess: evalModule, additionalData: info });
+    }
+
+    function getModuleFromInternalRegistry(name: string): any {
         var mod = internalRegistry[name];
         if (!mod) {
             throw new Error('Error loading module ' + name);
         }
-
-        // Load and import each dependency.
-        // When all dependencies are succesfully loaded, succeed this 
-        var depsToLoadCount = mod.deps.length;
-
-
-        // Hier moet je iets doen om te bepalen dat alle depencies geladen zijn
-        // daarna kun je handleModuleLoaded aanroepen.
-        // create new info object that holds the counter
-        var info = {
-        };
-        for (var i = 0; i < depsToLoadCount; i++) {
-
-        }
+        return mod;
     }
 
-    function handleDependentModuleLoaded(module: any): void {
+    function evalModule(result: IFetchSuccessResult) {
+        eval(result.data);
+        var info: IFetchAndEvalInfo = result.additionalData;
+        info.onFetchAndEvalSuccess();
     }
-
-    export function load(name, handleModuleLoaded, info) {
-        // Get module.
-        var normalizedName = normalizeName(name, []);
-        var mod = get(normalizedName);
-
-        // End module loading if module found.
-        var moduleLoaded = (mod !== null);
-        if (moduleLoaded) {
-            handleModuleLoaded(mod);
-
-            // Indien dit de laatste dependency van een module was, eindig dan ook de parent!
-            // Je kunt dit bepalen door te kijken naar het info object;
-            // Tevens is het zo dat dit info object de parentHandleFunction bevat.
-        }
-        else {
-            // Fetch and evaluate module
-            var url = (System.baseURL || '/') + name + '.js';
-            var moduleInfo = {
-                handleModuleLoaded: handleModuleLoaded,
-                name: name
-            };
-            fetch({ url: url, onSuccess: evalModule, additionalData: moduleInfo });
-        }
-    }
-
+    
     function normalizeName(child, parentBase) {
         if (child.charAt(0) === '/') {
             child = child.slice(1);
@@ -186,6 +214,7 @@
         }
         return parentBase.concat(parts).join('/');
     }
+
     export function register(name, deps, wrapper) {
         if (Array.isArray(name)) {
             // anounymous module
@@ -256,7 +285,7 @@
 
 var System = System || {
     baseURL: "/",
-    fetch: system.nano.fetch,
-    import: system.nano.load,
-    register: system.nano.register
+    fetch: am.nano.fetch,
+    import: am.nano.load,
+    register: am.nano.register
 };
