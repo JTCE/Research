@@ -3,11 +3,11 @@
 
 (function () {
     
-    interface IInfo {
+    interface ILoadInfo {
         counter: number;
-        done: (info: IInfo) => void,
+        done: (info: ILoadInfo) => void,
         mod: IModule,
-        parentInfo?: IInfo,
+        parentInfo?: ILoadInfo,
         total: number;
     }
 
@@ -40,7 +40,7 @@
 
     var module1 = getModule("module1");
 
-    var rootInfo: IInfo = {
+    var rootInfo: ILoadInfo = {
         counter: 0,
         done: endTreeLoading,
         mod: module1,
@@ -50,7 +50,11 @@
     
     loadModule(module1, rootInfo);
 
-    function fakeFetchAndLoad(mod: IModule, info: IInfo) {
+    function loadModule(mod: IModule, info: ILoadInfo) {
+        setTimeout(fakeFetchAndLoad, 100, mod, info);
+    }
+
+    function fakeFetchAndLoad(mod: IModule, info: ILoadInfo) {
 
         var isRootModule = (info.parentInfo === null);
         var hasDepedencies = (mod.deps.length > 0);
@@ -68,7 +72,7 @@
         }
     }
 
-    function updateParentInfo(info: IInfo) {
+    function updateParentInfo(info: ILoadInfo) {
         var parentInfo = info.parentInfo;
         if (parentInfo) {
             parentInfo.counter += 1;
@@ -81,16 +85,12 @@
         }
     }
 
-    function loadModule(mod: IModule, info: IInfo) {      
-        setTimeout(fakeFetchAndLoad, 100, mod, info);
-    }
-    
-    function loadDependencies(deps: Array<string>, parentInfo: IInfo) {
+    function loadDependencies(deps: Array<string>, parentInfo: ILoadInfo) {
         
         for (var i = 0; i < deps.length; i++) {
             var dep: string = deps[i];
             var mod = getModule(dep);
-            var childInfo: IInfo = {
+            var childInfo: ILoadInfo = {
                 counter: 0,
                 done: dependencyLoaded,
                 mod: mod,
@@ -101,11 +101,11 @@
         }
     }
 
-    function endTreeLoading(info: IInfo) {
+    function endTreeLoading(info: ILoadInfo) {
         console.log("End tree loading: " + info.mod.name);
     }
 
-    function dependencyLoaded(info: IInfo) {
+    function dependencyLoaded(info: ILoadInfo) {
         console.log("Dependency loaded: " + info.mod.name);
     }
 })();

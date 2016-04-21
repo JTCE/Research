@@ -1,6 +1,12 @@
-﻿module am.nano {
+﻿
+/**
+ *  The am.nano module can be used to load ES6 modules.
+ *  It is based on: https://github.com/caridy/es6-micro-loader/blob/master/dist/system-polyfill.js
+ *  
+ */
+module am.nano {
     "use strict";
-
+    
     /**
       * Inspired by: https://github.com/ModuleLoader/es6-module-loader/blob/master/src/system-fetch.js
       *  - without XDomainRequest support
@@ -71,24 +77,6 @@
 
         xhr.send(null);
     }
-
-    export interface IFetchErrorResult {
-        additionalData?: any;
-        error: Error;
-    }
-
-    export interface IFetchOptions {
-        additionalData?: any;
-        authorization?: boolean;
-        onError?: (result: IFetchErrorResult) => void; // When not supplied, the error is thrown.
-        onSuccess: (result: IFetchSuccessResult) => void;
-        url: string;
-    }
-
-    export interface IFetchSuccessResult {
-        additionalData?: any;
-        data: string;
-    }
     
     var seen = Object.create(null);
     var internalRegistry = Object.create(null);
@@ -114,77 +102,37 @@
     }
     
     export function load(name: string, onSuccess: (mod: any) => void) {
-        var endModuleLoading = onSuccess;
+        var endTreeLoading = onSuccess;
         var normalizedName = normalizeName(name, []);
-        var mod = get(normalizedName);
-        if (mod) {
-            endModuleLoading(mod);
+
+        var moduleAsCode = get(normalizedName);
+        if (moduleAsCode) {
+            endTreeLoading(moduleAsCode);
         } else {
-            loadInternal(name);
+            
+            // To determine, "if all dependencies are loaded", this "rootInfo" object will be passed to and updated during the load process. 
+            var rootInfo: ILoadInfo = {
+                counter: 0,
+                done: endTreeLoading,
+                mod: null,
+                normalizedName: normalizedName,
+                parentInfo: null,
+                total: 0
+            };
+
+            fetchAndEval(rootInfo);
         }
     }
 
-    function loadInternal(name: string) {
-        var url: string = (System.baseURL || '/') + name + '.js';
-        fetchAndEval(url, function () {
-            var mod = internalRegistry[name];
-            if (!mod) {
-                throw new Error('Error loading module ' + name);
-            }
-            //visitTree(mod.deps, loadInternal
+    function fetchAndEval(info: ILoadInfo) {
+        var url = (System.baseURL || '/') + info.normalizedName + '.js';
+        fetch({
+            url: url,
+            onSuccess: evalModule,
+            additionalData: info
         });
     }
-
-    //function loadDependencies(mod: any, info: IDepedenciesLoadInfo) {
-    //    var depsToLoadCount = mod.deps.length;
         
-    //    for (var i = 0; i < depsToLoadCount; i++) {
-    //        var depName = mod.deps[i];
-    //        var dependencyLoaded = (externalRegistry[depName] || internalRegistry[depName]);
-    //        if (dependencyLoaded) {
-                
-    //        } else {
-    //            loadInternal(depName, info);
-    //        }
-    //    }
-    //}
-
-    // http://www.2ality.com/2012/06/continuation-passing-style.html
-
-    function parMapCps(arrayLike, func, done) {
-        var resultCount = 0;
-        var resultArray = new Array(arrayLike.length);
-        for (var i = 0; i < arrayLike.length; i++) {
-            func(arrayLike[i], i, maybeDone.bind(null, i));  // (*)
-        }
-        function maybeDone(index, result) {
-            resultArray[index] = result;
-            resultCount++;
-            if (resultCount === arrayLike.length) {
-                done(resultArray);
-            }
-        }
-    }
-
-    function done(result) {
-        console.log("RESULT: " + result);  // RESULT: ONE,TWO,THREE
-    }
-
-    
-
-    
-    interface IFetchAndEvalInfo {
-        onFetchAndEvalSuccess: () => void;
-    }
-
-    function fetchAndEval(name: string, onSuccess: any) {
-        var url = (System.baseURL || '/') + name + '.js';
-        var info: IFetchAndEvalInfo = {
-            onFetchAndEvalSuccess: onSuccess
-        };
-        fetch({ url: url, onSuccess: evalModule, additionalData: info });
-    }
-
     function getModuleFromInternalRegistry(name: string): any {
         var mod = internalRegistry[name];
         if (!mod) {
@@ -195,10 +143,92 @@
 
     function evalModule(result: IFetchSuccessResult) {
         eval(result.data);
-        var info: IFetchAndEvalInfo = result.additionalData;
-        info.onFetchAndEvalSuccess();
+        
+        var info: ILoadInfo = result.additionalData;
+
+        if (anonymousEntry) {
+            // This loaded module was an anonymous module, now register it as an named module.
+            System.register(info.normalizedName, anonymousEntry[0], anonymousEntry[1]);
+            anonymousEntry = undefined;
+        }
+        
+
+        var mod: IModule = getModuleFromInternalRegistry(info.normalizedName);
+        info.mod = mod;
+        info.total = mod.deps.length;
+        handleLoadedModule(info);
     }
-    
+
+    function handleLoadedModule(info: ILoadInfo) {
+        var mod = info.mod;
+        var isRootModule = (info.parentInfo === null);
+        var hasDepedencies = (mod.deps.length > 0);
+        var shouldExecuteDone = (
+            ((isRootModule && !hasDepedencies) || (!isRootModule && !hasDepedencies))
+            && info.done
+        );
+        if (shouldExecuteDone) {
+            var moduleAsCode = get(info.normalizedName);
+            info.done(moduleAsCode);
+        }
+
+        if (!isRootModule && !hasDepedencies) {
+            updateParentInfo(info);
+        }
+
+        if (hasDepedencies) {
+            loadDependencies(mod.deps, info);
+        }
+    }
+
+    function loadDependencies(deps: Array<string>, parentInfo: ILoadInfo) {
+        for (var i = 0; i < deps.length; i++) {
+            var dep: string = deps[i];
+            loadDependency(dep, parentInfo);
+        }
+    }
+
+    function loadDependency(name: string, parentInfo: ILoadInfo) {
+        var normalizedName = normalizeName(name, []);
+
+        var childInfo: ILoadInfo = {
+            counter: 0,
+            done: dependencyLoaded,
+            mod: null,
+            normalizedName: normalizedName,
+            parentInfo: parentInfo,
+            total: 0
+        };
+
+        var mod = get(normalizedName);
+        if (mod) {
+            childInfo.mod = mod;
+            handleLoadedModule(childInfo);
+        } else {
+            fetchAndEval(childInfo);
+        }
+    }
+
+    function dependencyLoaded(mod: any) {
+        console.log("Dependency loaded");
+    }
+
+    function updateParentInfo(info: ILoadInfo) {
+        var parentInfo = info.parentInfo;
+        if (parentInfo) {
+            parentInfo.counter += 1;
+            if (parentInfo.counter === parentInfo.total) {
+                var moduleAsCode = get(parentInfo.normalizedName);
+                if (parentInfo.done) {
+                    parentInfo.done(moduleAsCode);
+                }
+                if (parentInfo.parentInfo) {
+                    updateParentInfo(parentInfo);
+                }
+            }
+        }
+    }
+
     function normalizeName(child, parentBase) {
         if (child.charAt(0) === '/') {
             child = child.slice(1);
