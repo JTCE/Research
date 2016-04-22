@@ -34,12 +34,7 @@ gulp.task("jshint", function () {
 *   The following files will be reloaded, when one of the "watched" files had changed.
 */
 gulp.task('reload', function () {
-    gulp.src([
-        "wwwroot/index.html"
-    ])
-    .on('error', plumberErrorHandler)
-    .pipe(gulp.dest('dist'))
-    .pipe(livereload());
+    livereload.reload("index.html");
 });
 
 /**
@@ -52,5 +47,5 @@ gulp.task("watch", function () {
         "wwwroot/**/*.html",
         "wwwroot/**/*.js",
         "wwwroot/**/*.css"
-    ], ["reload_rli_spike", "reload_test_runner"]);
+    ], ["reload"]);
 });

@@ -14,12 +14,18 @@
     <!-- Angular is used for rendering and because everything is rendered by angular, scripts can go in the head. -->
     <script src="libraries/angular/angular.min.js"></script>
 
+    <!-- The am.loader is used to load ES6 modules. -->
+    <script src="libraries/am/loader/loader.js"></script>
+
     <!-- The angular app must be loaded in the head, because we bootstrap angular for IE8 in the html element. -->
     <script src="app.angular.js"></script>
 
-    <script src="login/login.js"></script>
+    <!-- Load root ES6 module and start the application. -->
+    <script>
+        System.import("./app.start");
+    </script>
 </head>
-<body ng-controller="LoginController">
-    <div login class="login-container"></div>
+<body>
+    <div login></div>
 </body>
 </html>

@@ -1,87 +1,46 @@
 ﻿
 /**
- *  The am.nano module can be used to load ES6 modules.
+ *  The am.loader can be used to load ES6 modules.
  *  It is based on: https://github.com/caridy/es6-micro-loader/blob/master/dist/system-polyfill.js
- *  
+ *  Because it is used to load ES6 modules, by definition am.loader can't be a ES6 module.
  */
-module am.nano {
+module am.loader {
     "use strict";
-    
-    /**
-      * Inspired by: https://github.com/ModuleLoader/es6-module-loader/blob/master/src/system-fetch.js
-      *  - without XDomainRequest support
-      */
-    export function fetch(options: IFetchOptions): void {
-        var authorization = options.authorization;
-        var onError = options.onError;
-        var url = options.url;
-        var xhr = new XMLHttpRequest();
-
-        function load() {
-            var result: IFetchSuccessResult = {
-                additionalData: options.additionalData,
-                data: xhr.responseText
-            };
-            options.onSuccess(result);
-        }
-
-        function error() {
-            var err = new Error('XHR error' + (xhr.status ? ' (' + xhr.status + (xhr.statusText ? ' ' + xhr.statusText : '') + ')' : '') + ' loading ' + url);
-
-            var errorHandlerSupplied = (typeof onError === "function")
-            if (errorHandlerSupplied) {
-                var result: IFetchErrorResult = {
-                    additionalData: options.additionalData,
-                    error: err
-                };
-                onError(result);
-            } else {
-                throw err;
-            }
-        }
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                // in Chrome on file:/// URLs, status is 0
-                if (xhr.status == 0) {
-                    if (xhr.responseText) {
-                        load();
-                    }
-                    else {
-                        // when responseText is empty, wait for load or error event
-                        // to inform if it is a 404 or empty file
-                        xhr.addEventListener('error', error);
-                        xhr.addEventListener('load', load);
-                    }
-                }
-                else if (xhr.status === 200) {
-                    load();
-                }
-                else {
-                    error();
-                }
-            }
-        };
-        xhr.open("GET", url, true);
-
-        if (xhr.setRequestHeader) {
-            xhr.setRequestHeader('Accept', 'application/x-es-module, */*');
-            // can set "authorization: true" to enable withCredentials only
-            if (authorization) {
-                if (typeof authorization == 'string') {
-                    xhr.setRequestHeader('Authorization', authorization.toString());
-                }
-                xhr.withCredentials = true;
-            }
-        }
-
-        xhr.send(null);
-    }
     
     var seen = Object.create(null);
     var internalRegistry = Object.create(null);
     var externalRegistry = Object.create(null);
     var anonymousEntry;
+
+    var headEl = document.getElementsByTagName('head')[0],
+        ie = /MSIE/.test(navigator.userAgent);
+
+    /**
+     * A script tag is used to fetch and eval sources,
+     * because fetching the data directly will not allow developers to see / debug the sources in the browser.
+     */
+    function createScriptNode(src: string, callback: (info: ILoadInfo) => void, info: ILoadInfo) {
+        var node = document.createElement('script');
+        // use async=false for ordered async?
+        // parallel-load-serial-execute http://wiki.whatwg.org/wiki/Dynamic_Script_Execution_Order
+        if (node.async) {
+            node.async = false;
+        }
+        if (ie) {
+            node["onreadystatechange"] = function () {
+                if (/loaded|complete/.test(this.readyState)) {
+                    this.onreadystatechange = null;
+                    callback(info);
+                }
+            };
+        } else {
+            node.onload = node.onerror = function () {
+                callback(info);
+            };
+        }
+        node.setAttribute('src', src);
+        headEl.appendChild(node);
+    }
 
     function ensuredExecute(name) {
         var mod = internalRegistry[name];
@@ -106,7 +65,7 @@ module am.nano {
         var normalizedName = normalizeName(name, []);
 
         var moduleAsCode = get(normalizedName);
-        if (moduleAsCode) {
+        if (moduleAsCode && endTreeLoading) {
             endTreeLoading(moduleAsCode);
         } else {
             
@@ -126,11 +85,7 @@ module am.nano {
 
     function fetchAndEval(info: ILoadInfo) {
         var url = (System.baseURL || '/') + info.normalizedName + '.js';
-        fetch({
-            url: url,
-            onSuccess: evalModule,
-            additionalData: info
-        });
+        createScriptNode(url, onScriptLoad, info);
     }
         
     function getModuleFromInternalRegistry(name: string): any {
@@ -141,18 +96,13 @@ module am.nano {
         return mod;
     }
 
-    function evalModule(result: IFetchSuccessResult) {
-        eval(result.data);
-        
-        var info: ILoadInfo = result.additionalData;
-
+    function onScriptLoad(info: ILoadInfo) {      
         if (anonymousEntry) {
-            // This loaded module was an anonymous module, now register it as an named module.
+            // Register as an named module.
             System.register(info.normalizedName, anonymousEntry[0], anonymousEntry[1]);
             anonymousEntry = undefined;
         }
         
-
         var mod: IModule = getModuleFromInternalRegistry(info.normalizedName);
         info.mod = mod;
         info.total = mod.deps.length;
@@ -165,11 +115,12 @@ module am.nano {
         var hasDepedencies = (mod.deps.length > 0);
         var shouldExecuteDone = (
             ((isRootModule && !hasDepedencies) || (!isRootModule && !hasDepedencies))
-            && info.done
         );
         if (shouldExecuteDone) {
             var moduleAsCode = get(info.normalizedName);
-            info.done(moduleAsCode);
+            if (info.done) {
+                info.done(moduleAsCode);
+            }      
         }
 
         if (!isRootModule && !hasDepedencies) {
@@ -193,7 +144,7 @@ module am.nano {
 
         var childInfo: ILoadInfo = {
             counter: 0,
-            done: dependencyLoaded,
+            done: null,
             mod: null,
             normalizedName: normalizedName,
             parentInfo: parentInfo,
@@ -207,10 +158,6 @@ module am.nano {
         } else {
             fetchAndEval(childInfo);
         }
-    }
-
-    function dependencyLoaded(mod: any) {
-        console.log("Dependency loaded");
     }
 
     function updateParentInfo(info: ILoadInfo) {
@@ -315,7 +262,6 @@ module am.nano {
 
 var System = System || {
     baseURL: "/",
-    fetch: am.nano.fetch,
-    import: am.nano.load,
-    register: am.nano.register
+    import: am.loader.load,
+    register: am.loader.register
 };

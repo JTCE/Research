@@ -1,5 +1,4 @@
-﻿declare module am.nano {
-
+﻿declare module am.fetch {
     interface IFetchAndEvalInfo {
         onFetchAndEvalSuccess: () => void;
     }
@@ -20,23 +19,5 @@
     interface IFetchSuccessResult {
         additionalData?: any;
         data: string;
-    }
-
-    interface ILoadInfo {
-        counter: number;
-        done: (info: ILoadInfo) => void,
-        mod: IModule,
-        normalizedName: string;
-        parentInfo?: ILoadInfo,
-        total: number;
-    }
-
-    interface IModule {
-        deps: Array<string>;
-        dependants: any;
-        execute: () => void;
-        proxy: any;
-        update: (moduleName: any, moduleObj: any) => void;
-        values: any;
-    }   
+    }  
 }

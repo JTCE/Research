@@ -1,83 +1,45 @@
 /**
- *  The am.nano module can be used to load ES6 modules.
+ *  The am.loader can be used to load ES6 modules.
  *  It is based on: https://github.com/caridy/es6-micro-loader/blob/master/dist/system-polyfill.js
- *
+ *  Because it is used to load ES6 modules, by definition am.loader can't be a ES6 module.
  */
 var am;
 (function (am) {
-    var nano;
-    (function (nano) {
+    var loader;
+    (function (loader) {
         "use strict";
-        /**
-          * Inspired by: https://github.com/ModuleLoader/es6-module-loader/blob/master/src/system-fetch.js
-          *  - without XDomainRequest support
-          */
-        function fetch(options) {
-            var authorization = options.authorization;
-            var onError = options.onError;
-            var url = options.url;
-            var xhr = new XMLHttpRequest();
-            function load() {
-                var result = {
-                    additionalData: options.additionalData,
-                    data: xhr.responseText
-                };
-                options.onSuccess(result);
-            }
-            function error() {
-                var err = new Error('XHR error' + (xhr.status ? ' (' + xhr.status + (xhr.statusText ? ' ' + xhr.statusText : '') + ')' : '') + ' loading ' + url);
-                var errorHandlerSupplied = (typeof onError === "function");
-                if (errorHandlerSupplied) {
-                    var result = {
-                        additionalData: options.additionalData,
-                        error: err
-                    };
-                    onError(result);
-                }
-                else {
-                    throw err;
-                }
-            }
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    // in Chrome on file:/// URLs, status is 0
-                    if (xhr.status == 0) {
-                        if (xhr.responseText) {
-                            load();
-                        }
-                        else {
-                            // when responseText is empty, wait for load or error event
-                            // to inform if it is a 404 or empty file
-                            xhr.addEventListener('error', error);
-                            xhr.addEventListener('load', load);
-                        }
-                    }
-                    else if (xhr.status === 200) {
-                        load();
-                    }
-                    else {
-                        error();
-                    }
-                }
-            };
-            xhr.open("GET", url, true);
-            if (xhr.setRequestHeader) {
-                xhr.setRequestHeader('Accept', 'application/x-es-module, */*');
-                // can set "authorization: true" to enable withCredentials only
-                if (authorization) {
-                    if (typeof authorization == 'string') {
-                        xhr.setRequestHeader('Authorization', authorization.toString());
-                    }
-                    xhr.withCredentials = true;
-                }
-            }
-            xhr.send(null);
-        }
-        nano.fetch = fetch;
         var seen = Object.create(null);
         var internalRegistry = Object.create(null);
         var externalRegistry = Object.create(null);
         var anonymousEntry;
+        var headEl = document.getElementsByTagName('head')[0], ie = /MSIE/.test(navigator.userAgent);
+        /**
+         * A script tag is used to fetch and eval sources,
+         * because fetching the data directly will not allow developers to see / debug the sources in the browser.
+         */
+        function createScriptNode(src, callback, info) {
+            var node = document.createElement('script');
+            // use async=false for ordered async?
+            // parallel-load-serial-execute http://wiki.whatwg.org/wiki/Dynamic_Script_Execution_Order
+            if (node.async) {
+                node.async = false;
+            }
+            if (ie) {
+                node["onreadystatechange"] = function () {
+                    if (/loaded|complete/.test(this.readyState)) {
+                        this.onreadystatechange = null;
+                        callback(info);
+                    }
+                };
+            }
+            else {
+                node.onload = node.onerror = function () {
+                    callback(info);
+                };
+            }
+            node.setAttribute('src', src);
+            headEl.appendChild(node);
+        }
         function ensuredExecute(name) {
             var mod = internalRegistry[name];
             if (mod && !seen[name]) {
@@ -97,7 +59,7 @@ var am;
             var endTreeLoading = onSuccess;
             var normalizedName = normalizeName(name, []);
             var moduleAsCode = get(normalizedName);
-            if (moduleAsCode) {
+            if (moduleAsCode && endTreeLoading) {
                 endTreeLoading(moduleAsCode);
             }
             else {
@@ -113,14 +75,10 @@ var am;
                 fetchAndEval(rootInfo);
             }
         }
-        nano.load = load;
+        loader.load = load;
         function fetchAndEval(info) {
             var url = (System.baseURL || '/') + info.normalizedName + '.js';
-            fetch({
-                url: url,
-                onSuccess: evalModule,
-                additionalData: info
-            });
+            createScriptNode(url, onScriptLoad, info);
         }
         function getModuleFromInternalRegistry(name) {
             var mod = internalRegistry[name];
@@ -129,11 +87,9 @@ var am;
             }
             return mod;
         }
-        function evalModule(result) {
-            eval(result.data);
-            var info = result.additionalData;
+        function onScriptLoad(info) {
             if (anonymousEntry) {
-                // This loaded module was an anonymous module, now register it as an named module.
+                // Register as an named module.
                 System.register(info.normalizedName, anonymousEntry[0], anonymousEntry[1]);
                 anonymousEntry = undefined;
             }
@@ -146,11 +102,12 @@ var am;
             var mod = info.mod;
             var isRootModule = (info.parentInfo === null);
             var hasDepedencies = (mod.deps.length > 0);
-            var shouldExecuteDone = (((isRootModule && !hasDepedencies) || (!isRootModule && !hasDepedencies))
-                && info.done);
+            var shouldExecuteDone = (((isRootModule && !hasDepedencies) || (!isRootModule && !hasDepedencies)));
             if (shouldExecuteDone) {
                 var moduleAsCode = get(info.normalizedName);
-                info.done(moduleAsCode);
+                if (info.done) {
+                    info.done(moduleAsCode);
+                }
             }
             if (!isRootModule && !hasDepedencies) {
                 updateParentInfo(info);
@@ -169,7 +126,7 @@ var am;
             var normalizedName = normalizeName(name, []);
             var childInfo = {
                 counter: 0,
-                done: dependencyLoaded,
+                done: null,
                 mod: null,
                 normalizedName: normalizedName,
                 parentInfo: parentInfo,
@@ -183,9 +140,6 @@ var am;
             else {
                 fetchAndEval(childInfo);
             }
-        }
-        function dependencyLoaded(mod) {
-            console.log("Dependency loaded");
         }
         function updateParentInfo(info) {
             var parentInfo = info.parentInfo;
@@ -279,15 +233,14 @@ var am;
                 return value;
             });
         }
-        nano.register = register;
+        loader.register = register;
         function set(name, values) {
             externalRegistry[name] = values;
         }
-    })(nano = am.nano || (am.nano = {}));
+    })(loader = am.loader || (am.loader = {}));
 })(am || (am = {}));
 var System = System || {
     baseURL: "/",
-    fetch: am.nano.fetch,
-    import: am.nano.load,
-    register: am.nano.register
+    import: am.loader.load,
+    register: am.loader.register
 };
