@@ -82,11 +82,13 @@
 </head>
 <body>
 
-    <!--<script src="libraries/system.nano/system.nano.dist.js"></script>-->
-    <!--<script>
-        debugger;
-    </script>-->
-    <!--<script src="/app.js"></script>-->
-    <script src="repl.js"></script>
+    <script src="libraries/am.nano/am.nano.js"></script>
+    <script>        
+        System.import("./module1", function (mod) {
+            mod.runModule1();
+        });
+    </script>
+    <!--<script src="app.js"></script>-->
+    <!--<script src="repl.js"></script>-->
 </body>
 </html>

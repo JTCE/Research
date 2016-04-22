@@ -1,3 +1,8 @@
+/**
+ *  The am.nano module can be used to load ES6 modules.
+ *  It is based on: https://github.com/caridy/es6-micro-loader/blob/master/dist/system-polyfill.js
+ *
+ */
 var am;
 (function (am) {
     var nano;
@@ -89,62 +94,33 @@ var am;
             return !!externalRegistry[name] || !!internalRegistry[name];
         }
         function load(name, onSuccess) {
-            var endModuleLoading = onSuccess;
+            var endTreeLoading = onSuccess;
             var normalizedName = normalizeName(name, []);
-            var mod = get(normalizedName);
-            if (mod) {
-                endModuleLoading(mod);
+            var moduleAsCode = get(normalizedName);
+            if (moduleAsCode) {
+                endTreeLoading(moduleAsCode);
             }
             else {
-                loadInternal(name);
+                // To determine, "if all dependencies are loaded", this "rootInfo" object will be passed to and updated during the load process. 
+                var rootInfo = {
+                    counter: 0,
+                    done: endTreeLoading,
+                    mod: null,
+                    normalizedName: normalizedName,
+                    parentInfo: null,
+                    total: 0
+                };
+                fetchAndEval(rootInfo);
             }
         }
         nano.load = load;
-        function loadInternal(name) {
-            var url = (System.baseURL || '/') + name + '.js';
-            fetchAndEval(url, function () {
-                var mod = internalRegistry[name];
-                if (!mod) {
-                    throw new Error('Error loading module ' + name);
-                }
-                //visitTree(mod.deps, loadInternal
+        function fetchAndEval(info) {
+            var url = (System.baseURL || '/') + info.normalizedName + '.js';
+            fetch({
+                url: url,
+                onSuccess: evalModule,
+                additionalData: info
             });
-        }
-        //function loadDependencies(mod: any, info: IDepedenciesLoadInfo) {
-        //    var depsToLoadCount = mod.deps.length;
-        //    for (var i = 0; i < depsToLoadCount; i++) {
-        //        var depName = mod.deps[i];
-        //        var dependencyLoaded = (externalRegistry[depName] || internalRegistry[depName]);
-        //        if (dependencyLoaded) {
-        //        } else {
-        //            loadInternal(depName, info);
-        //        }
-        //    }
-        //}
-        // http://www.2ality.com/2012/06/continuation-passing-style.html
-        function parMapCps(arrayLike, func, done) {
-            var resultCount = 0;
-            var resultArray = new Array(arrayLike.length);
-            for (var i = 0; i < arrayLike.length; i++) {
-                func(arrayLike[i], i, maybeDone.bind(null, i)); // (*)
-            }
-            function maybeDone(index, result) {
-                resultArray[index] = result;
-                resultCount++;
-                if (resultCount === arrayLike.length) {
-                    done(resultArray);
-                }
-            }
-        }
-        function done(result) {
-            console.log("RESULT: " + result); // RESULT: ONE,TWO,THREE
-        }
-        function fetchAndEval(name, onSuccess) {
-            var url = (System.baseURL || '/') + name + '.js';
-            var info = {
-                onFetchAndEvalSuccess: onSuccess
-            };
-            fetch({ url: url, onSuccess: evalModule, additionalData: info });
         }
         function getModuleFromInternalRegistry(name) {
             var mod = internalRegistry[name];
@@ -156,7 +132,75 @@ var am;
         function evalModule(result) {
             eval(result.data);
             var info = result.additionalData;
-            info.onFetchAndEvalSuccess();
+            if (anonymousEntry) {
+                // This loaded module was an anonymous module, now register it as an named module.
+                System.register(info.normalizedName, anonymousEntry[0], anonymousEntry[1]);
+                anonymousEntry = undefined;
+            }
+            var mod = getModuleFromInternalRegistry(info.normalizedName);
+            info.mod = mod;
+            info.total = mod.deps.length;
+            handleLoadedModule(info);
+        }
+        function handleLoadedModule(info) {
+            var mod = info.mod;
+            var isRootModule = (info.parentInfo === null);
+            var hasDepedencies = (mod.deps.length > 0);
+            var shouldExecuteDone = (((isRootModule && !hasDepedencies) || (!isRootModule && !hasDepedencies))
+                && info.done);
+            if (shouldExecuteDone) {
+                var moduleAsCode = get(info.normalizedName);
+                info.done(moduleAsCode);
+            }
+            if (!isRootModule && !hasDepedencies) {
+                updateParentInfo(info);
+            }
+            if (hasDepedencies) {
+                loadDependencies(mod.deps, info);
+            }
+        }
+        function loadDependencies(deps, parentInfo) {
+            for (var i = 0; i < deps.length; i++) {
+                var dep = deps[i];
+                loadDependency(dep, parentInfo);
+            }
+        }
+        function loadDependency(name, parentInfo) {
+            var normalizedName = normalizeName(name, []);
+            var childInfo = {
+                counter: 0,
+                done: dependencyLoaded,
+                mod: null,
+                normalizedName: normalizedName,
+                parentInfo: parentInfo,
+                total: 0
+            };
+            var mod = get(normalizedName);
+            if (mod) {
+                childInfo.mod = mod;
+                handleLoadedModule(childInfo);
+            }
+            else {
+                fetchAndEval(childInfo);
+            }
+        }
+        function dependencyLoaded(mod) {
+            console.log("Dependency loaded");
+        }
+        function updateParentInfo(info) {
+            var parentInfo = info.parentInfo;
+            if (parentInfo) {
+                parentInfo.counter += 1;
+                if (parentInfo.counter === parentInfo.total) {
+                    var moduleAsCode = get(parentInfo.normalizedName);
+                    if (parentInfo.done) {
+                        parentInfo.done(moduleAsCode);
+                    }
+                    if (parentInfo.parentInfo) {
+                        updateParentInfo(parentInfo);
+                    }
+                }
+            }
         }
         function normalizeName(child, parentBase) {
             if (child.charAt(0) === '/') {

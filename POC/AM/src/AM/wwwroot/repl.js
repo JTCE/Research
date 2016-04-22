@@ -29,6 +29,9 @@
         total: module1.deps.length
     };
     loadModule(module1, rootInfo);
+    function loadModule(mod, info) {
+        setTimeout(fakeFetchAndLoad, 100, mod, info);
+    }
     function fakeFetchAndLoad(mod, info) {
         var isRootModule = (info.parentInfo === null);
         var hasDepedencies = (mod.deps.length > 0);
@@ -54,9 +57,6 @@
                 }
             }
         }
-    }
-    function loadModule(mod, info) {
-        setTimeout(fakeFetchAndLoad, 100, mod, info);
     }
     function loadDependencies(deps, parentInfo) {
         for (var i = 0; i < deps.length; i++) {
