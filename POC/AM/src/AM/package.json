@@ -9,5 +9,6 @@
     "gulp-livereload": ">=3.8.1"
   },
   "dependencies": {
+    "angular": "1.2.29"
   }
 }
