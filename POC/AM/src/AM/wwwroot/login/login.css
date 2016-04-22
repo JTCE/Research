@@ -1,0 +1,44 @@
+﻿.login-label {
+    display: inline-block;
+    text-align: right;
+    width: 257px;
+}
+
+.login-textbox {
+    display: inline-block;
+    margin-right: 10px;
+    width: 224px;
+}
+
+.login-container {
+    background: rgba(126, 33, 109, 0.95);
+    box-shadow: 10px 10px 50px #333333;
+    color: rgb(255, 255, 255);
+    margin: 158px auto 30px auto;
+    min-height: 360px;
+    position: relative;
+    width: 526px;
+}
+
+.login-logo {
+    background: url('images/logo.png');
+    height: 57px;
+    width: 242px;
+    margin: 17px 0 0 17px;
+    display: inline-block;
+}
+
+.login-info {
+    background: url('images/info.png');
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+}
+
+.login-introduction {
+    line-height: 20px;
+    margin: 17px 20px 17px 20px;
+}

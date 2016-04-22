@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -7,87 +7,21 @@
     <meta name="description" content="AM">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <style>
-        html {
-            background: url('images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
+    
 
-        a, button, div, form, p, h1, h2, h3, h4, h5, h6, input, li, select, span, table, td, textarea, th, tr, ul {
-            border: 0;
-            border-image-width: 0;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            font-family: sans-serif;
-            font-size: 13px;
-            margin: 0;
-            outline: 0;
-            padding: 0;
-        }
-
-        button {
-            cursor: pointer;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        .label {
-            display: inline-block;
-            text-align: right;
-            width: 257px;
-        }
-
-        .textbox {
-            display: inline-block;
-            margin-right: 10px;
-            width: 224px;
-        }
-
-        .login {
-            background: rgba(126, 33, 109, 0.95);
-            box-shadow: 10px 10px 50px #333333;
-            color: rgb(255, 255, 255);
-            margin: 158px auto 30px auto;
-            min-height: 360px;
-            position: relative;
-            width: 526px;
-        }
-
-        .logo {
-            background: url('images/logo.png');
-            height: 57px;
-            width: 242px;
-            margin: 17px 0 0 17px;
-            display: inline-block;
-        }
-
-        .info {
-            background: url('images/info.png');
-            display: inline-block;
-            height: 20px;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            width: 20px;
-        }
-
-        .introduction {
-            line-height: 20px;
-            margin: 17px 20px 17px 20px;
-        }
-    </style>
-</head>
-<body>
-
+    <!-- Because everything is rendered by angular, scripts can go in the head. -->
     <script src="libraries/am.nano/am.nano.js"></script>
-    <script>        
+
+    <script>
         System.import("./module1", function (mod) {
             mod.runModule1();
         });
     </script>
+</head>
+<body>
+
+    
+    
     <!--<script src="app.js"></script>-->
     <!--<script src="repl.js"></script>-->
 </body>
