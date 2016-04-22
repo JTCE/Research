@@ -34,7 +34,7 @@ gulp.task("jshint", function () {
 *   The following files will be reloaded, when one of the "watched" files had changed.
 */
 gulp.task('reload', function () {
-    livereload.reload("index.html");
+    livereload.reload("/");
 });
 
 /**
