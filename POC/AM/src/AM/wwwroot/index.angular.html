@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AM</title>
+    <meta name="description" content="AM">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="login/login.css">
+
+    <!-- Angular is used for rendering and because everything is rendered by angular, scripts can go in the head. -->
+    <script src="libraries/angular/angular.min.js"></script>
+
+    <!-- The angular app must be loaded in the head, because we bootstrap angular for IE8 in the html element. -->
+    <script src="app.angular.js"></script>
+
+    <script src="login/login.js"></script>
+</head>
+<body ng-controller="LoginController">
+    <div login class="login-container"></div>
+</body>
+</html>

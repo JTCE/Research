@@ -1,17 +1,12 @@
-﻿import { login } from "./login/login"
-
-//function renderLogin() {
-//    var element = document.createElement("div");
-//    var attribute = document.createAttribute("login");
-//    element.setAttributeNode(attribute);
-//    document.body.appendChild(element);
-//}
+﻿
+// Adjust loader so .html will be loaded and converted to json.
+// Adjust loader so .css will be loaded and converted to json.
+// Create a gulp task that creates bundles foreach component including html and css.
 
 export function start() {
     console.log("App started!");
     // renderLogin();
-    var l = login;
-    debugger; 
+   
 }
 
 start();
