@@ -3,14 +3,14 @@
  * Inspired by: https://github.com/ModuleLoader/es6-module-loader/blob/master/src/system-fetch.js
  *  - without XDomainRequest support.
  */
-export function fetch(options: IFetchOptions): void {
+export function fetch(options: am.fetch.IFetchOptions): void {
     var authorization = options.authorization;
     var onError = options.onError;
     var url = options.url;
     var xhr = new XMLHttpRequest();
 
     function load() {
-        var result: IFetchSuccessResult = {
+        var result: am.fetch.IFetchSuccessResult = {
             additionalData: options.additionalData,
             data: xhr.responseText
         };
@@ -22,7 +22,7 @@ export function fetch(options: IFetchOptions): void {
 
         var errorHandlerSupplied = (typeof onError === "function")
         if (errorHandlerSupplied) {
-            var result: IFetchErrorResult = {
+            var result: am.fetch.IFetchErrorResult = {
                 additionalData: options.additionalData,
                 error: err
             };

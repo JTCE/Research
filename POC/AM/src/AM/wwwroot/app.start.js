@@ -1,25 +1,16 @@
-System.register(["./login/login"], function(exports_1, context_1) {
+// Adjust loader so .html will be loaded and converted to json.
+// Adjust loader so .css will be loaded and converted to json.
+// Create a gulp task that creates bundles foreach component including html and css.
+System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var login_1;
-    //function renderLogin() {
-    //    var element = document.createElement("div");
-    //    var attribute = document.createAttribute("login");
-    //    element.setAttributeNode(attribute);
-    //    document.body.appendChild(element);
-    //}
     function start() {
         console.log("App started!");
         // renderLogin();
-        var l = login_1.login;
-        debugger;
     }
     exports_1("start", start);
     return {
-        setters:[
-            function (login_1_1) {
-                login_1 = login_1_1;
-            }],
+        setters:[],
         execute: function() {
             start();
         }

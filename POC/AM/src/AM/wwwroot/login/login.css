@@ -1,4 +1,17 @@
-﻿.login-label {
+﻿html {
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: 'DIN-Regular';
+    src: url('fonts/DIN-Regular.eot'),
+         url('fonts/DIN-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/DIN-Regular.woff') format('woff'), /* Modern Browsers */
+         url('fonts/DIN-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+.login-label {
     display: inline-block;
     text-align: right;
     width: 257px;

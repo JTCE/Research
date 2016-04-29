@@ -16,12 +16,11 @@
     <!-- Load root ES6 module and start the application. -->
     <script>
         function start(mod) {
-            // call app
+            mod.calendar();
         }
-        System.import("./app.start");
+        System.import("./calendar/calendar", start);
     </script>
 </head>
 <body>
-    <div login class="login-container"></div>
 </body>
 </html>
