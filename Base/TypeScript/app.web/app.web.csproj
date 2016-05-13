@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -152,7 +153,6 @@
     <Content Include="poc\kendo\index.html" />
     <Content Include="poc\kendo\unittests.html" />
     <Content Include="poc\openstreetmap\app.js.map" />
-    <Content Include="gulp.ps1" />
     <Content Include="libraries\fontawesome\fontawesome-webfont.eot" />
     <Content Include="libraries\fontawesome\fontawesome-webfont.ttf" />
     <Content Include="libraries\fontawesome\fontawesome-webfont.woff" />
