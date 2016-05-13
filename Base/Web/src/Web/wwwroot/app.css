@@ -1,0 +1,16 @@
+﻿.records {
+}
+
+.records li {
+    line-height: 30px;
+}
+
+.records li input {
+    display: inline;
+    vertical-align: middle;
+}
+
+.records li span {
+    display: inline;
+    vertical-align: middle;
+}
