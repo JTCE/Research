@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Spike html, css and typescript.</title>
+    <title>Spike</title>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-    <!-- Application styles -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="app.css" />
+
+    <script src="app.js"></script>
 </head>
 <body>
-    <ul class="records">
+    <ul id="records">
         <li>
             <input type="checkbox" />
             <span>Geen</span>
@@ -30,5 +31,6 @@
             <span>Authenticator app</span>
         </li>
     </ul>
+    <a href="" onclick="return app.selectAll();">Selecteer alle</a>
 </body>
 </html>
