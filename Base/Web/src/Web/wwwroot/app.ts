@@ -6,6 +6,8 @@
         var records = document.getElementById(_recordsElementId).children;
 
         foreach(records, select);
+        
+        const x = 2;
 
         // Prevent default behaviour of anchor.
         return false;
