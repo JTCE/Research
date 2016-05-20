@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "cookies"
+  },
+  "hostingPlanName": {
+    "value": "Default0"
+  },
+  "siteLocation": {
+    "value": "West Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "b814f5f5-2cfe-487a-b320-d3feb371fb5e"
+  },
+  "resourceGroup": {
+    "value": "Default-Web-WestEurope"
+  }
+}

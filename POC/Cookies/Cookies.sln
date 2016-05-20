@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{62A58E02-9345-48F7-8EEC-145895B44565}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{66872364-4A50-4EC3-960A-20E640218709}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{EF1CD5DC-3A6A-4F10-8349-1CD8FA0E47C4}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{D2D609B8-6621-4E77-97CA-DE99DC972F50}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\Web.json = PublishScripts\Templates\Web.json
+		PublishScripts\Templates\Web.param.dev.json = PublishScripts\Templates\Web.param.dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62A58E02-9345-48F7-8EEC-145895B44565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A58E02-9345-48F7-8EEC-145895B44565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A58E02-9345-48F7-8EEC-145895B44565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A58E02-9345-48F7-8EEC-145895B44565}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF1CD5DC-3A6A-4F10-8349-1CD8FA0E47C4} = {66872364-4A50-4EC3-960A-20E640218709}
+		{D2D609B8-6621-4E77-97CA-DE99DC972F50} = {66872364-4A50-4EC3-960A-20E640218709}
+	EndGlobalSection
+EndGlobal
