@@ -12,16 +12,14 @@ var fb;
                 {
                     afterShow: function () {
                         // To make angular work with a dynamic html template string, this string should first be compiled.
-                        var template = '<div wizard>Test</div>';
+                        var template = '<wizard></wizard>';
                         var content = $compile(template)($scope);
                         var inner = this.inner;
                         inner.html(''); // Remove dummy element                    
                         inner.append(content); // Show the wizard.
                         // Apply angular bindings.
                         $scope.$digest();
-                    },
-                    width: 'auto',
-                    height: 'auto'
+                    }
                 });
             }
         }

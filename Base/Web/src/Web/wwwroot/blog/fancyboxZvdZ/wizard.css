@@ -1,0 +1,15 @@
+﻿
+wizard {
+    display: block;
+    width: 600px;
+}
+
+wizard .header {
+    overflow: hidden;
+}
+
+wizard .header .title {
+}
+
+wizard .header .progress {
+}

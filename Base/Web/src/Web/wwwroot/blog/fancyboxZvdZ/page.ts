@@ -17,9 +17,8 @@
                     '<div></div>', // Dummy dom element. Fancybox needs at least one dom element to show.
                     {
                         afterShow: function () {
-
                             // To make angular work with a dynamic html template string, this string should first be compiled.
-                            var template = '<div wizard>Test</div>';
+                            var template = '<wizard></wizard>';
                             var content = $compile(template)($scope);
 
                             var inner = this.inner;
@@ -28,9 +27,7 @@
 
                             // Apply angular bindings.
                             $scope.$digest();
-                        },
-                        width: 'auto',
-                        height: 'auto'
+                        }
                     }
                 );
             }

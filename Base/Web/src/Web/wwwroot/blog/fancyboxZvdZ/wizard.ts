@@ -4,34 +4,36 @@
     app.directive("wizard", [Wizard]);
 
     function Wizard() {
-        
+        var template = `
+            <div class="header">
+                <div class="title" ng-bind="resources.title"></div>
+                <div class="progress" ng-bind="progressText()"></div>
+            </div>
+            <div ng-if="step===1">
+                <input data-val="true" data-val-required="Dit veld is verplicht" name="Phonenumber" ng-model="phonenumber" type="text" value="" aria-required="true" aria-invalid="false">
+            </div>
+            <div ng-if="step===2">
+                <input data-val="true" data-val-required="Dit veld is verplicht" name="Verificationcode" ng-model="verificationcode" type="text" value="" aria-required="true" aria-invalid="false">
+            </div>
+            <div ng-if="step===3">
+                <input data-val="true" data-val-required="Dit veld is verplicht" name="Password" ng-model="password" type="text" value="" aria-required="true" aria-invalid="false">
+            </div>
+            <div>
+                <button type="button" ng-bind="nextText()" ng-click="showWizard()"></button>
+            </div>
+        `;
+
         function link($scope: IWizardScope) {
-            $scope.buttonText = "Toon wizard";
-            $scope.showWizard = showWizard.bind(this);
-
-            function showWizard() {
-
-                $.fancybox(
-                    '<div></div>', // Dummy dom element. Fancybox needs at least one dom element to show.
-                    {
-                        afterShow: function () {
-
-                            // To make angular work with a dynamic html template string, this string should first be compiled.
-                            var template = '<div wizard>Test</div>';
-                            var content = $compile(template)($scope);
-
-                            var inner = this.inner;
-                            inner.html(''); // Remove dummy element                    
-                            inner.append(content); // Show the wizard.
-
-                            // Apply angular bindings.
-                            $scope.$digest();
-                        },
-                        width: 'auto',
-                        height: 'auto'
-                    }
-                );
-            }
+            $scope.resources = {
+                next: "Ga verder",
+                of: " van ",
+                save: "Opslaan",
+                title: "Wijzig telefoonnumer"
+            };
+            $scope.step = 1;
+            $scope.total = 3;
+            $scope.nextText = () => { return ($scope.step === $scope.total) ? $scope.resources.save : $scope.resources.next; };
+            $scope.progressText = () => { return `$scope.step $scope.resources.of $scope.total`; };
         }
 
         return {
@@ -40,10 +42,21 @@
         };
     }
 
-    interface IWizardScope extends ng.IScope {
+    interface IWizardResources {
+        next: string;
+        of: string;
+        save: string;
+        title: string;
+    }
 
-        telefoonnummer: string;
-        verificatiecode: string;
-        wachtwoord: string;
+    interface IWizardScope extends ng.IScope {
+        nextText: () => string;
+        password: string;
+        phonenumber: string;
+        progressText: () => string;
+        resources: IWizardResources;
+        step: number;
+        total: number;
+        verificationcode: string;
     }
 }
