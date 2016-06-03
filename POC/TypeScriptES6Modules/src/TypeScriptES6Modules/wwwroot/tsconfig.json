@@ -1,7 +1,6 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
-    "module": "none",
+    "module": "system",
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,
@@ -9,6 +8,7 @@
     "target": "es5"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "wwwroot"
   ]
 }

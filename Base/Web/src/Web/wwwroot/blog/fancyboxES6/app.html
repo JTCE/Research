@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Fancybox</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" href="app.css" />
+
+    <!-- Libraries -->
+    <script src="jquery.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="system.polyfill.js"></script> <!-- A polyfill voor System.register and System.import. -->
+
+    <!-- Root ES6 app module. -->
+    <script src="app.js"></script>
+
+    <!-- Start the application. -->
+    <script>
+        System.import('app', function (app) {
+            app.start();
+        });
+    </script>
+</head>
+<body>    
+</body>
+</html>

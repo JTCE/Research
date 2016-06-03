@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Fancybox</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="jquery.fancybox/jquery.fancybox.css" />
+
+    <!-- Scripts -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.fancybox/jquery.fancybox.js"></script>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+
+    <my-button></my-button>
+
+    <script>
+        (function () {
+            "use strict";
+
+            // Register angular app.
+            var appName = 'app';
+            var app = angular.module(appName, []);
+
+            // Boot angular, when DOM is loaded.
+            angular.element(document).ready(function () {
+                angular.bootstrap(document, [appName]);
+            });
+            
+            function MyButton($compile) {
+
+                var template = `<button type="button" ng-bind="buttonText" ng-click="showFancybox()"></button>`;
+
+                function link($scope) {
+                    $scope.buttonText = "Show fancybox";
+                    $scope.popupText = "This text is dynamically shown by angular!";
+                    $scope.showFancybox = showFancybox.bind(this);
+
+                    function showFancybox() {
+
+                        $.fancybox(
+                            '<div></div>', // Dummy dom element. Fancybox needs at least one dom element to show.
+                            {
+                                afterShow: function () {
+
+                                    // To make angular work with a dynamic html template string, this string should first be compiled.
+                                    var template = '<div>{{popupText}}</div>';
+                                    var content = $compile(template)($scope);
+
+                                    var inner = this.inner;
+                                    inner.html('');         // Remove dummy element                    
+                                    inner.append(content);  // Show the fancybox.
+
+                                    // Apply angular bindings.
+                                    $scope.$digest();
+                                },
+                                width: 'auto',
+                                height: 'auto'
+                            }
+                        );
+                    }
+                }
+
+                return {
+                    template: template,
+                    link: link
+                };
+            }
+            app.directive("myButton", ["$compile", MyButton]);
+        })();
+    </script>
+</body>
+</html>

@@ -1,16 +1,17 @@
 var app;
 (function (app) {
     "use strict";
-    var _recordsElementId = "records";
+    const _recordsElementId = "records";
     function selectAll() {
         var records = document.getElementById(_recordsElementId).children;
         foreach(records, select);
+        const x = 2;
         // Prevent default behaviour of anchor.
         return false;
     }
     app.selectAll = selectAll;
     function select(record) {
-        var checkbox = record.children[0];
+        const checkbox = record.children[0];
         checkbox.checked = true;
     }
     function foreach(records, fn, data) {
@@ -19,3 +20,4 @@ var app;
         }
     }
 })(app || (app = {}));
+//# sourceMappingURL=app.js.map
