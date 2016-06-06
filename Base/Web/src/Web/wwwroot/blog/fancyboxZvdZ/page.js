@@ -8,7 +8,7 @@ var fb;
             $scope.buttonText = "Show wizard";
             $scope.showWizard = showWizard.bind(this);
             function showWizard() {
-                $.fancybox('<div></div>', // Dummy dom element. Fancybox needs at least one dom element to show.
+                $scope.fancybox = $.fancybox('<div></div>', // Dummy dom element. Fancybox needs at least one dom element to show.
                 {
                     afterShow: function () {
                         // To make angular work with a dynamic html template string, this string should first be compiled.
@@ -19,7 +19,13 @@ var fb;
                         inner.append(content); // Show the wizard.
                         // Apply angular bindings.
                         $scope.$digest();
-                    }
+                    },
+                    autoSize: false,
+                    autoHeight: false,
+                    autoWidth: false,
+                    autoResize: false,
+                    width: 500,
+                    height: 200
                 });
             }
         }

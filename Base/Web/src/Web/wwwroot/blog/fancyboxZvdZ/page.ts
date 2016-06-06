@@ -13,7 +13,7 @@
 
             function showWizard() {
 
-                $.fancybox(
+                $scope.fancybox = $.fancybox(
                     '<div></div>', // Dummy dom element. Fancybox needs at least one dom element to show.
                     {
                         afterShow: function () {
@@ -27,7 +27,13 @@
 
                             // Apply angular bindings.
                             $scope.$digest();
-                        }
+                        },
+                        autoSize: false,
+                        autoHeight: false,
+                        autoWidth: false,
+                        autoResize: false,
+                        width: 500,
+                        height: 200
                     }
                 );
             }
@@ -41,6 +47,7 @@
 
     interface IPageScope extends ng.IScope {
         buttonText: string;
+        fancybox: any;
         showWizard: () => void;
     }
 }
