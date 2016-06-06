@@ -23,7 +23,12 @@ time, mark, audio, video, input, textarea, keygen, select, button {
     font-family: 'DIN-Regular';
 }
 
-wizard {
+.wijzig-telefoonnumer-wizard {
+    height: 100%;
+}
+
+.wijzig-telefoonnumer-wizard .wizard {
+    background-color: #EEE9F4;
     color: rgb(126, 33, 109);
     display: block;
     font-family: 'DIN-Regular';
@@ -31,46 +36,45 @@ wizard {
     overflow: hidden;
 }
 
-wizard .item {
+.wijzig-telefoonnumer-wizard .info {
+    font-size: 13px;
+    padding: 20px 10px 0 10px;
+}
+
+.wijzig-telefoonnumer-wizard .item {
     clear: both;
+    float: none; /* Nodig om ".groep_image, .item" te overschrijven */
     font-size: 13px;
     overflow: hidden;
     padding: 20px 10px 0 10px;
 }
 
-wizard .info {
-    font-size: 13px;
-    padding: 20px 10px 0 10px;
-}
-
-wizard .item .label {
+.wijzig-telefoonnumer-wizard .item .label {
     float: left;
-    height: 24px;
-    line-height: 24px;
+    padding: 4px 0 4px 0;
     width: 25%;
 }
 
-wizard .item .value {
+.wijzig-telefoonnumer-wizard .item .value {
     color: rgb(126, 33, 109);
     float: left;
-    height: 24px;
-    line-height: 24px;
-    padding: 0 6px 0 6px;
+    height: 100%;
+    padding: 4px 6px 4px 6px;
     width: 75%;
 }
 
-wizard .footer {
+.wijzig-telefoonnumer-wizard .footer {
     clear: both;
     margin-top: 20px;
     overflow: hidden;
     padding: 10px;
 }
 
-wizard .footer button {
+.wijzig-telefoonnumer-wizard .footer button {
     float: right;
 }
 
-wizard .header {
+.wijzig-telefoonnumer-wizard .header {
     background-color: #E0DCE5;
     border-bottom: solid 1px #7E216D;
     color: #7E216D;
@@ -81,23 +85,17 @@ wizard .header {
     padding: 10px;
 }
 
-wizard .header .title {
+.wijzig-telefoonnumer-wizard .header .title {
     float: left;
 }
 
-wizard .header .progress {
+.wijzig-telefoonnumer-wizard .header .progress {
     float: right;
     font-size: 14px;
     padding-top: 6px;
 }
 
-wizard .inner {
-    background-color: #EEE9F4;
-    height: 100%;
-    overflow: hidden;
-}
-
-wizard input[type="text"] {
+.wijzig-telefoonnumer-wizard input[type="text"] {
     background-color: rgb(253, 250, 210);
     border: 1px dotted #7E216D;
     padding: 0 6px 0 6px;

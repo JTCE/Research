@@ -18,7 +18,7 @@
                     {
                         afterShow: function () {
                             // To make angular work with a dynamic html template string, this string should first be compiled.
-                            var template = '<wizard></wizard>';
+                            var template = '<div wijzig-telefoonnumer-wizard class="wijzig-telefoonnumer-wizard"></div>';
                             var content = $compile(template)($scope);
 
                             var inner = this.inner;
@@ -29,9 +29,6 @@
                             $scope.$digest();
                         },
                         autoSize: false,
-                        autoHeight: false,
-                        autoWidth: false,
-                        autoResize: false,
                         width: 500,
                         height: 200
                     }

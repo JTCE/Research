@@ -1,11 +1,11 @@
 ﻿module fb {
     "use strict";
 
-    app.directive("wizard", [Wizard]);
+    app.directive("wijzigTelefoonnumerWizard", [Wizard]);
 
     function Wizard() {
         var template = `
-            <div class="inner">
+            <div class="wizard">
                 <div class="header">
                     <div class="title" ng-bind="resources.title"></div>
                     <div class="progress" ng-bind="progressText()"></div>

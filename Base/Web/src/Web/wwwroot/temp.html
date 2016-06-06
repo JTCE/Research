@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="wizard">
+        <div class="header">
+            <div class="title" ng-bind="resources.title"></div>
+            <div class="progress" ng-bind="progressText()"></div>
+        </div>
+        <div ng-if="step===1">
+            <div class="info">
+                Hier komt nog een mooie beschrijving voor stap {{step}}.
+            </div>
+            <div class="tt">
+                <div class="label">Telefoonnummer:</div><input class="value" data-val="true" data-val-required="Dit veld is verplicht" name="Phonenumber" ng-model="phonenumber" type="text" value="" aria-required="true" aria-invalid="false">
+            </div>
+        </div>
+        <div ng-if="step===2">
+            <div class="info">
+                Hier komt nog een mooie beschrijving voor stap {{step}}.
+            </div>
+            <div class="item">
+                <div class="label">Verificatiecode:</div>
+                <input class="value" data-val="true" data-val-required="Dit veld is verplicht" name="Phonenumber" ng-model="phonenumber" type="text" value="" aria-required="true" aria-invalid="false">
+            </div>
+        </div>
+        <div ng-if="step===3">
+            <div class="info">
+                Hier komt nog een mooie beschrijving voor stap {{step}}.
+            </div>
+            <div class="item">
+                <div class="label">Oude wachtwoord:</div>
+                <input class="value" data-val="true" data-val-required="Dit veld is verplicht" name="Phonenumber" ng-model="phonenumber" type="text" value="" aria-required="true" aria-invalid="false">
+            </div>
+        </div>
+        <div class="footer">
+            <button class="button green" type="button" ng-bind="nextText()" ng-click="next()"></button>
+        </div>
+    </div>
+</body>
+</html>
