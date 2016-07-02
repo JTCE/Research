@@ -1,0 +1,142 @@
+Project ProcessFiles (.NETCoreApp,Version=v1.0) will be compiled because inputs were modified
+Compiling ProcessFiles for .NETCoreApp,Version=v1.0
+
+Compilation succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time elapsed 00:00:01.1427946
+ 
+
+Processing files started.
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofPersoon.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofVragenlijst.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Agenda\_AfspraakBevestiging.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Agenda\_SelecteerTijd.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\GebruikersBeheer.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\GebruikersBeheer.css <============================================
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap2.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap3.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap4.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<ItemGroup><None Include="App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofDocsEnWSWPopup.scss" />
+<None Include="App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofPersoon.scss" />
+<None Include="App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofVragenlijst.scss" />
+<None Include="App\Administratie\Verlof\Index.scss" />
+<None Include="App\Administratie\Verzuimhistorie\_DetailInfo.scss" />
+<None Include="App\Administratie\Werknemer\_DienstverbandEdit.scss" />
+<None Include="App\Administratie\Werknemer\_NoRiskpolisEdit.scss" />
+<None Include="App\Administratie\Werknemer\_WAOStatusEdit.scss" />
+<None Include="App\Administratie\ZiekteMelding\Index.scss" />
+<None Include="App\Agenda\_AfspraakBevestiging.scss" />
+<None Include="App\Agenda\_AfspraakPlannenTab1.scss" />
+<None Include="App\Agenda\_OverzichtContainer.scss" />
+<None Include="App\Agenda\_OverzichtSearch.scss" />
+<None Include="App\Agenda\_PlannenContainer.scss" />
+<None Include="App\Agenda\_SelecteerTijd.scss" />
+<None Include="App\Agenda\_ZoekDienstverband.scss" />
+<None Include="App\Contact\Contact.scss" />
+<None Include="App\Dossiers\Verzuimkalender.scss" />
+<None Include="App\Dossiers\_DossierUploadDocument.scss" />
+<None Include="App\Dossiers\_NotitiePopup.scss" />
+<None Include="App\GebruikersBeheer\GebruikersBeheer.scss" />
+<None Include="App\GebruikersBeheer\Index.scss" />
+<None Include="App\GebruikersBeheer\_GebruikerAanmaken.scss" />
+<None Include="App\GebruikersBeheer\_GebruikerAanmaken_WizardStap2.scss" />
+<None Include="App\GebruikersBeheer\_GebruikerAanmaken_WizardStap3.scss" />
+<None Include="App\GebruikersBeheer\_GebruikerAanmaken_WizardStap4.scss" />
+<None Include="App\GebruikersBeheer\_OverzichtGebruikers.scss" />
+<None Include="App\Home\_LaatstBekekenWerknemers.scss" />
+<None Include="App\Interventies\_InterventieDownloads.scss" />
+<None Include="App\MijnProfiel\MijnContactgegevens.scss" />
+<None Include="App\MijnProfiel\_VervangingNieuw.scss" />
+<None Include="App\MijnTools\Index.scss" />
+<None Include="App\Rapporten\NoRiskpolis.scss" />
+<None Include="App\Rapporten\UitDienst.scss" />
+<None Include="App\Rapporten\Vragenlijst.scss" />
+<None Include="App\Rapporten\WAOStatus.scss" />
+<None Include="App\Rapporten\WgaStatus.scss" />
+<None Include="App\Rapporten\ZiekUitDienst.scss" />
+<None Include="App\Registratie\Aanmelden.scss" />
+<None Include="App\Settings\ExtraRechten.scss" />
+<None Include="App\Settings\Modules.scss" />
+<None Include="App\Settings\TaakDefinitie.scss" />
+<None Include="App\Settings\VerzuimProtocol.scss" />
+<None Include="App\Shared\PdfNotities.scss" />
+<None Include="App\Shared\PdfVerzuimverlof.scss" />
+<None Include="App\Shared\_MasterPopup.scss" />
+<None Include="App\Shared\_MasterPopup_RequireJS.scss" />
+<None Include="App\Shared\_SiteMaster.scss" />
+<None Include="App\Shared\Werknemer\_Document.scss" />
+<None Include="App\Shared\Werknemer\_DocumentUpload.scss" />
+<None Include="App\Shared\Werknemer\_EditNotitie.scss" />
+<None Include="App\Shared\Werknemer\_NoRiskpolis.scss" />
+<None Include="App\Shared\Werknemer\_NoRiskpolisDocs.scss" />
+<None Include="App\Shared\Werknemer\_Persoon.scss" />
+<None Include="App\Shared\Werknemer\_WAOStatus.scss" />
+<None Include="App\Shared\Werknemer\_WGAStatus.scss" />
+<None Include="App\SpreekuurAfspraak\Details.scss" />
+<None Include="App\Taak\_Voltooien.scss" />
+</ItemGroup>
+"~/App/Administratie/AanvraagVerzuimVerlof/AanvraagVerzuimVerlofDocsEnWSWPopup.css",
+"~/App/Administratie/AanvraagVerzuimVerlof/AanvraagVerzuimVerlofPersoon.css",
+"~/App/Administratie/AanvraagVerzuimVerlof/AanvraagVerzuimVerlofVragenlijst.css",
+"~/App/Administratie/Verlof/Index.css",
+"~/App/Administratie/Verzuimhistorie/DetailInfo.css",
+"~/App/Administratie/Werknemer/DienstverbandEdit.css",
+"~/App/Administratie/Werknemer/NoRiskpolisEdit.css",
+"~/App/Administratie/Werknemer/WAOStatusEdit.css",
+"~/App/Administratie/ZiekteMelding/Index.css",
+"~/App/Agenda/AfspraakBevestiging.css",
+"~/App/Agenda/AfspraakPlannenTab1.css",
+"~/App/Agenda/OverzichtContainer.css",
+"~/App/Agenda/OverzichtSearch.css",
+"~/App/Agenda/PlannenContainer.css",
+"~/App/Agenda/SelecteerTijd.css",
+"~/App/Agenda/ZoekDienstverband.css",
+"~/App/Contact/Contact.css",
+"~/App/Dossiers/Verzuimkalender.css",
+"~/App/Dossiers/DossierUploadDocument.css",
+"~/App/Dossiers/NotitiePopup.css",
+"~/App/GebruikersBeheer/Index.css",
+"~/App/GebruikersBeheer/GebruikerAanmaken.css",
+"~/App/GebruikersBeheer/GebruikerAanmaken_WizardStap2.css",
+"~/App/GebruikersBeheer/GebruikerAanmaken_WizardStap3.css",
+"~/App/GebruikersBeheer/GebruikerAanmaken_WizardStap4.css",
+"~/App/GebruikersBeheer/OverzichtGebruikers.css",
+"~/App/Home/LaatstBekekenWerknemers.css",
+"~/App/Interventies/InterventieDownloads.css",
+"~/App/MijnProfiel/MijnContactgegevens.css",
+"~/App/MijnProfiel/VervangingNieuw.css",
+"~/App/MijnTools/Index.css",
+"~/App/Rapporten/NoRiskpolis.css",
+"~/App/Rapporten/UitDienst.css",
+"~/App/Rapporten/Vragenlijst.css",
+"~/App/Rapporten/WAOStatus.css",
+"~/App/Rapporten/WgaStatus.css",
+"~/App/Rapporten/ZiekUitDienst.css",
+"~/App/Registratie/Aanmelden.css",
+"~/App/Settings/ExtraRechten.css",
+"~/App/Settings/Modules.css",
+"~/App/Settings/TaakDefinitie.css",
+"~/App/Settings/VerzuimProtocol.css",
+"~/App/Shared/PdfNotities.css",
+"~/App/Shared/PdfVerzuimverlof.css",
+"~/App/Shared/MasterPopup.css",
+"~/App/Shared/MasterPopup_RequireJS.css",
+"~/App/Shared/SiteMaster.css",
+"~/App/Shared/Werknemer/Document.css",
+"~/App/Shared/Werknemer/DocumentUpload.css",
+"~/App/Shared/Werknemer/EditNotitie.css",
+"~/App/Shared/Werknemer/NoRiskpolis.css",
+"~/App/Shared/Werknemer/NoRiskpolisDocs.css",
+"~/App/Shared/Werknemer/Persoon.css",
+"~/App/Shared/Werknemer/WAOStatus.css",
+"~/App/Shared/Werknemer/WGAStatus.css",
+"~/App/SpreekuurAfspraak/Details.css",
+"~/App/Taak/Voltooien.css",
+
+Total *.cshtml files = 188
+Total *.cshtml files containing the text 'style=' = 58
+Total 'style =' text count 379
+Processing finished.
