@@ -79,9 +79,12 @@ namespace ConsoleApplication
         }
 
         /* Create text that can be used to add the css file to the BundleConfig.cs.
+         
          */
         public void AddBundleCsPaths(string scssPath, ProcessCshtmlFilesInfo info) {
             var cssPath = Path.ChangeExtension(scssPath, ".css");
+            
+            // Indien het bestand 1 op 1 al bestaat dan 
             if(File.Exists(cssPath)) {
                 Console.WriteLine(cssPath + " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             }
@@ -134,7 +137,42 @@ namespace ConsoleApplication
         public int StyleFileCounter { get; set; }
     }
 
+/*
+    On the "stigas" branch:
+    Tasks "Convert all current *.css files to *.scss files"
+        - Get all *.css files (not in libararies) which don't have a corresponding *.scss yet.
+            - Rename on disk to *.scss
+            - Add the @import "./App/Styles/variables"; a the top of each created *.scss file.
+            - Convert "Content *.css" includes in csproj file to "None *.scss" includes.
+            - Remove all *.css files (not in libraries) form disk (this could be more files then the renamed files)
+        - Manually - Add ignore rule to GIT ignore file, that ignores *.css files (not in libararies).
+        - Manually - Run "apply-theming"
+        - Manually - GIT Commit / Sync
+    The tasks above should not have any impact, except that all *.css will be converted to *.scss and only *.scss is kept in git.
 
+    On the "stigas" branch:
+    Tasks "Extract css from cshtml"
+    - When cshtml file contains a html tag containing a "style" attribute:
+        - When cshtml file does NOT start with "_" and corresponding scss file does not exists
+            - Create default sass file
+            - Add to the bundle
+        - When cshtml file does NOT start with "_" and corresponding scss file does exist
+            - DO NOTHING
+        - When cshtml file starts with "_" and corresponding scss file without leading "_" does not exists
+            - Create default sass file
+            - Add to the bundle
+        When cshtml file starts with "_" and corresponding scss file without leading "_" does exist
+            - DO NOTHING
+
+        Always
+        - Append a css class .name-of-the-file to the sass file.
+        - Append a new css class .name-of-the-file .ruleXX to sass file for each style attribute
+        - Replace style="" by style="ruleXX"
+        - Manually open each cshtml file and put .name-of-the-file-without-leading-underscore at the root html tag.
+        - Manually replace style="ruleXX" by class="ruleXX"
+        - When done control if no "style="rule..." exists in cshtml files.
+
+*/
 
 // C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\Verlof\Index.css <============================================
 // C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\ZiekteMelding\Index.css <============================================
@@ -159,7 +197,14 @@ namespace ConsoleApplication
 // C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Shared\PdfVerzuimverlof.css <============================================
 // C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\SpreekuurAfspraak\Details.css <============================================
 
-
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofPersoon.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofVragenlijst.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Agenda\_AfspraakBevestiging.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Agenda\_SelecteerTijd.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap2.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap3.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap4.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 }
