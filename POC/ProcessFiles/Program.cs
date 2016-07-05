@@ -9,34 +9,135 @@ namespace ConsoleApplication
 {
     public class Program
     {
-        /*
-         * Tasks
-         * - Create SASS files foreach CSHTML file, that contains a html tag with a style attribute.
-         * - Create XML that can be used to add each created SASS file to a *.csproj file with "Build Action" set to "None".
-         */
         public static void Main(string[] args)
         {
             Console.WriteLine("Processing files started.");
-            var fs = new FileSystem();
-            var info = new ProcessCshtmlFilesInfo();
-            info.ProjectFolder = new DirectoryInfo(@"C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web");
             
-            var files = fs.FindFiles(info.ProjectFolder, "*.cshtml");         
-            foreach (FileInfo file in files)
-            {
-                Task task = fs.ProcessCshtmlFile(file, info);
-                task.Wait();
-            }
-            Console.WriteLine($"<ItemGroup>{info.CsprojXml}</ItemGroup>");
-            Console.WriteLine(info.BundleCsIncludes.ToString());
-            Console.WriteLine($"Total *.cshtml files = {info.FileCounter}");
-            Console.WriteLine($"Total *.cshtml files containing the text 'style=' = {info.StyleFileCounter}");
-            Console.WriteLine($"Total 'style =' text count {info.StyleTextCounter}");
+            var fs = new FileSystem();
+            fs.DeleteCssFiles();
+            
             Console.WriteLine("Processing finished.");
         }
     }
 
     public class FileSystem {
+
+        public void DeleteCssFiles() {
+            string projectFolder = @"C:\Projects\MyWebApp";
+            string appFolder = Path.Combine(projectFolder, "App");
+            string librariesFolder = Path.Combine(appFolder, "Libraries");
+            string csprojPath = Path.Combine(projectFolder, @"MyWebApp.csproj");
+            
+            int fileCounter = 0;
+            var files = FindFiles(new DirectoryInfo(appFolder), "*.css"); // This will get *.css and *.cssn files on Windows, don't know why.
+            foreach (FileInfo file in files)
+            {
+                if(
+                    !file.FullName.StartsWith(librariesFolder) &&
+                    !file.FullName.EndsWith(".cssn")
+                ){
+                    
+                    fileCounter++;
+                    File.Delete(file.FullName);
+                    Console.WriteLine($"Delete {file.FullName}");
+                }
+            }
+
+            Console.WriteLine($"Total *.css files deleted = {fileCounter}");
+        }
+
+         public async Task RenameCssToCssnInCsProj() {
+            string projectFolder = @"C:\Projects\MyWebApp";
+            string appFolder = Path.Combine(projectFolder, "App");
+            string librariesFolder = Path.Combine(appFolder, "Libraries");
+            string csprojPath = Path.Combine(projectFolder, @"MyWebApp.csproj");
+            string csprojContent = File.ReadAllText(csprojPath);
+            int fileCounter = 0;
+
+            var files = FindFiles(new DirectoryInfo(appFolder), "*.css"); // This will get *.css and *.cssn files on Windows, don't know why.
+            foreach (FileInfo file in files)
+            {
+                var cssnPath = Path.ChangeExtension(file.FullName, ".cssn");
+                if(
+                    !file.FullName.StartsWith(librariesFolder)                   
+                ){
+                    
+                    fileCounter++;
+
+                    string relativePath = file.FullName.Replace(projectFolder + @"\", string.Empty);
+                    string relativePathCssn = Path.ChangeExtension(relativePath, ".cssn");
+                    string find = $"<Content Include=\"{relativePath}\" />";
+                    if(csprojContent.Contains(find))
+                    {
+                        string replace = $"<Content Include=\"{relativePathCssn}\" />";
+                        Console.WriteLine($"find {find}");
+                        Console.WriteLine($"replace {replace}");
+                        csprojContent = csprojContent.Replace(find, replace);
+                    }
+
+                    await CreateOrUpdateFile(csprojPath, csprojContent);
+                }
+            }
+
+            Console.WriteLine($"Total *.css files renamed = {fileCounter}");
+        }
+
+        public async Task RenameCssToCssnOnDisk() {
+            string projectFolder = @"C:\Projects\MyWebApp";
+            string appFolder = Path.Combine(projectFolder, "App");
+            string librariesFolder = Path.Combine(appFolder, "Libraries");
+            int fileCounter = 0;
+            
+            var files = FindFiles(new DirectoryInfo(projectFolder), "*.css"); // This will get *.css and *.cssn files, don't know why.
+            foreach (FileInfo file in files)
+            {
+                var cssnPath = Path.ChangeExtension(file.FullName, ".cssn");
+                if(
+                    !file.FullName.StartsWith(librariesFolder) &&
+                    !File.Exists(cssnPath)
+                ){
+                    
+                    fileCounter++;
+
+                    string relativePath = file.FullName.Replace(projectFolder, string.Empty);
+                    Console.WriteLine($"relativePath {relativePath}");
+                    int seperatorCounter = relativePath.Split(@"\".ToCharArray()).Length - 1;
+                    Console.WriteLine($"seperatorCounter {seperatorCounter}");
+                    
+                    // Determine the "import" variables line, that should be added to each CSS Next file.
+                    string relativePrefix = string.Empty;
+                    for(var i = 0; i< seperatorCounter; i++) {
+                        relativePrefix += "../";
+                    }
+                    string importText = $"@import \"{relativePrefix}App/Styles/variables.cssn\";";
+                    Console.WriteLine($"importText {importText}");
+                    
+                    string content = File.ReadAllText(file.FullName);
+                    await CreateOrUpdateFile(cssnPath, importText + Environment.NewLine + Environment.NewLine + content );
+                }
+            }
+
+            Console.WriteLine($"Total *.css files renamed = {fileCounter}");
+        }
+
+        public void ExtractStyleFromCsHtml() {
+
+            var info = new ProcessCshtmlFilesInfo();
+            info.ProjectFolder = new DirectoryInfo(@"C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web");
+            
+            var files = FindFiles(info.ProjectFolder, "*.cssn");
+            foreach (FileInfo file in files)
+            {
+                Task task = ProcessCshtmlFile(file, info);
+                task.Wait();
+            }
+
+            Console.WriteLine($"<ItemGroup>{info.CsprojXml}</ItemGroup>");
+            Console.WriteLine(info.BundleCsIncludes.ToString());
+            Console.WriteLine($"Total *.cshtml files = {info.FileCounter}");
+            Console.WriteLine($"Total *.cshtml files containing the text 'style=' = {info.StyleFileCounter}");
+            Console.WriteLine($"Total 'style =' text count {info.StyleTextCounter}");
+        }
 
         public async Task CreateOrUpdateFile(string path, string content)
         {
