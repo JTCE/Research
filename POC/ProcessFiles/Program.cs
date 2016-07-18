@@ -13,16 +13,62 @@ namespace ConsoleApplication
         {
             Console.WriteLine("Processing files started.");
             
-            var fs = new FileSystem();
-            fs.DeleteCssFiles();
+            Styling.ExtractStyleFromViews();
             
             Console.WriteLine("Processing finished.");
         }
     }
 
-    public class FileSystem {
+    public static class Styling {
 
-        public void DeleteCssFiles() {
+        public static void ExtractStyleFromViews() {
+
+            var info = new StylingInfo();
+            info.ProjectFolder = new DirectoryInfo(@"C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web");
+            
+            var appDirectoryInfo = new DirectoryInfo(Path.Combine(info.ProjectFolder.FullName, "App"));
+            var files = FileSystem.FindFiles(appDirectoryInfo, "*html");
+            foreach (FileInfo file in files)
+            {
+                Task task = ProcessCshtmlFile(file, info);
+                task.Wait();
+            }
+
+            Console.WriteLine("Extract styles from view result:");
+            Console.WriteLine($"Total *.cshtml / *.html files = {info.FileCounter}");
+            Console.WriteLine($"Total *.cshtml / *.html files containing the text 'style=' = {info.StyleFileCounter}");
+            Console.WriteLine($"Total 'style =' text count {info.StyleTextCounter}");
+        }
+
+        public static async Task ProcessCshtmlFile(FileInfo file, StylingInfo info) {
+            var fullName = file.FullName.ToLower();
+            bool isUsedForPrinting = fullName.Contains("print");
+            //bool isNodeModulesFolder = fullName.Contains(@"\node_modules\");
+            //bool isDistFolder = fullName.Contains(@"\node_modules\");
+
+            if(!isUsedForPrinting) {
+                Console.WriteLine($"{fullName}");
+                string content = File.ReadAllText(fullName);
+                MatchCollection matches = Regex.Matches(content, @" ?[Ss]tyle ?= ?""");
+                info.FileCounter += 1;
+                if(matches.Count > 0) {
+                    info.StyleFileCounter += 1;
+                    info.StyleTextCounter += matches.Count;
+                }
+            }
+        }
+    }
+
+    public class StylingInfo {
+        public int FileCounter { get; set; }
+        public DirectoryInfo ProjectFolder { get; set; }
+        public int StyleFileCounter { get; set; }
+        public int StyleTextCounter { get; set; }
+    }
+
+    public static class FileSystem {
+
+        public static void DeleteCssFiles() {
             string projectFolder = @"C:\Projects\MyWebApp";
             string appFolder = Path.Combine(projectFolder, "App");
             string librariesFolder = Path.Combine(appFolder, "Libraries");
@@ -46,11 +92,11 @@ namespace ConsoleApplication
             Console.WriteLine($"Total *.css files deleted = {fileCounter}");
         }
 
-         public async Task RenameCssToCssnInCsProj() {
-            string projectFolder = @"C:\Projects\MyWebApp";
+         public static async Task RenameCssToCssnInCsProj() {
+            string projectFolder = @"C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web";
             string appFolder = Path.Combine(projectFolder, "App");
             string librariesFolder = Path.Combine(appFolder, "Libraries");
-            string csprojPath = Path.Combine(projectFolder, @"MyWebApp.csproj");
+            string csprojPath = Path.Combine(projectFolder, @"ZvdZOnline.Web.csproj");
             string csprojContent = File.ReadAllText(csprojPath);
             int fileCounter = 0;
 
@@ -59,17 +105,18 @@ namespace ConsoleApplication
             {
                 var cssnPath = Path.ChangeExtension(file.FullName, ".cssn");
                 if(
-                    !file.FullName.StartsWith(librariesFolder)                   
+                    !file.FullName.StartsWith(librariesFolder)  &&
+                    !file.FullName.EndsWith(".cssn")                  
                 ){
                     
                     fileCounter++;
 
                     string relativePath = file.FullName.Replace(projectFolder + @"\", string.Empty);
                     string relativePathCssn = Path.ChangeExtension(relativePath, ".cssn");
-                    string find = $"<Content Include=\"{relativePath}\" />";
+                    string find = $"<Content Include=\"{relativePathCssn}\" />";
                     if(csprojContent.Contains(find))
                     {
-                        string replace = $"<Content Include=\"{relativePathCssn}\" />";
+                        string replace = $"<None Include=\"{relativePathCssn}\" />";
                         Console.WriteLine($"find {find}");
                         Console.WriteLine($"replace {replace}");
                         csprojContent = csprojContent.Replace(find, replace);
@@ -82,7 +129,7 @@ namespace ConsoleApplication
             Console.WriteLine($"Total *.css files renamed = {fileCounter}");
         }
 
-        public async Task RenameCssToCssnOnDisk() {
+        public static async Task RenameCssToCssnOnDisk() {
             string projectFolder = @"C:\Projects\MyWebApp";
             string appFolder = Path.Combine(projectFolder, "App");
             string librariesFolder = Path.Combine(appFolder, "Libraries");
@@ -120,26 +167,9 @@ namespace ConsoleApplication
             Console.WriteLine($"Total *.css files renamed = {fileCounter}");
         }
 
-        public void ExtractStyleFromCsHtml() {
+        
 
-            var info = new ProcessCshtmlFilesInfo();
-            info.ProjectFolder = new DirectoryInfo(@"C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web");
-            
-            var files = FindFiles(info.ProjectFolder, "*.cssn");
-            foreach (FileInfo file in files)
-            {
-                Task task = ProcessCshtmlFile(file, info);
-                task.Wait();
-            }
-
-            Console.WriteLine($"<ItemGroup>{info.CsprojXml}</ItemGroup>");
-            Console.WriteLine(info.BundleCsIncludes.ToString());
-            Console.WriteLine($"Total *.cshtml files = {info.FileCounter}");
-            Console.WriteLine($"Total *.cshtml files containing the text 'style=' = {info.StyleFileCounter}");
-            Console.WriteLine($"Total 'style =' text count {info.StyleTextCounter}");
-        }
-
-        public async Task CreateOrUpdateFile(string path, string content)
+        public static async Task CreateOrUpdateFile(string path, string content)
         {
             byte[] result = Encoding.UTF8.GetBytes(content);
             using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true))
@@ -148,41 +178,16 @@ namespace ConsoleApplication
             }
         }
 
-        public IEnumerable<FileInfo> FindFiles(DirectoryInfo folder, string pattern)
+        public static IEnumerable<FileInfo> FindFiles(DirectoryInfo folder, string pattern)
         {
             // Note: using EnumerateFiles is faster then using "GetFiles".
             return folder.EnumerateFiles(pattern, SearchOption.AllDirectories);
         }
 
-        public async Task ProcessCshtmlFile(FileInfo file, ProcessCshtmlFilesInfo info) {
-            info.FileCounter++;
-
-                if(!file.FullName.Contains(@"App\Print")) {
-                    var content = File.ReadAllText(file.FullName);
-
-                    // Determine if the file contains the text "style =".
-                    var regEx = new Regex(@".?style\s*=.?", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    var result = regEx.Matches(content);
-                    
-                    if (result.Count > 0)
-                    {
-                        info.StyleTextCounter += result.Count;
-                        info.StyleFileCounter++;
-
-                        // Create sass file.
-                        var scssPath = Path.ChangeExtension(file.FullName, ".scss");                        
-                        await CreateOrUpdateFile(scssPath, "@import \"./App/Styles/variables\";" + Environment.NewLine + Environment.NewLine);                  
-
-                        AddCsprojXml(scssPath, info);
-                        AddBundleCsPaths(scssPath, info);
-                    }              
-                }
-        }
-
         /* Create text that can be used to add the css file to the BundleConfig.cs.
          
          */
-        public void AddBundleCsPaths(string scssPath, ProcessCshtmlFilesInfo info) {
+        public static void AddBundleCsPaths(string scssPath, ProcessCshtmlFilesInfo info) {
             var cssPath = Path.ChangeExtension(scssPath, ".css");
             
             // Indien het bestand 1 op 1 al bestaat dan 
@@ -218,7 +223,7 @@ namespace ConsoleApplication
 
         /* Create xml text that can be use to add sass file to *.csproj with "Build Action" set to "None".
          */
-        public void AddCsprojXml(string scssPath, ProcessCshtmlFilesInfo info) {
+        public static void AddCsprojXml(string scssPath, ProcessCshtmlFilesInfo info) {
             string path = scssPath.Replace(info.ProjectFolder.FullName + "\\", string.Empty);
             string xml = $"<None Include=\"{path}\" />";           
             info.CsprojXml.AppendLine(xml);

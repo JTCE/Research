@@ -1,142 +1,304 @@
-Project ProcessFiles (.NETCoreApp,Version=v1.0) will be compiled because inputs were modified
-Compiling ProcessFiles for .NETCoreApp,Version=v1.0
-
-Compilation succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time elapsed 00:00:01.1427946
- 
-
+Project ProcessFiles (.NETCoreApp,Version=v1.0) was previously compiled. Skipping compilation.
 Processing files started.
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofPersoon.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofVragenlijst.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Agenda\_AfspraakBevestiging.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\Agenda\_SelecteerTijd.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\GebruikersBeheer.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\GebruikersBeheer.css <============================================
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap2.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap3.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-C:\Projects\ZvdZ\zvdzonline\Source\ZvdZOnline\ZvdZOnline.Web\App\GebruikersBeheer\_GebruikerAanmaken_WizardStap4.css !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-<ItemGroup><None Include="App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofDocsEnWSWPopup.scss" />
-<None Include="App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofPersoon.scss" />
-<None Include="App\Administratie\AanvraagVerzuimVerlof\_AanvraagVerzuimVerlofVragenlijst.scss" />
-<None Include="App\Administratie\Verlof\Index.scss" />
-<None Include="App\Administratie\Verzuimhistorie\_DetailInfo.scss" />
-<None Include="App\Administratie\Werknemer\_DienstverbandEdit.scss" />
-<None Include="App\Administratie\Werknemer\_NoRiskpolisEdit.scss" />
-<None Include="App\Administratie\Werknemer\_WAOStatusEdit.scss" />
-<None Include="App\Administratie\ZiekteMelding\Index.scss" />
-<None Include="App\Agenda\_AfspraakBevestiging.scss" />
-<None Include="App\Agenda\_AfspraakPlannenTab1.scss" />
-<None Include="App\Agenda\_OverzichtContainer.scss" />
-<None Include="App\Agenda\_OverzichtSearch.scss" />
-<None Include="App\Agenda\_PlannenContainer.scss" />
-<None Include="App\Agenda\_SelecteerTijd.scss" />
-<None Include="App\Agenda\_ZoekDienstverband.scss" />
-<None Include="App\Contact\Contact.scss" />
-<None Include="App\Dossiers\Verzuimkalender.scss" />
-<None Include="App\Dossiers\_DossierUploadDocument.scss" />
-<None Include="App\Dossiers\_NotitiePopup.scss" />
-<None Include="App\GebruikersBeheer\GebruikersBeheer.scss" />
-<None Include="App\GebruikersBeheer\Index.scss" />
-<None Include="App\GebruikersBeheer\_GebruikerAanmaken.scss" />
-<None Include="App\GebruikersBeheer\_GebruikerAanmaken_WizardStap2.scss" />
-<None Include="App\GebruikersBeheer\_GebruikerAanmaken_WizardStap3.scss" />
-<None Include="App\GebruikersBeheer\_GebruikerAanmaken_WizardStap4.scss" />
-<None Include="App\GebruikersBeheer\_OverzichtGebruikers.scss" />
-<None Include="App\Home\_LaatstBekekenWerknemers.scss" />
-<None Include="App\Interventies\_InterventieDownloads.scss" />
-<None Include="App\MijnProfiel\MijnContactgegevens.scss" />
-<None Include="App\MijnProfiel\_VervangingNieuw.scss" />
-<None Include="App\MijnTools\Index.scss" />
-<None Include="App\Rapporten\NoRiskpolis.scss" />
-<None Include="App\Rapporten\UitDienst.scss" />
-<None Include="App\Rapporten\Vragenlijst.scss" />
-<None Include="App\Rapporten\WAOStatus.scss" />
-<None Include="App\Rapporten\WgaStatus.scss" />
-<None Include="App\Rapporten\ZiekUitDienst.scss" />
-<None Include="App\Registratie\Aanmelden.scss" />
-<None Include="App\Settings\ExtraRechten.scss" />
-<None Include="App\Settings\Modules.scss" />
-<None Include="App\Settings\TaakDefinitie.scss" />
-<None Include="App\Settings\VerzuimProtocol.scss" />
-<None Include="App\Shared\PdfNotities.scss" />
-<None Include="App\Shared\PdfVerzuimverlof.scss" />
-<None Include="App\Shared\_MasterPopup.scss" />
-<None Include="App\Shared\_MasterPopup_RequireJS.scss" />
-<None Include="App\Shared\_SiteMaster.scss" />
-<None Include="App\Shared\Werknemer\_Document.scss" />
-<None Include="App\Shared\Werknemer\_DocumentUpload.scss" />
-<None Include="App\Shared\Werknemer\_EditNotitie.scss" />
-<None Include="App\Shared\Werknemer\_NoRiskpolis.scss" />
-<None Include="App\Shared\Werknemer\_NoRiskpolisDocs.scss" />
-<None Include="App\Shared\Werknemer\_Persoon.scss" />
-<None Include="App\Shared\Werknemer\_WAOStatus.scss" />
-<None Include="App\Shared\Werknemer\_WGAStatus.scss" />
-<None Include="App\SpreekuurAfspraak\Details.scss" />
-<None Include="App\Taak\_Voltooien.scss" />
-</ItemGroup>
-"~/App/Administratie/AanvraagVerzuimVerlof/AanvraagVerzuimVerlofDocsEnWSWPopup.css",
-"~/App/Administratie/AanvraagVerzuimVerlof/AanvraagVerzuimVerlofPersoon.css",
-"~/App/Administratie/AanvraagVerzuimVerlof/AanvraagVerzuimVerlofVragenlijst.css",
-"~/App/Administratie/Verlof/Index.css",
-"~/App/Administratie/Verzuimhistorie/DetailInfo.css",
-"~/App/Administratie/Werknemer/DienstverbandEdit.css",
-"~/App/Administratie/Werknemer/NoRiskpolisEdit.css",
-"~/App/Administratie/Werknemer/WAOStatusEdit.css",
-"~/App/Administratie/ZiekteMelding/Index.css",
-"~/App/Agenda/AfspraakBevestiging.css",
-"~/App/Agenda/AfspraakPlannenTab1.css",
-"~/App/Agenda/OverzichtContainer.css",
-"~/App/Agenda/OverzichtSearch.css",
-"~/App/Agenda/PlannenContainer.css",
-"~/App/Agenda/SelecteerTijd.css",
-"~/App/Agenda/ZoekDienstverband.css",
-"~/App/Contact/Contact.css",
-"~/App/Dossiers/Verzuimkalender.css",
-"~/App/Dossiers/DossierUploadDocument.css",
-"~/App/Dossiers/NotitiePopup.css",
-"~/App/GebruikersBeheer/Index.css",
-"~/App/GebruikersBeheer/GebruikerAanmaken.css",
-"~/App/GebruikersBeheer/GebruikerAanmaken_WizardStap2.css",
-"~/App/GebruikersBeheer/GebruikerAanmaken_WizardStap3.css",
-"~/App/GebruikersBeheer/GebruikerAanmaken_WizardStap4.css",
-"~/App/GebruikersBeheer/OverzichtGebruikers.css",
-"~/App/Home/LaatstBekekenWerknemers.css",
-"~/App/Interventies/InterventieDownloads.css",
-"~/App/MijnProfiel/MijnContactgegevens.css",
-"~/App/MijnProfiel/VervangingNieuw.css",
-"~/App/MijnTools/Index.css",
-"~/App/Rapporten/NoRiskpolis.css",
-"~/App/Rapporten/UitDienst.css",
-"~/App/Rapporten/Vragenlijst.css",
-"~/App/Rapporten/WAOStatus.css",
-"~/App/Rapporten/WgaStatus.css",
-"~/App/Rapporten/ZiekUitDienst.css",
-"~/App/Registratie/Aanmelden.css",
-"~/App/Settings/ExtraRechten.css",
-"~/App/Settings/Modules.css",
-"~/App/Settings/TaakDefinitie.css",
-"~/App/Settings/VerzuimProtocol.css",
-"~/App/Shared/PdfNotities.css",
-"~/App/Shared/PdfVerzuimverlof.css",
-"~/App/Shared/MasterPopup.css",
-"~/App/Shared/MasterPopup_RequireJS.css",
-"~/App/Shared/SiteMaster.css",
-"~/App/Shared/Werknemer/Document.css",
-"~/App/Shared/Werknemer/DocumentUpload.css",
-"~/App/Shared/Werknemer/EditNotitie.css",
-"~/App/Shared/Werknemer/NoRiskpolis.css",
-"~/App/Shared/Werknemer/NoRiskpolisDocs.css",
-"~/App/Shared/Werknemer/Persoon.css",
-"~/App/Shared/Werknemer/WAOStatus.css",
-"~/App/Shared/Werknemer/WGAStatus.css",
-"~/App/SpreekuurAfspraak/Details.css",
-"~/App/Taak/Voltooien.css",
-
-Total *.cshtml files = 188
-Total *.cshtml files containing the text 'style=' = 58
-Total 'style =' text count 379
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\test.runner.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\admin\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\admin\_adminsubmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\aanvraagverzuimverlof.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\aanvraagverzuimverlofoverzicht.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofdocsenwswpopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofinformatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofoverzichtinformatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofoverzichtlijst.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofpersoon.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\aanvraagverzuimverlof\_aanvraagverzuimverlofvragenlijst.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\herstelmelding\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\overlijdenmelding\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\uitdienstmelding\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\verlof\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\verzuimhistorie\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\verzuimhistorie\_detailinfo.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\selectwerkgever.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\werknemerinfo.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\werknemertoevoegen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_contactedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_dienstverbandedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_noriskpolisedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_partneredit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_persoonedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_selectwerkgever.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_specifiekekenmerken.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_waostatusedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_wgastatusedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_wswindicatieedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\werknemer\_ziekuitdienstedit.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\administratie\ziektemelding\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\afspraakplannen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_afspraakbevestiging.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_afspraakmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_afspraakplannentab1.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_annulerencontainer.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_overzichtcontainer.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_overzichtsearch.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_plannencontainer.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_selecteertijd.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\agenda\_zoekdienstverband.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\arbodienst\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\contact\contact.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\accordion\accordion.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\datatable\datatable.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\radiobuttons\radiobuttons.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\responsivedatepicker\responsivedatepicker.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\responsivenumeric\responsivenumeric.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\responsivetekstbox\responsivetekstbox.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\responsivetextarea\responsivetextarea.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\toggle\toggle.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\core\directives\tristatecheckbox\tristatecheckbox.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\dashboard.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\kosten\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\kosten\kosten.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\settings\content.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\settings\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\settings\settings.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\taken\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\taken\tabs\takenpertype.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\taken\tabs\takenperuitvoerder.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\verzuimmeldingen\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\verzuimmeldingen\verzuimmeldingen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\verzuimpercentage\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\verzuimpercentage\verzuimpercentage.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\verzuimvenster\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\basis\verzuimvenster\verzuimvenster.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\lijndiagrammen\lijndiagrammen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\lijndiagrammen\lijndiagram\lijndiagram.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\treelist\treelist.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\verslagvergelijkingsperiode\verslagvergelijkingsperiode.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\widget\export.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\widget\widget.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\widgetspanel\widgets-panel.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\common\widgetspanel\pool\pool.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\instellingen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\instellingen.noeditor.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\instellingen.treelist.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\tabs\functie.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\tabs\geslacht.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\tabs\leeftijdsklasse.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\tabs\totaal.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\meldingsfrequentie\tabs\verzuimduurklasse.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\settings\content.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\settings\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\settings\noeditor.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\settings\settings.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\settings\treelist.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\info.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\instellingen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\tabs\aantalverzuimen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\tabs\aantalverzuimenkalenderdagen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\tabs\aantalverzuimenpercentage.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\tabs\verzuimcijfers.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\tabs\verzuimdatamonitor.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dashboard\uitgebreid\verzuimdatamonitor\tabs\verzuimduurklasse.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\dossieruploaddocumentpopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\overzicht.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\taken.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\test.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\verzuimkalender.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\vrdossier.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\wgadossier.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\_dossiermeldingpopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\_dossiermenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\_dossierstukken.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\_dossieruploaddocument.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\_meldingen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\dossiers\_notitiepopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\formulier.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\overzicht.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\_menu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\directives\validatie.regel.bewerken.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\directives\validatie.regel.bewerken.regels.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\directives\vraag.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\formulier\formulier.editor.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\formulier\formulier.vraag.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\preview\preview.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\preview\vragenlijst.preview.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\a.z.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\a.z.multi.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\auto.complete.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\combo.box.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\date.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\default.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\drop.down.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\icon.yes.no.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\number.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\numbers.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\numbers.multi.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\slider.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\svg.yes.no.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\text.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\text.multi.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\time.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\templates\youtube.video.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\toelichting.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragenbank.vragen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.algemeen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.buttons.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.header.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.invoer.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.keuze.awesome.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.keuze.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.nummerlijst.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.onbekend.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.tekstlijst.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\formulieren\vragenbank\vragen\vragenbank.vraag.youtube.video.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\gebruikersbeheer.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\twofactorbasis.beleid.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\twofactorbasis.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\twofactorbasis.informatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\twofactorbasis.instellen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\twofactorbasis.resetten.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikeraanmaken.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikeraanmaken_wizardstap1.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikeraanmaken_wizardstap2.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikeraanmaken_wizardstap3.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikeraanmaken_wizardstap4.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikeraanmaken_wizardstap5.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikersbeheermenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_gebruikerwijzigen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_overzichtgebruikers.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\gebruikersbeheer\_vervangingregelen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\home\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\home\searchresults.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\home\_laatstbekekenwerknemers.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\home\_mijnverzuimendewerknemers.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\interventies\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\interventies\_interventiedownloads.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\interventies\_interventiessubmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\gebruikersnaamwijzigen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\passwordrecovery.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\_algemenevoorwaarden.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\_login.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\_popup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\_tweestapsbeleid.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\_tweestapsinstellen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\login\_tweestapsverificatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\autorisatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\mijnaccount.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\mijnautorisatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\mijncontactgegevens.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\mijnvervanging.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\_autorisatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\_mijnprofielmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\_vervangingactueel.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\_vervanginghistorie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\_vervangingnieuw.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijnprofiel\_wijzigmobielnummer.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\mijntools\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\basis.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\basisdashboard.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\duurzaamherstelplanalert.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\noriskpolis.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\uitdienst.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\uitgebreiddashboard.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\verzuimhistorie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\vragenlijst.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\waostatus.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\wgastatus.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\ziekuitdienst.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\rapporten\_rapportagesubmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\registratie\aanmelden.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\research\rli\angularkendo\spike.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\research\rli\spike\spike.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\research\rli\styling\spike.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\extrarechten.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\informatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\modules.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\organisatieprotocol.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\taakdefinitie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\taakdefinitiedocument.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\taakdefinitiedocumentenpopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\verzuimprotocol.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\settings\_settingsmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\pdfconversatienotitie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\pdfnotities.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\pdfverzuimverlof.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\resetsession.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_masterlogin.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_masterpopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_masterpopup_requirejs.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_mastersecure.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_mastersecureadministratie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_mastersecurenosearch.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_sitemaster.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_spreekuurafspraakmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_werknemercontext.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\_werknemercontextforpopup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\error.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\_errormessage.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\_footer.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\_menu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\_menuusersettings.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\_news.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\common\_shortcuts.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\editortemplates\date.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\search\_search.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\search\_searchresults.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\submenu\_administratiesubmenu.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_contact.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_dienstverband.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_document.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_documentupload.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_editnotitie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_leidinggevenden.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_noriskpolis.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_noriskpolisdocs.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_notitie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_partner.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_persoon.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_snelkoppelingen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_waoadviesinfo.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_waostatus.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_wgastatus.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_wgastatustoelichting.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_wswindicatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\shared\werknemer\_ziekuitdienst.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\slimbesparen\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\spreekuurafspraak\details.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\spreekuurafspraak\overzicht.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\index.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\widget\widget.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\widget\tabs\allemodules\allemodules.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\widget\tabs\mijnmodules\mijnmodules.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\bedankt.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\betaaloptie.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\betaaloptie.kopen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\betaaloptie.opzeggen.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\betaaloptie.proefperiode.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\staffel.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\start.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\voorwaarden.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\store\wizard\wizard.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_aanmaken.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_annuleren.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_bekijken.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_downloads.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_popup.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_toewijzen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_verwijderen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_voltooien.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\taak\_wijzigen.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\werknemercommunicatie\dialogwerknemercommunicatie.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\werknemercommunicatie\dialogwerknemercommunicatiesluitenjanee.cshtml
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\werknemercommunicatie\nieuwewerknemercommunicatiedirective.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\werknemercommunicatie\werknemercommunicatiedirective.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\werknemercommunicatie\deelherstelmelding\deelherstelmelden.html
+c:\projects\zvdz\zvdzonline\source\zvdzonline\zvdzonline.web\app\werknemercommunicatie\notitie\notitiedirective.html
+Extract styles from view result:
+Total *.cshtml / *.html files = 297
+Total *.cshtml / *.html files containing the text 'style=' = 70
+Total 'style =' text count 327
 Processing finished.
